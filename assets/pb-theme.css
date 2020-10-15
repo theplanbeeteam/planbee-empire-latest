@@ -1,0 +1,63 @@
+/* Styles for the blog tag cloud */
+.blog-stories-tags {
+  display: inline-block;
+  max-width: 1400px;
+  li {
+    display: inline-block;
+    padding: 0 1rem;
+    vertical-align: middle;
+  }
+  a:link, a:visited, a:active {
+    text-decoration: none;
+    color: #02c3e7;
+  }
+  a:hover {
+    text-decoration: none;
+    color: #0296b1;
+  }
+}
+
+.tag-alpha {
+  font-size: .707em
+}
+.tag-beta {
+  font-size: 1em
+}
+.tag-gamma {
+  font-size: 1.414em
+}
+.tag-delta {
+  font-size: 1.999em
+}
+.tag-epsilon {
+  font-size: 2.827em
+}
+.tag-zeta {
+  font-size: 3.998em
+}
+
+/* Styles for the old product section, indicating a newer version is available. */
+.newer_product_available {
+
+  max-width: 1350px;
+  margin: auto;
+  padding: 0px 25px 0px 25px;
+  border-style: dashed;
+  border-width: 1px;
+  border-color: #02c3e7;
+
+  p {
+    text-align: center;
+  }
+
+  a:link, a:visited, a:active {
+    text-decoration: none;
+    color: #02c3e7;
+  }
+
+  a:hover {
+    text-decoration: none;
+    color: #0296b1;
+  }
+
+}
