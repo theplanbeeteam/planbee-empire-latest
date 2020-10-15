@@ -1,8 +1,10 @@
+{%- include 'pb-register-banner' -%}
 <section class="account-page account-page-register" data-template-account>
   <header class="account-page-masthead">
     <h1 class="account-page-title">
       {{ 'customers.register.title' | t}}
     </h1>
+    {%- include 'pb-register-subheading' -%}
   </header>
 
   <article class="account-page-content">
@@ -115,3 +117,4 @@
     {% endform %}
   </article>
 </section>
+{%- include 'pb-register-foot' -%}
