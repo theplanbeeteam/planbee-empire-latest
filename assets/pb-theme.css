@@ -61,3 +61,34 @@
   }
 
 }
+
+/* Styles for Contact Us page. */
+.contact-us-row {
+  display: flex;
+}
+
+.contact-us-row-bottom {
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  position: relative;
+  top: 4px;
+}
+
+.contact-us-column {
+  flex: 33.3333%
+}
+
+.contact-us-column-middle {
+  flex-grow: 0;
+  flex-shrink 0;
+}
+
+@media screen and (max-width: 600px) {
+  .contact-us-column {
+    display: none;
+  }
+}
+
+.site-footer-wrapper {
+  margin-top: 0px;
+}

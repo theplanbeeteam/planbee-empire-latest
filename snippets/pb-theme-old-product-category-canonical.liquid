@@ -1,0 +1,17 @@
+{% if template contains 'product' %}
+  {% if product.metafields.global.pb_canonical == blank %}
+  <link rel="canonical" href="{{ canonical_url }}" />
+  {% else %}
+  <link rel="canonical" href="{{ product.metafields.global.pb_canonical | prepend: '/products/' | prepend: shop.url }}" />
+  {% endif %}
+{% else %}
+  {% if template contains 'collection' %}
+    {% if collection.metafields.global.pb_canonical == blank %}
+    <link rel="canonical" href="{{ canonical_url }}" />
+    {% else %}
+    <link rel="canonical" href="{{ collection.metafields.global.pb_canonical | prepend: '/collections/' | prepend: shop.url }}" />
+    {% endif %}
+    {% else %}
+    <link rel="canonical" href="{{ canonical_url }}" />
+  {% endif %}
+{% endif %}
