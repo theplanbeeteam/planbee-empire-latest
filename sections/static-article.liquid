@@ -80,7 +80,7 @@
       <div class="article--content rte">
         {{ article.content }}
       </div>
-
+      {%- render 'pb-author-bios' -%}
       {% if article.tags != blank %}
         <div class="article--tags">
           <span class="article--tags-title">{{- 'blog.article.filed_in' | t -}}</span>

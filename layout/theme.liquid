@@ -76,7 +76,16 @@
     <!-- PLANBEE CUSTOM CSS -->
     {{ 'pb-theme.css' | asset_url | stylesheet_tag }}
     <!-- END PLANBEE CUSTOM CSS  -->
-
+    <!-- PLANBEE CUSTOM SCRIPT -->
+      <!-- PRODUCT IMAGE SLIDER -->
+        {% if product.id > 1 %}
+        {% render 'pb-product-image-slider' %}
+        {% endif %}
+      <!-- END PRODUC IMAGE SLIDER -->
+      <!-- TrustBox script -->
+        <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+      <!-- End TrustBox script -->
+    <!-- END PLANBEE CUSTOM SCRIPT -->
     {% comment %}theme-object{% endcomment %}
     <script>
       window.Theme = window.Theme || {};

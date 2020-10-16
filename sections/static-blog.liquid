@@ -38,6 +38,7 @@
         article: articles[featured_post]
       %}
     {% endif %}
+    {%- render 'pb-blog-categories-tag-cloud' -%}
 
     <ul class="blog--inner">
       {% for article in blog.articles %}
