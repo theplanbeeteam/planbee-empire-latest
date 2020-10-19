@@ -15,6 +15,10 @@ When the theme is updated, all we need to do is:
 3. Add the custom code snippets to the 'snippets' folder.
 4. Copy over the 'render' references to the custom snippets in the theme's liquid files. These can be quickly found in the old theme by searching for "render 'pb-'".
 
+## Ongoing tasks
+
+Collection sidebar grid. Art is done; use as a reference for other collections.
+
 ## Completed tasks
 
 ### Customizer
@@ -49,3 +53,4 @@ Most theme settings applied. Home page sections still need customising.
 - pb-author-bios.liquid
 - pb-blog-categories-tag-cloud.liquid
 - pb-product-image-slider.liquid
+- pb-product-mini.liquid

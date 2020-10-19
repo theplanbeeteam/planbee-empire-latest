@@ -1,4 +1,4 @@
-/* CUSTOM CLASSES */
+/* ---------------------------- CUSTOM CLASSES ---------------------------- */
 
 /* Styles for the blog tag cloud */
 .blog-stories-tags {
@@ -107,7 +107,7 @@
   margin-top: 0px;
 }
 
-/* OVERRIDES */
+/* ------------------------------- OVERRIDES ------------------------------- */
 
 /* Product page: set min-height for product title; hide quantity selector and resize add to cart button; . */
 h1.product-title {
@@ -122,3 +122,14 @@ button.product-form--atc-button.mdc-ripple-surface.mdc-ripple-upgraded {
     margin: 0;
     width: 100%;
 }
+
+/* Trustbox product review mini override */
+#pb-product-mini {
+  min-height: 24px;
+  position: relative;
+  left: -7px;
+}
+
+/* ----------------------------- MEDIA QUERIES ----------------------------- */
+
+/* Move media queries down to here before deploying to production. */
