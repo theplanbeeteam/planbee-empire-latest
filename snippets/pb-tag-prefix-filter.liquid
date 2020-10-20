@@ -1,0 +1,8 @@
+{% assign prefix = tag | slice: 0 %}
+  {% if prefix == '_' %}
+    {% continue %}
+  {% endif %}
+
+  <!-- The first line tells Shopify that the first character (slice) of a tag shall be called 'prefix'.
+
+  The other lines tell Shopify that if 'prefix' is an underscore, to skip displaying it and look for other tags to display that do not have this prefix. -->

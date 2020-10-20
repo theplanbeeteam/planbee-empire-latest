@@ -84,6 +84,7 @@
     {% comment %}
       Loop through collection tags
     {% endcomment %}
+    {%- render 'pb-tag-prefix-filter' -%}
     {% for tag in sorted_tags %}
       {% assign cat = tag | split: '_' | first %}
       {% if cat != tag and cat_item == cat %}
