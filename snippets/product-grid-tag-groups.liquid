@@ -65,7 +65,8 @@
   {% endif %}
 
   {% assign tag_count = 0 %}
-  <h3 class="productgrid--sidebar-title--small">
+  <!-- PLANBEE CUSTOM CODE: inserted the 'cat-item | handleize' liquid object into the class attribute below. -->
+  <h3 class="productgrid--sidebar-title--small {{ cat_item | handleize }}">
     {{ cat_item }}
   </h3>
   <ul
@@ -84,8 +85,10 @@
     {% comment %}
       Loop through collection tags
     {% endcomment %}
-    {%- render 'pb-tag-prefix-filter' -%}
+
     {% for tag in sorted_tags %}
+      <!-- PLANBEE CUSTOM CODE: snippet below prevents tags prefixed with an underscore from being displayed in the sidebar. -->
+      {%- include 'pb-tag-prefix-filter' -%}
       {% assign cat = tag | split: '_' | first %}
       {% if cat != tag and cat_item == cat %}
         {% assign tag_count = tag_count | plus: 1 %}
@@ -142,8 +145,9 @@
           {% assign filter_class = filter_class | append: ' filter-item--hidden' %}
         {%- endif -%}
 
+        <!-- PLANBEE CUSTOM CODE: inserted the 'cat-item | handleize' liquid object into the class attribute directly below. -->
         <li
-          class="{{ filter_class }}"
+          class="{{ filter_class }} {{ cat_item | handleize }}"
           data-tag-advanced
           data-group="{{ cat_item }}"
           data-handle="{{ tag | handle }}"
