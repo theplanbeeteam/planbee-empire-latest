@@ -1,0 +1,7 @@
+{%- if product.price_varies -%}
+  <p><span>From {{ product.price_min | money }} to {{ product.price_max | money }}</span></p>
+  {%- elsif product.price < 0.01 -%}
+  <p>FREE</p>
+  {%- else -%}
+  <p>{{ product.price | money }}</p>
+{%- endif -%}

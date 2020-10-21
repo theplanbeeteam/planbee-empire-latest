@@ -301,9 +301,14 @@
         </span>
       {% endif %}
 
+      <!-- PLANBEE CUSTOM CODE -->
+      {%- comment -%}
       {% unless emphasize_price %}
         {{ product_item_price }}
       {% endunless %}
+      {%- endcomment -%}
+      {%- include 'pb-product-item-price' -%}
+      <!-- END PLANBEE CUSTOM CODE -->
 
       {% if product_ratings_reviews and product_ratings_star_display == "all" %}
         <div class="productitem--ratings">
