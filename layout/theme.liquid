@@ -73,28 +73,16 @@
     {{ 'theme.css' | asset_url | stylesheet_tag }}
     {{ 'ripple.css' | asset_url | stylesheet_tag }}
     <link rel="stylesheet" href="https://cdn.shopify.com/shopifycloud/shopify-plyr/v1.0/shopify-plyr.css">
-    <!-- PLANBEE CUSTOM CSS -->
+
+    <!-- PLANBEE CUSTOM CODE -->
+    <!-- Custom styles and overrides -->
     {{ 'pb-theme.css' | asset_url | stylesheet_tag }}
-    <!-- END PLANBEE CUSTOM CSS  -->
-    <!-- PLANBEE CUSTOM SCRIPT -->
-    <!-- PRODUCT IMAGE SLIDER -->
+    <!-- Product image slider -->
     {% if product.id > 1 %}
     {% render 'pb-product-image-slider' %}
     {% endif %}
-    <!-- END PRODUC IMAGE SLIDER -->
-    <!-- TrustBox -->
-    <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js"></script>
-    <!-- End TrustBox -->
-    <!-- Zendesk -->
-    <script type="text/javascript" defer>
-    window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
-    d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
-    _.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute("charset","utf-8");
-    $.src="https://v2.zopim.com/?52gEUMc1eR1sxksJFC5NkktLLL5R8kmG";z.t=+new Date;$.
-    type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
-    </script>
-    <!-- End Zendesk -->
-    <!-- END PLANBEE CUSTOM SCRIPT -->
+    <!-- END PLANBEE CUSTOM CODE  -->
+
     {% comment %}theme-object{% endcomment %}
     <script>
       window.Theme = window.Theme || {};
@@ -115,6 +103,7 @@
         "product_recommendations_url": "{{ routes.product_recommendations_url }}",
       };
     </script>
+
   {% render 'minmaxify-head' %}
 </head>
 
@@ -237,5 +226,17 @@
       defer
     >
     </script>
+    <!-- PLANBEE CUSTOM SCRIPTS -->
+    <!-- Trustpilot -->
+    <script src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js"></script>
+    <!-- Zendesk -->
+    <script>
+      window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
+      d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
+      _.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute("charset","utf-8");
+      $.src="https://v2.zopim.com/?52gEUMc1eR1sxksJFC5NkktLLL5R8kmG";z.t=+new Date;$.
+      type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
+    </script>
+    <!-- END PLANBEE CUSTOM SCRIPTS -->
   </body>
 </html>
