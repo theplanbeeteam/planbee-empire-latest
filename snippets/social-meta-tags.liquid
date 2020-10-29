@@ -25,6 +25,7 @@
   {% assign og_image = og_default_image %}
 {% endif %}
 
+{%- unless template contains 'shogun' -%}
 {% if og_image != blank %}
   {% capture og_image_tags %}
     {% comment %}
@@ -58,6 +59,7 @@
     <meta property="og:image:alt" content="{{ image_alt }}" />
   {% endcapture %}
 {% endif %}
+{%- endunless -%}
 
 {% if template.name == 'product' %}
   {% assign variant = product.selected_variant %}
@@ -165,4 +167,3 @@
 <meta name="twitter:description" content="{{ twitter_description | escape }}">
 
 {{ twitter_image_tags }}
-
