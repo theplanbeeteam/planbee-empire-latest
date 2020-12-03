@@ -25,7 +25,9 @@
   {% assign og_image = og_default_image %}
 {% endif %}
 
+<!-- PLANBEE CUSTOM CODE (1 OF 2) -->
 {%- unless template contains 'shogun' -%}
+<!-- END PLANBEE CUSTOM CODE (1 OF 2) -->
 {% if og_image != blank %}
   {% capture og_image_tags %}
     {% comment %}
@@ -59,7 +61,9 @@
     <meta property="og:image:alt" content="{{ image_alt }}" />
   {% endcapture %}
 {% endif %}
+<!-- PLANBEE CUSTOM CODE (2 OF 2) -->
 {%- endunless -%}
+<!-- END PLANBEE CUSTOM CODE (2 OF 2) -->
 
 {% if template.name == 'product' %}
   {% assign variant = product.selected_variant %}
