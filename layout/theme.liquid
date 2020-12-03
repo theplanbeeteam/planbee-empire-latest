@@ -48,7 +48,10 @@
     {% endif %}
 
     {% include 'favicon' %}
+    <!-- PLANBEE CUSTOM CODE -->
+    <!-- Sets the canonical URL of products and collections with the metafield 'pb_canonical' to a newer version. -->
     {%- render 'pb-theme-old-product-category-canonical' -%}
+    <!-- END PLANBEE CUSTOM CODE -->
 
     {% if template contains 'collection' and current_tags %}
       <meta name="robots" content="noindex" />
