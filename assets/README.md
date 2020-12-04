@@ -57,3 +57,5 @@ Most theme settings applied. Home page sections still need customising.
 - pb-product-image-slider.liquid
 - pb-product-mini.liquid
 - pb-product-grid-item.liquid
+
+TEST CHANGE
