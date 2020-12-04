@@ -80,7 +80,9 @@
       <div class="article--content rte">
         {{ article.content }}
       </div>
+      <!-- PLANBEE CUSTOM CODE -->
       {%- render 'pb-author-bios' -%}
+      <!-- END PLANBEE CUSTOM CODE -->
       {% if article.tags != blank %}
         <div class="article--tags">
           <span class="article--tags-title">{{- 'blog.article.filed_in' | t -}}</span>

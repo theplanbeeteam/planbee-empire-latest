@@ -38,7 +38,9 @@
         article: articles[featured_post]
       %}
     {% endif %}
+    <!-- PLANBEE CUSTOM CODE -->
     {%- render 'pb-blog-categories-tag-cloud' -%}
+    <!-- END PLANBEE CUSTOM CODE -->
 
     <ul class="blog--inner">
       {% for article in blog.articles %}
