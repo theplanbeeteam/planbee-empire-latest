@@ -70,7 +70,7 @@
   {% unless section.settings.show_mobile_search_bar %}
     {% capture search_button %}
         <div class="site-header-mobile-search-button--button" tabindex="-1">
-          {% include 'icon-search' %}
+          {% render 'icon-search' %}
         </div>
     {% endcapture %}
     {% if section.settings.enable_live_search %}
@@ -109,7 +109,7 @@
           {% endif %}
 
           {%
-            include 'rimg',
+            render 'rimg',
             img: section.settings.logo,
             class: 'site-logo-image',
             alt: logo_alt,
@@ -130,9 +130,8 @@
     </div>
 
     {%
-      include 'live-search-form',
+      render 'live-search-form',
       quick_links: linklists[section.settings.quick_links],
-      enable_live_search: section.settings.enable_live_search,
       enable_images: section.settings.enable_live_search_images,
       enable_content: section.settings.enable_live_search_articles_pages
     %}
@@ -151,10 +150,10 @@
             "
           >
             {% if section.settings.image == blank %}
-              {% include 'icon-library', id: section.settings.small_promo_icon %}
+              {% render 'icon-library', id: section.settings.small_promo_icon %}
             {% else %}
               {%
-                include 'rimg',
+                render 'rimg',
                 class: 'small-promo-custom-icon',
                 img: section.settings.image,
                 size: '60x'
@@ -203,7 +202,7 @@
         data-header-cart-count="{% if cart.item_count > 0 %}{{ cart.item_count }}{% endif %}">
       </span>
 
-      {% include 'icon-cart' %}
+      {% render 'icon-cart' %}
       <span class="visually-hidden">{{ 'general.accessibility.cart' | t }}</span>
     </a>
   </div>
@@ -229,18 +228,17 @@
     aria-label="{{ 'general.accessibility.nav_main' | t }}"
   >
     {%
-      include 'navmenu',
+      render 'navmenu',
       menu: section.settings.menu,
       blocks: section.blocks,
-      is_mobile: false
     %}
 
-    {% include 'site-header-actions' %}
+    {% render 'site-header-actions' %}
   </nav>
 </div>
 
 {%
-  include 'site-mobile-nav',
+  render 'site-mobile-nav',
   blocks: section.blocks,
 %}
 

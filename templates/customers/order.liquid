@@ -38,7 +38,7 @@
                   <a class="order-image" href="{{ line_item.product.url }}">
                     {% if line_item.image %}
                       {%
-                        include 'rimg',
+                        render 'rimg',
                         img: line_item.image,
                         alt: line_item.title,
                         size: '75x'
@@ -66,7 +66,7 @@
                       <ul class="discount-list" aria-label="{{ 'product.general.discounts' | t }}">
                         {% for discount_allocation in line_item.line_level_discount_allocations %}
                           <li class="discount-list-item">
-                            {% include 'icon-library', id: 'icon-sale-tag' %}
+                            {% render 'icon-library', id: 'icon-sale-tag' %}
                             {{ discount_allocation.discount_application.title }}
                             (-<span class="money">{{ discount_allocation.amount | money }}</span>)
                           </li>
@@ -139,7 +139,7 @@
             {%- for discount_application in order.cart_level_discount_applications -%}
               <div class="order-footer-item discount-list-item">
                 <span class="order-footer-label cart-discount-title">
-                  {% include 'icon-library', id: 'icon-sale-tag' %}
+                  {% render 'icon-library', id: 'icon-sale-tag' %}
                   {{- discount_application.title -}}
                 </span>
                 <span class="order-footer-value cart-discount-price">-<span class="money">{{ discount_application.total_allocated_amount | money }}</span></span>
@@ -225,7 +225,7 @@
               {{ 'customers.order.shipping_address' | t }}
             </h2>
             {%
-              include 'account-address-list',
+              render 'account-address-list',
               address: order.shipping_address
             %}
           </div>
@@ -236,7 +236,7 @@
             {{ 'customers.order.billing_address' | t }}
           </h2>
           {%
-            include 'account-address-list',
+            render 'account-address-list',
             address: order.billing_address
           %}
         </div>

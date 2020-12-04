@@ -75,7 +75,7 @@
             class="navmenu-icon navmenu-icon-depth-1"
             data-navmenu-trigger
           >
-            {% include 'icon-chevron-down-small' %}
+            {% render 'icon-chevron-down-small' %}
           </span>
         {% endif %}
       </a>
@@ -83,21 +83,22 @@
       {% if show_meganav %}
         {% if show_multi_column %}
           {%
-            include 'multi-column-menu',
+            render 'multi-column-menu',
             menu: menu_item,
             block: meganav_block,
           %}
         {% else %}
           {%
-            include 'meganav',
+            render 'meganav',
             menu: menu_item,
             block: meganav_block,
           %}
         {% endif %}
       {% elsif show_subnav %}
         {%
-          include 'navlist',
+          render 'navlist',
           menu_list: linklists[menu_item.handle].links,
+          menu_title: menu_title,
           depth: 2,
           max_depth: 3,
           show_arrows: true,

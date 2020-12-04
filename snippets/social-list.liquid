@@ -15,7 +15,7 @@
   <div class="social-icons">
     {%- if settings.social_facebook != blank -%}
       {%
-        include 'social-link',
+        render 'social-link',
         id: 'facebook',
         title: 'Facebook',
         url: settings.social_facebook
@@ -24,7 +24,7 @@
 
     {%- if settings.social_twitter != blank -%}
       {%
-        include 'social-link',
+        render 'social-link',
         id: 'twitter',
         title: 'Twitter',
         url: settings.social_twitter
@@ -33,7 +33,7 @@
 
     {%- if settings.social_pinterest != blank -%}
       {%
-        include 'social-link',
+        render 'social-link',
         id: 'pinterest',
         title: 'Pinterest',
         url: settings.social_pinterest
@@ -42,7 +42,7 @@
 
     {%- if settings.social_instagram != blank -%}
       {%
-        include 'social-link',
+        render 'social-link',
         id: 'instagram',
         title: 'Instagram',
         url: settings.social_instagram
@@ -51,7 +51,7 @@
 
     {%- if settings.social_tumblr != blank -%}
       {%
-        include 'social-link',
+        render 'social-link',
         id: 'tumblr',
         title: 'Tumblr'
         url: settings.social_tumblr
@@ -60,7 +60,7 @@
 
     {%- if settings.social_vimeo != blank -%}
       {%
-        include 'social-link',
+        render 'social-link',
         id: 'vimeo',
         title: 'Vimeo',
         url: settings.social_vimeo
@@ -69,7 +69,7 @@
 
     {%- if settings.social_youtube != blank -%}
       {%
-        include 'social-link',
+        render 'social-link',
         id: 'youtube',
         title: 'Youtube',
         url: settings.social_youtube
@@ -78,7 +78,7 @@
 
     {%- if settings.social_linkedin != blank -%}
       {%
-        include 'social-link',
+        render 'social-link',
         id: 'linkedin',
         title: 'LinkedIn',
         url: settings.social_linkedin
@@ -89,7 +89,7 @@
       {% assign url = 'mailto:' | append: settings.social_email %}
       {% assign email_title = 'general.general.email' | t %}
       {%
-        include 'social-link',
+        render 'social-link',
         id: 'email',
         title: email_title,
         url: url
@@ -98,7 +98,7 @@
 
     {%- if settings.social_rss != blank -%}
       {%
-        include 'social-link',
+        render 'social-link',
         id: 'rss',
         title: 'general.social.rss' | t,
         url: settings.social_rss

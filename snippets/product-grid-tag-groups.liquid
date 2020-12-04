@@ -4,7 +4,7 @@
 
 {%- capture tag_icon -%}
   <span class="filter-icon--checkbox">
-    {%- include 'icon-checkbox' -%}
+    {%- render 'icon-checkbox' -%}
   </span>
 {%- endcapture -%}
 
@@ -65,7 +65,9 @@
   {% endif %}
 
   {% assign tag_count = 0 %}
-  <!-- PLANBEE CUSTOM CODE: inserted the 'cat-item | handleize' liquid object into the class attribute below. -->
+
+<!-- PLANBEE CUSTOM CODE: inserted the 'cat-item | handleize' liquid object into the class attribute below. -->
+
   <h3 class="productgrid--sidebar-title--small {{ cat_item | handleize }}">
     {{ cat_item }}
   </h3>
@@ -85,12 +87,18 @@
     {% comment %}
       Loop through collection tags
     {% endcomment %}
-
     {% for tag in sorted_tags %}
-      <!-- PLANBEE CUSTOM CODE: snippet below prevents tags prefixed with an underscore from being displayed in the sidebar. -->
+    
+    <!-- PLANBEE CUSTOM CODE: snippet below prevents tags prefixed with an underscore from being displayed in the sidebar. -->
       {%- include 'pb-tag-prefix-filter' -%}
-      {% assign cat = tag | split: '_' | first %}
-      {% if cat != tag and cat_item == cat %}
+    
+      {% liquid
+        assign cat = tag | split: '_' | first
+        assign cat_handle = cat | handleize
+        assign tag_handle = tag | handleize
+        assign cat_item_handle = cat_item | handleize
+      %}
+      {% if cat_handle != tag_handle and cat_item_handle == cat_handle %}
         {% assign tag_count = tag_count | plus: 1 %}
 
         {%- if show_swatches -%}
@@ -103,7 +111,7 @@
               <div class="filter-item--swatch">
                 <div
                   class="filter-item--swatch-inner"
-                  style="{% include 'swatch-styles', color_name: color_name %}"
+                  style="{% render 'swatch-styles', color_name: color_name %}"
                 >
                 </div>
               </div>
@@ -124,7 +132,7 @@
                 {% assign animation_state = 'checked' %}
               {% endif %}
               <span class="filter-icon--checkbox" data-handle="{{ tag | handle}}">
-                {%- include 'icon-checkmark-animated', animation_state: animation_state -%}
+                {%- render 'icon-checkmark-animated', animation_state: animation_state -%}
               </span>
 
             {%- endunless -%}
@@ -145,9 +153,8 @@
           {% assign filter_class = filter_class | append: ' filter-item--hidden' %}
         {%- endif -%}
 
-        <!-- PLANBEE CUSTOM CODE: inserted the 'cat-item | handleize' liquid object into the class attribute directly below. -->
         <li
-          class="{{ filter_class }} {{ cat_item | handleize }}"
+          class="{{ filter_class }}"
           data-tag-advanced
           data-group="{{ cat_item }}"
           data-handle="{{ tag | handle }}"

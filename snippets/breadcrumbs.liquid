@@ -1,11 +1,13 @@
+{% assign search_category = search_category | default: blank %}
 {% assign show_breadcrumbs = true %}
 
 {% if show_breadcrumbs %}
-  {% include 'advanced-tag-loop' %}
+  {% capture cat_array %}{%- render 'advanced-tag-loop' -%}{% endcapture %}
+  {% assign cat_array = cat_array | split: '|' %}
 
   {%- capture delimiter -%}
     <span class="breadcrumbs-delimiter" aria-hidden="true">
-      {% include 'icon-chevron-down-thin' %}
+      {% render 'icon-chevron-down-thin' %}
     </span>
   {%- endcapture -%}
 
@@ -85,10 +87,14 @@
       <span>{{ article.title }}</span>
 
     {% elsif template contains 'search' and search.performed %}
-      {%
-        include 'search-sanitizer',
-        search_terms: search.terms
-      %}
+      {% capture sanitized_terms %}
+        {%
+          render 'search-sanitizer',
+          search_terms: search.terms
+        %}
+      {% endcapture %}
+
+      {% assign sanitized_terms = sanitized_terms | strip %}
 
       {{ delimiter }}
 

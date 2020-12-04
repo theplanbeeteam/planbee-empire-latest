@@ -10,9 +10,6 @@
 
   @param image_crop {boolean}
     Defines if the image should be cropped or not
-
-  @param hover_zoom {String}
-    This is the hover zoom setting, which is either 'disabled', 'separate', or 'replace'
 {% endcomment %}
 
 {% if product.media.size > 0 %}
@@ -37,14 +34,14 @@
       aria-label="Scroll thumbnails left"
       data-gallery-scroll-button
     >
-      {% include 'icon-chevron-down' %}
+      {% render 'icon-chevron-down' %}
     </button>
     <button
       class="gallery-navigation--scroll-button scroll-right"
       aria-label="Scroll thumbnails right"
       data-gallery-scroll-button
     >
-      {% include 'icon-chevron-down' %}
+      {% render 'icon-chevron-down' %}
     </button>
     <div
       class="gallery-navigation--scroller"
@@ -67,12 +64,12 @@
       >
         <span class="product-gallery--media-thumbnail-img-wrapper" tabindex="-1">
           {% if media.media_type == 'video' or media.media_type == 'external_video' %}
-            {% include 'icon-library', id: 'icon-play-thumb' %}
+            {% render 'icon-library', id: 'icon-play-thumb' %}
           {% elsif media.media_type == 'model' %}
-            {% include 'icon-library', id: 'icon-model-thumb' %}
+            {% render 'icon-library', id: 'icon-model-thumb' %}
           {% endif %}
           {%
-            include 'rimg',
+            render 'rimg',
             class: 'product-gallery--media-thumbnail-img',
             img: media.preview_image,
             size: thumb_dimensions,

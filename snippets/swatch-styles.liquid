@@ -25,7 +25,7 @@
   {%- assign swatch_product = swatch_product | default: blank -%}
   {%- assign swatch_option_key = swatch_option_key | default: blank -%}
   {%- assign swatch_size = swatch_size | default: 32 -%}
-  {%- assign use_aspect_ratio = use_aspect_ratio | default: true -%}
+  {%- assign use_aspect_ratio = use_aspect_ratio | default: true, allow_false: true -%}
 
   {%- assign swatch_bg_color = blank -%}
   {%- assign swatch_bg_image = blank -%}

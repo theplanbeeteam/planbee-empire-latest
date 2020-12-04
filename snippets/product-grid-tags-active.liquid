@@ -1,8 +1,9 @@
-{% include 'advanced-tag-loop' %}
+{% capture cat_array %}{%- render 'advanced-tag-loop' -%}{% endcapture %}
+{% assign cat_array = cat_array | split: '|' %}
 
 {%- capture tag_icon -%}
   <span class="filter-icon--remove">
-    {% include 'icon-remove' %}
+    {% render 'icon-remove' %}
     <span class="visually-hidden">
       {{ 'product_grid.filters.remove_filter' | t }}
     </span>

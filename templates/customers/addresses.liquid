@@ -24,7 +24,7 @@
               {% for address in customer.addresses %}
                 <li class="account-address">
                   {%
-                    include 'account-address-list',
+                    render 'account-address-list',
                     address: address
                   %}
 
@@ -47,7 +47,7 @@
               {% endfor %}
             </ul>
 
-            {% include 'pagination' %}
+            {% render 'pagination', paginate: paginate %}
           </div>
         {% endif %}
 
@@ -56,14 +56,14 @@
         {% endcomment %}
         <div class="account-page--column-half">
           {%
-            include 'account-address-form',
+            render 'account-address-form',
             address: customer.new_address,
             visible: true
           %}
 
           {% for address in customer.addresses %}
             {%
-              include 'account-address-form',
+              render 'account-address-form',
               address: address,
               visible: false
             %}

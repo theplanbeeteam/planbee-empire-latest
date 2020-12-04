@@ -41,11 +41,12 @@
       >
       {% for block_item in section.blocks %}
         {%
-          include 'promo-block',
+          render 'promo-block',
           block: block_item,
           text_alignment: section.settings.text_alignment,
           compress_blocks: section.settings.compress_blocks,
-          maintain_aspect_ratio: section.settings.maintain_aspect_ratio
+          maintain_aspect_ratio: section.settings.maintain_aspect_ratio,
+          index: forloop.index,
         %}
       {% endfor %}
       </div>
@@ -53,7 +54,7 @@
   </div>
 
   {%
-    include 'promo-block-background',
+    render 'promo-block-background',
     blocks: section.blocks
   %}
 </section>

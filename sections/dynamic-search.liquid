@@ -20,6 +20,7 @@
           },
           "no_results_products": {
             "title": {{ 'search.general.no_results_products_title' | t: terms: '*terms*' | json }},
+            "title_in_category": {{ 'search.general.no_results_products_title_in_category' | t: terms: '*terms*', category: '*category*' | json }},
             "message": {{ 'search.general.no_results_products_message' | t | json }}
           }
         }
@@ -45,7 +46,7 @@
     "
     {% if section.settings.image %}
       {%
-        include 'rimg',
+        render 'rimg',
         img: section.settings.image,
         size: '1350x1350',
         lazy: true,
@@ -55,7 +56,7 @@
   >
     {% if section.settings.image %}
       {%
-        include 'rimg',
+        render 'rimg',
         img: section.settings.image,
         size: '1350x1350',
         lazy: true,
@@ -92,11 +93,11 @@
     </div>
 
     {%
-      include 'live-search-form',
-      enable_live_search: section.settings.enable_live_search,
+      render 'live-search-form',
       enable_images: section.settings.enable_live_search_images,
       enable_content: section.settings.enable_live_search_articles_pages,
-      placeholder: section.settings.placeholder
+      placeholder: section.settings.placeholder,
+      quick_links: nil,
     %}
   </div>
 </section>

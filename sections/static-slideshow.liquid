@@ -35,7 +35,7 @@
         {% capture current %}{% cycle 1, 2 %}{% endcapture %}
         {% assign placeholder_style = 'lifestyle-' | append: current %}
         {%-
-          include 'placeholder_svg_uri'
+          render 'placeholder_svg_uri'
           placeholder: placeholder_style
         -%}
       {% endcapture %}
@@ -79,7 +79,7 @@
           "
           {% if block.settings.background_image %}
             {%
-              include 'rimg',
+              render 'rimg',
               img: block.settings.background_image,
               size: '2000x2000',
               crop: slideshow_crop,
@@ -94,7 +94,7 @@
         >
           {% if block.settings.background_image %}
             {%
-              include 'rimg',
+              render 'rimg',
               img: block.settings.background_image,
               class: 'slideshow-image',
               size: '2000x2000',
@@ -184,7 +184,7 @@
     {% endfor %}
 
     {%
-      include 'slideshow-overlay',
+      render 'slideshow-overlay',
       blocks: section.blocks
     %}
   </section>

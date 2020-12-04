@@ -131,7 +131,7 @@
 
   {%- assign fonts_type_section_style_italic = settings.type_section | font_modify: 'style', 'italic' | map: 'style' | default: 'italic' -%}
   {{ settings.type_section | font_modify: 'style', 'italic' | font_face: font_display: fonts_type_section_display }}
-{% comment %}font-sizes{% endcomment %}
+{% comment %}Inject font-sizes begin{% endcomment %}
 {%- assign font_size_types = 'heading-large|heading-medium|heading-1|heading-2|heading-3|heading-4|heading-5|heading-6|body-larger|body-large|body-medium|body|body-small|body-smaller|body-smallest|body-tiny|button-small|button-medium|button-large|button-x-large|menu-large|menu|input|section-heading|menu-body-medium|menu-body-small|heading-body-small|heading-body-smaller|heading-slideshow' | split: '|' -%}
 {%- assign font_size_types_forloop_iterations = font_size_types | size | times: 2 | minus: 1 -%}
 {%- assign font_size_half_iterations_minus_one = font_size_types.size | minus: 1 -%}
@@ -420,8 +420,10 @@
     }}
   {%- endif -%}
 {%- endfor -%}
+{% comment %}Inject font-sizes end{% endcomment %}
+
 {% assign color_transparent = settings.color_background %}
-{% capture color_background %}{% comment %}color-transparent{% endcomment %}
+{% capture color_background %}{% comment %}Inject color-transparent begin{% endcomment %}
 {%- capture _ -%}
 {% comment %}
   Check to see if a color is black and transparent.
@@ -445,11 +447,13 @@
   {% assign color_transparent_result = color_transparent | color_to_rgb %}
 {% endif %}
 {%- endcapture -%}
-{{ color_transparent_result }}{% endcapture %}
+{{ color_transparent_result }}
+{% comment %}Inject color-transparent end{% endcomment %}
+{% endcapture %}
 {% assign color_text_encoded = settings.color_text | color_to_hex | replace: '#', '' %}
 {% assign morph_color = settings.color_text %}
 {% assign morph_adjustment = 5 %}
-{% capture color_text_hover %}{% comment %}morph{% endcomment %}
+{% capture color_text_hover %}{% comment %}Inject morph begin{% endcomment %}
 {%- capture _ -%}
   {% comment %}
     This adjusts the color to give it an appropriate difference from the original color.
@@ -490,10 +494,12 @@
   {% endif %}
   {% assign morph_adjustment = blank %}
 {%- endcapture -%}
-{{ new_color }}{% endcapture %}
+{{ new_color }}
+{% comment %}Inject morph end{% endcomment %}
+{% endcapture %}
 {% assign morph_color = settings.color_links %}
 {% assign morph_adjustment = 3 %}
-{% capture color_link_hover %}{% comment %}morph{% endcomment %}
+{% capture color_link_hover %}{% comment %}Inject morph begin{% endcomment %}
 {%- capture _ -%}
   {% comment %}
     This adjusts the color to give it an appropriate difference from the original color.
@@ -534,9 +540,11 @@
   {% endif %}
   {% assign morph_adjustment = blank %}
 {%- endcapture -%}
-{{ new_color }}{% endcapture %}
+{{ new_color }}
+{% comment %}Inject morph end{% endcomment %}
+{% endcapture %}
 {% assign morph_color = settings.color_button_background %}
-{% capture color_button_background_focus %}{% comment %}morph{% endcomment %}
+{% capture color_button_background_focus %}{% comment %}Inject morph begin{% endcomment %}
 {%- capture _ -%}
   {% comment %}
     This adjusts the color to give it an appropriate difference from the original color.
@@ -577,9 +585,11 @@
   {% endif %}
   {% assign morph_adjustment = blank %}
 {%- endcapture -%}
-{{ new_color }}{% endcapture %}
+{{ new_color }}
+{% comment %}Inject morph end{% endcomment %}
+{% endcapture %}
 {% assign morph_color = settings.color_button_secondary_background %}
-{% capture color_button_secondary_background_focus %}{% comment %}morph{% endcomment %}
+{% capture color_button_secondary_background_focus %}{% comment %}Inject morph begin{% endcomment %}
 {%- capture _ -%}
   {% comment %}
     This adjusts the color to give it an appropriate difference from the original color.
@@ -620,9 +630,11 @@
   {% endif %}
   {% assign morph_adjustment = blank %}
 {%- endcapture -%}
-{{ new_color }}{% endcapture %}
+{{ new_color }}
+{% comment %}Inject morph end{% endcomment %}
+{% endcapture %}
 {% assign morph_color = settings.color_button_secondary_border %}
-{% capture color_button_secondary_border_hover %}{% comment %}morph{% endcomment %}
+{% capture color_button_secondary_border_hover %}{% comment %}Inject morph begin{% endcomment %}
 {%- capture _ -%}
   {% comment %}
     This adjusts the color to give it an appropriate difference from the original color.
@@ -663,9 +675,11 @@
   {% endif %}
   {% assign morph_adjustment = blank %}
 {%- endcapture -%}
-{{ new_color }}{% endcapture %}
+{{ new_color }}
+{% comment %}Inject morph end{% endcomment %}
+{% endcapture %}
 {% assign color_transparent = settings.color_header_background %}
-{% capture color_header_background %}{% comment %}color-transparent{% endcomment %}
+{% capture color_header_background %}{% comment %}Inject color-transparent begin{% endcomment %}
 {%- capture _ -%}
 {% comment %}
   Check to see if a color is black and transparent.
@@ -689,9 +703,11 @@
   {% assign color_transparent_result = color_transparent | color_to_rgb %}
 {% endif %}
 {%- endcapture -%}
-{{ color_transparent_result }}{% endcapture %}
+{{ color_transparent_result }}
+{% comment %}Inject color-transparent end{% endcomment %}
+{% endcapture %}
 {% assign morph_color = settings.color_input_text %}
-{% capture color_input_text_hover %}{% comment %}morph{% endcomment %}
+{% capture color_input_text_hover %}{% comment %}Inject morph begin{% endcomment %}
 {%- capture _ -%}
   {% comment %}
     This adjusts the color to give it an appropriate difference from the original color.
@@ -732,9 +748,11 @@
   {% endif %}
   {% assign morph_adjustment = blank %}
 {%- endcapture -%}
-{{ new_color }}{% endcapture %}
+{{ new_color }}
+{% comment %}Inject morph end{% endcomment %}
+{% endcapture %}
 {% assign morph_color = settings.color_input_border %}
-{% capture color_input_border_morph_2 %}{% comment %}morph{% endcomment %}
+{% capture color_input_border_morph_2 %}{% comment %}Inject morph begin{% endcomment %}
 {%- capture _ -%}
   {% comment %}
     This adjusts the color to give it an appropriate difference from the original color.
@@ -775,10 +793,12 @@
   {% endif %}
   {% assign morph_adjustment = blank %}
 {%- endcapture -%}
-{{ new_color }}{% endcapture %}
+{{ new_color }}
+{% comment %}Inject morph end{% endcomment %}
+{% endcapture %}
 
 {% assign morph_adjustment = 4 %}
-{% capture color_input_border_morph_4 %}{% comment %}morph{% endcomment %}
+{% capture color_input_border_morph_4 %}{% comment %}Inject morph begin{% endcomment %}
 {%- capture _ -%}
   {% comment %}
     This adjusts the color to give it an appropriate difference from the original color.
@@ -819,10 +839,12 @@
   {% endif %}
   {% assign morph_adjustment = blank %}
 {%- endcapture -%}
-{{ new_color }}{% endcapture %}
+{{ new_color }}
+{% comment %}Inject morph end{% endcomment %}
+{% endcapture %}
 
 {% assign morph_adjustment = 10 %}
-{% capture color_input_border_morph_10 %}{% comment %}morph{% endcomment %}
+{% capture color_input_border_morph_10 %}{% comment %}Inject morph begin{% endcomment %}
 {%- capture _ -%}
   {% comment %}
     This adjusts the color to give it an appropriate difference from the original color.
@@ -863,10 +885,12 @@
   {% endif %}
   {% assign morph_adjustment = blank %}
 {%- endcapture -%}
-{{ new_color }}{% endcapture %}
+{{ new_color }}
+{% comment %}Inject morph end{% endcomment %}
+{% endcapture %}
 
 {% assign morph_adjustment = 12 %}
-{% capture color_input_border_morph_12 %}{% comment %}morph{% endcomment %}
+{% capture color_input_border_morph_12 %}{% comment %}Inject morph begin{% endcomment %}
 {%- capture _ -%}
   {% comment %}
     This adjusts the color to give it an appropriate difference from the original color.
@@ -907,9 +931,11 @@
   {% endif %}
   {% assign morph_adjustment = blank %}
 {%- endcapture -%}
-{{ new_color }}{% endcapture %}
+{{ new_color }}
+{% comment %}Inject morph end{% endcomment %}
+{% endcapture %}
 {% assign color_transparent = settings.color_footer_background %}
-{% capture color_footer_background %}{% comment %}color-transparent{% endcomment %}
+{% capture color_footer_background %}{% comment %}Inject color-transparent begin{% endcomment %}
 {%- capture _ -%}
 {% comment %}
   Check to see if a color is black and transparent.
@@ -933,9 +959,11 @@
   {% assign color_transparent_result = color_transparent | color_to_rgb %}
 {% endif %}
 {%- endcapture -%}
-{{ color_transparent_result }}{% endcapture %}
+{{ color_transparent_result }}
+{% comment %}Inject color-transparent end{% endcomment %}
+{% endcapture %}
 {% assign morph_color = settings.color_footer_text %}
-{% capture color_footer_link %}{% comment %}morph{% endcomment %}
+{% capture color_footer_link %}{% comment %}Inject morph begin{% endcomment %}
 {%- capture _ -%}
   {% comment %}
     This adjusts the color to give it an appropriate difference from the original color.
@@ -976,13 +1004,15 @@
   {% endif %}
   {% assign morph_adjustment = blank %}
 {%- endcapture -%}
-{{ new_color }}{% endcapture %}
+{{ new_color }}
+{% comment %}Inject morph end{% endcomment %}
+{% endcapture %}
 {% assign color_black = '#000' %}
   {% assign color_white = '#fff' %}
 {% assign border_mix_local_background = color_background %}
   {% assign border_mix_local_dark = color_black %}
   {% assign border_mix_local_light = color_white %}
-  {% capture border_mix %}{% comment %}border-mix{% endcomment %}
+  {% capture border_mix %}{% comment %}Inject border-mix begin{% endcomment %}
 {%- capture _ -%}
   {% comment %}
     If background is dark return appropriate color
@@ -998,7 +1028,9 @@
     {% assign border_mix_result = border_mix_local_light %}
   {% endif %}
 {%- endcapture -%}
-{{ border_mix_result }}{% endcapture %}
+{{ border_mix_result }}
+{% comment %}Inject border-mix end{% endcomment %}
+{% endcapture %}
 
   {% assign color_border = color_background | color_mix: border_mix, 50 %}
 {% assign overlay_opacity = settings.overlay_opacity | divided_by: 100.00 %}

@@ -12,10 +12,14 @@
     How many search results for given type have been found
 {% endcomment %}
 
-{%
-  include 'search-sanitizer',
-  search_terms: search.terms
-%}
+{% capture sanitized_terms %}
+  {%
+    render 'search-sanitizer',
+    search_terms: search.terms
+  %}
+{% endcapture %}
+
+{% assign sanitized_terms = sanitized_terms | strip %}
 
 <div class="productgrid--footer-item">
   <h2 class="productgrid--footer-title">

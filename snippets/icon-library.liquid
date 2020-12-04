@@ -6,6 +6,8 @@
          Custom class to add to SVG
 {% endcomment %}
 
+{% assign icon_class = icon_class | default: nil %}
+
 {%- capture icon -%}
   {%- capture shared_svg_attrs -%}
     class="{{ id | replace: '_', '-' }} {% if icon_class %}{{ icon_class }}{% endif %}"

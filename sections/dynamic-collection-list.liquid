@@ -30,8 +30,9 @@
         {% endif %}
 
         {%
-          include 'collection-list-item',
+          render 'collection-list-item',
           block: block,
+          collection: collection,
           collection_image: featured_image,
           collection_image_alt: featured_image_alt
         %}

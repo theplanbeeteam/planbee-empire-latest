@@ -65,12 +65,12 @@
 {% paginate collection.products by paginate_by %}
   <div class="productgrid--outer {{ collection_classes | strip_newlines }}">
     <div class="productgrid--masthead">
-      {% include 'breadcrumbs' %}
+      {% render 'breadcrumbs' %}
 
       {% if section.settings.show_collection_image and collection.image %}
         <figure class="collection--image">
           {%
-            include 'rimg',
+            render 'rimg',
             img: collection.image,
             size: '1350x',
             lazy: true,
@@ -92,7 +92,7 @@
 
     {% if show_sidebar %}
       {%
-        include 'product-grid-sidebar',
+        render 'product-grid-sidebar',
         filter_style: section.settings.filter_style,
         filter_position: section.settings.filter_position,
         filter_limit: section.settings.filter_limit,
@@ -131,7 +131,7 @@
                 data-productgrid-trigger-filters
               >
                 <span class="utils-filter-icon">
-                  {%- include 'icon-filters' -%}
+                  {%- render 'icon-filters' -%}
                 </span>
                 <span class="utils-filter-text">
                   {{- 'product_grid.filters.title_count' | t: count: filter_count -}}
@@ -142,7 +142,7 @@
 
           {%- if section.settings.sort_by -%}
             {%-
-              include 'product-grid-sortby',
+              render 'product-grid-sortby',
               type: 'select',
             -%}
           {%- endif -%}
@@ -160,9 +160,8 @@
               <div class="utils-view-container">
                 {%- if section.settings.show_by -%}
                   {%-
-                    include 'product-grid-showby',
+                    render 'product-grid-showby',
                     show_by: paginate_by,
-                    grid_list: section.settings.grid_list
                   -%}
                 {%- endif -%}
 
@@ -177,7 +176,7 @@
                       data-collection-view="grid-view"
                       aria-label="grid view"
                     >
-                      {% include 'icon-library', id: 'icon-grid' %}
+                      {% render 'icon-library', id: 'icon-grid' %}
                     </button>
 
                     <button
@@ -185,7 +184,7 @@
                       data-collection-view="list-view"
                       aria-label="list view"
                     >
-                      {% include 'icon-library', id: 'icon-list' %}
+                      {% render 'icon-library', id: 'icon-list' %}
                     </button>
                   </div>
                 {% endif %}
@@ -196,7 +195,7 @@
       {% endif %}
       {% if current_tags.size > 0 %}
         <div class="productgrid--filters">
-          {%- include 'product-grid-tags-active' %}
+          {%- render 'product-grid-tags-active' %}
         </div>
       {% endif %}
 
@@ -204,7 +203,7 @@
         <ul class="productgrid--items products-per-row-{{- section.settings.products_per_row -}}">
           {% for product in collection.products %}
             {%
-              include 'product-grid-item',
+              render 'product-grid-item',
               product: product
             %}
           {% endfor %}
@@ -226,7 +225,7 @@
       {% endif %}
 
       {%
-        include 'pagination',
+        render 'pagination', paginate: paginate,
         grid_list: true
       %}
     </div>
@@ -235,12 +234,12 @@
 
 {%- if section.settings.sort_by -%}
   {%-
-    include 'product-grid-sortby',
+    render 'product-grid-sortby',
     type: 'modal',
   -%}
 {%- endif -%}
 
-{% include 'quick-shop' %}
+{% render 'quick-shop' %}
 
 {% schema %}
 {

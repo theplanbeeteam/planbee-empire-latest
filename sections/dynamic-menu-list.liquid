@@ -62,7 +62,7 @@
             <div class="menulist-item__image">
               {% if image %}
                 {%
-                  include 'rimg',
+                  render 'rimg',
                   img: image,
                   size: '180x180',
                   crop: 'center',
@@ -83,7 +83,7 @@
                 {% endif %}
 
                 <span class="menulist-item__title-icon accordion--icon">
-                  {% include 'icon-chevron-down' %}
+                  {% render 'icon-chevron-down' %}
                 </span>
               </h2>
               {% assign show_max_items = 6 %}

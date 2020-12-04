@@ -24,6 +24,10 @@
     This is the click to zoom setting, which is either 'disabled', 'mobile', 'desktop', or 'always'
 {% endcomment %}
 
+{% assign onboarding = onboarding | default: false %}
+{% assign layout = layout | default: nil %}
+{% assign hide_description = hide_description | default: false %}
+
 {% assign enable_social_sharing = settings.product_social_sharing %}
 {% assign selected_variant = product.selected_or_first_available_variant %}
 {% assign compare_at_price = selected_variant.compare_at_price %}
@@ -44,11 +48,18 @@
   {% assign on_sale = true %}
 {% endif %}
 
-{%
-  include 'consistent-savings',
-  variants: product.variants,
-  on_sale: on_sale
-%}
+{% assign consistent_saved = false %}
+{% capture consistent_savings %}
+  {%
+    render 'consistent-savings',
+    variants: product.variants,
+    on_sale: on_sale
+  %}
+{% endcapture %}
+{% if consistent_savings contains 'true' %}
+  {% assign consistent_saved = true %}
+{% endif %}
+
 
 {%- capture share_buttons -%}
   {% assign social_image = false %}
@@ -57,7 +68,7 @@
   {% endif %}
   {% assign social_url = shop.url | append: product.url %}
   {%-
-    include 'share-buttons',
+    render 'share-buttons',
     snippet_title: 'general.share_buttons.title',
     social_image: social_image,
     social_title: product.title,
@@ -70,7 +81,7 @@
     Product slideshow, never moves
   {% endcomment %}
   {%
-    include 'product-gallery',
+    render 'product-gallery',
     product: product,
     aspect_ratio: gallery_aspect_ratio,
     thumbnail_position: gallery_thumbnail_position,
@@ -133,7 +144,7 @@
 
       <div class="product-pricing" aria-live="polite">
         {%
-          include 'product-badge',
+          render 'product-badge',
           class_root: 'product',
           product_available: product_available,
           on_sale: on_sale,
@@ -143,7 +154,7 @@
         %}
 
         {%
-          include 'product-price',
+          render 'product-price',
           class_root: 'product',
           price: price,
           price_varies: false,
@@ -180,9 +191,10 @@
 
         {% unless onboarding %}
           {%
-            include 'product-form',
+            render 'product-form',
             product: product,
-            selected_variant: selected_variant
+            selected_variant: selected_variant,
+            is_product_modal: is_product_modal,
           %}
         {% endunless %}
 

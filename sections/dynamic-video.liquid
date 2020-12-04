@@ -18,7 +18,7 @@
   {% assign url = section.settings.url | default: 'https://www.youtube.com/watch?v=_9VUPq3SxOc' %}
 
   <div class="dynamic-video">
-    {% assign overlay = null %}
+    {% assign overlay = nil %}
 
     {% if section.settings.show_overlay %}
       {% assign opacity = section.settings.opacity | times: 0.01 %}
@@ -26,7 +26,7 @@
     {% endif %}
 
     {%
-      include 'video',
+      render 'video',
       cover: section.settings.cover,
       aspect_ratio: section.settings.aspect_ratio,
       overlay: overlay,

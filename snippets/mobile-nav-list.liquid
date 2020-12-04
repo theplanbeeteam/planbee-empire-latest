@@ -9,6 +9,9 @@
 
 {% endcomment %}
 
+{% assign menu_list = linklists[menu].links %}
+{% assign menu_title = linklists[menu].title %}
+
 <ul
   class="navmenu navmenu-depth-1"
   data-navmenu
@@ -59,7 +62,7 @@
 
       {% if show_subnav %}
         {%
-          include 'mobile-navmenu-button',
+          render 'mobile-navmenu-button',
           button_label: menu_item.title,
         %}
       {% endif %}
@@ -69,16 +72,17 @@
         {% assign accordion_level = 3 %}
         <div class="navmenu-submenu navmenu-meganav" data-navmenu-submenu data-accordion-content>
         {%
-          include 'meganav-promo',
-          meganav_block: meganav_block,
+          render 'meganav-promo',
+          block: meganav_block,
           position: 'first'
         %}
       {% endif %}
 
       {% if show_subnav %}
         {%
-          include 'navlist',
+          render 'navlist',
           menu_list: linklists[menu_item.handle].links,
+          menu_title: menu_title,
           depth: 2,
           max_depth: 3,
           show_arrows: true,
@@ -90,8 +94,8 @@
 
       {% if meganav_block %}
         {%
-          include 'meganav-promo',
-          meganav_block: meganav_block,
+          render 'meganav-promo',
+          block: meganav_block,
           position: 'last'
         %}
         </div>

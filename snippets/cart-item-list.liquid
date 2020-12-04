@@ -1,7 +1,7 @@
 <ul class="cartitems--list" data-cart-item-list>
   {% for item in cart.items %}
     {%
-      include 'cart-item',
+      render 'cart-item',
       item: item
     %}
   {% endfor %}

@@ -12,14 +12,14 @@
       <meta name="description" content="{{ page_description | escape }}">
     {% endif %}
 
-    {% include 'favicon' %}
+    {% render 'favicon' %}
 
     <link rel="canonical" href="{{ canonical_url }}">
     <meta name="viewport" content="width=device-width">
 
     {% assign twitter_handle = settings.social_twitter | split: 'twitter.com/' | last %}
     {%
-      include 'social-meta-tags',
+      render 'social-meta-tags',
       twitter_handle: settings.twitter_handle
     %}
 
@@ -42,7 +42,36 @@
     {% comment %}
       Modal container, used on Collections, Password, and QuickShop
     {% endcomment %}
-    {% include 'modal' %}
+    {% comment %}Inject modal begin{% endcomment %}
+    <div class="modal" data-modal-container aria-label="modal window" data-trap-focus>
+      <div class="modal-inner" data-modal-inner>
+        <button
+          class="modal-close"
+          type="button"
+          aria-label="{{ 'general.accessibility.close' | t }}"
+          data-modal-close
+        >
+          {% render 'icon-menu-close' %}
+        </button>
+        <div class="modal-content" data-modal-content></div>
+      </div>
+    </div>
+    
+    <div class="modal-1" data-modal-container-1 aria-label="modal window">
+      <div class="modal-inner" data-modal-inner>
+        <button
+          class="modal-close"
+          type="button"
+          aria-label="{{ 'general.accessibility.close' | t }}"
+          data-modal-1-close
+        >
+          {% render 'icon-menu-close' %}
+        </button>
+        <div class="modal-content" data-modal-content></div>
+      </div>
+    </div>
+    {% comment %}Inject modal end{% endcomment %}
+
 
     <script
       src="{{ 'vendors-main.bundle.js' | asset_url }}"

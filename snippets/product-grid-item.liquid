@@ -3,6 +3,8 @@
     Required to show product information
 {% endcomment %}
 
+{% assign recently_viewed = recently_viewed | default: nil %}
+
 {% assign product_grid_show_second_image = settings.product_grid_show_second_image %}
 {% assign emphasize_price = settings.product_grid_emphasize_price %}
 {% assign quick_shop_display = settings.product_grid_show_quickshop %}
@@ -30,7 +32,7 @@
         aria-label="close"
         data-remove-recently-viewed
       >
-        {% include 'icon-remove' %}
+        {% render 'icon-remove' %}
       </button>
     </div>
     {%- endcapture -%}
@@ -57,11 +59,17 @@
   {% assign has_variants = true %}
 {% endunless %}
 
-{%
-  include 'consistent-savings',
-  variants: product.variants,
-  on_sale: on_sale
-%}
+{% assign consistent_saved = false %}
+{% capture consistent_savings %}
+  {%
+    render 'consistent-savings',
+    variants: product.variants,
+    on_sale: on_sale
+  %}
+{% endcapture %}
+{% if consistent_savings contains 'true' %}
+  {% assign consistent_saved = true %}
+{% endif %}
 
 {%- capture classes -%}
   productgrid--item
@@ -165,7 +173,7 @@
                 {% endif %}
                 {%- capture swatch_styles -%}
                   {%
-                    include 'swatch-styles',
+                    render 'swatch-styles',
                     color_name: swatch_value,
                     use_variant_images: use_variant_images,
                     swatch_product: product,
@@ -229,7 +237,7 @@
           {% if product_grid_show_second_image and product.media.size > 1 %}
             {% assign second_image = product.media[1].preview_image.src %}
             {%
-              include 'rimg',
+              render 'rimg',
               img: second_image,
               size: '512x',
               lazy: true,
@@ -238,7 +246,7 @@
             %}
           {% endif %}
           {%
-            include 'rimg',
+            render 'rimg',
             img: initial_image
             size: '512x',
             lazy: true,
@@ -257,7 +265,7 @@
         {% endif %}
 
         {%
-          include 'product-badge',
+          render 'product-badge',
           class_root: 'productitem',
           product_available: product_available,
           on_sale: on_sale,
@@ -270,7 +278,7 @@
 
     {%- capture product_item_price -%}
       {%
-        include 'product-price',
+        render 'product-price',
         class_root: 'productitem',
         price: price,
         price_varies: price_varies,
@@ -371,7 +379,7 @@
 
             <div class="productitem--listview-badge">
               {%
-                include 'product-badge',
+                render 'product-badge',
                 class_root: 'productitem',
                 product_available: product_available,
                 on_sale: on_sale,
@@ -425,7 +433,7 @@
                   {{ quick_buy_text }}
                 </span>
                 <span class="atc-button--icon">
-                  {%- include 'icon-spinner' -%}
+                  {%- render 'icon-spinner' -%}
                 </span>
               </button>
             </div>

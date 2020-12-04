@@ -100,7 +100,7 @@
           class="product-gallery--image-background"
           {% if image_crop %}
             {%
-              include 'rimg',
+              render 'rimg',
               img: media,
               size: 'x700',
               lazy: true,
@@ -109,7 +109,7 @@
           {% endif %}
         >
           {%
-            include 'rimg',
+            render 'rimg',
             img: media,
             class: 'product-gallery--loaded-image'
             size: 'x700',
@@ -121,7 +121,7 @@
         {% assign external_video_url = media | external_video_url %}
         <div class="product-gallery--external-video">
           {%
-            include 'video'
+            render 'video'
             url: external_video_url,
             cover: media.preview_image,
             slideshow: true,
@@ -163,11 +163,11 @@
       data-gallery-expand aria-haspopup="true"
     >
       <span class="click-text" tabindex="-1">
-        {% include 'icon-library', id: 'icon-zoom' %}
+        {% render 'icon-library', id: 'icon-zoom' %}
         {{ 'product.general.zoom' | t }}
       </span>
       <span class="tap-text" tabindex="-1">
-        {% include 'icon-library', id: 'icon-tap' %}
+        {% render 'icon-library', id: 'icon-tap' %}
         {{ 'product.general.zoomTapMobile' | t }}
       </span>
     </button>

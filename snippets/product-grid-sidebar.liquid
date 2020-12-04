@@ -10,7 +10,7 @@
 
   @param menu_depth {String}
     How many child menus to show
-    
+
   @param show_prod_count {Bool}
     Show product count on collection menu links
 {% endcomment %}
@@ -18,7 +18,11 @@
 <div class="productgrid--sidebar">
 
   {% if filter_position == 'above_menus' %}
-    {% include 'product-grid-sidebar-filters' %}
+    {%
+      render 'product-grid-sidebar-filters',
+      filter_limit: filter_limit,
+      filter_style: filter_style,
+    %}
   {% endif %}
 
   {% comment %}
@@ -47,12 +51,12 @@
 
         <div class="productgrid--sidebar-item productgrid--sidebar-menu">
           {%
-            include 'navlist',
+            render 'navlist',
             menu_list: linklists[block.settings.menu].links,
             depth: 1,
             max_depth: sidebar_menu_depth,
             aria_expanded: true,
-            show_collection_product_count: show_prod_count
+            show_prod_count: show_prod_count
           %}
         </div>
       {% endfor %}
@@ -60,6 +64,10 @@
   {% endif %}
 
   {% unless filter_position == 'above_menus' %}
-    {% include 'product-grid-sidebar-filters' %}
+    {%
+      render 'product-grid-sidebar-filters',
+      filter_limit: filter_limit,
+      filter_style: filter_style,
+    %}
   {% endunless %}
 </div>

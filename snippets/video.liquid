@@ -11,6 +11,9 @@
     Indicates slideshow container, such as product gallery
 {% endcomment %}
 
+{% assign overlay = overlay | default: nil %}
+{% assign slideshow = slideshow | default: nil %}
+
 {% assign platform = '' %}
 {%- if url contains 'youtube' or url contains 'youtu.be' -%}
   {% assign platform = 'youtube' %}
@@ -30,7 +33,7 @@
       class="video-cover"
       {% if cover %}
         {%
-          include 'rimg',
+          render 'rimg',
           img: cover,
           size: '1800x1000',
           crop: 'center',
@@ -42,7 +45,7 @@
     >
       {% if cover %}
         {%
-          include 'rimg',
+          render 'rimg',
           img: cover,
           size: '1800x1000',
           crop: 'center',
@@ -64,8 +67,8 @@
           aria-label="play"
           data-video-play-button
         >
-          {% include 'icon-library', id: 'icon-play' %}
-          {% include 'icon-library', id: 'icon-loading' %}
+          {% render 'icon-library', id: 'icon-play' %}
+          {% render 'icon-library', id: 'icon-loading' %}
         </button>
       </div>
     </div>

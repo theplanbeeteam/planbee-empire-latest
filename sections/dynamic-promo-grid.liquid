@@ -70,12 +70,13 @@
           {%- endcapture -%}
 
           {%
-            include 'promo-block',
+            render 'promo-block',
             block: block,
             text_alignment: section.settings.text_alignment,
             maintain_aspect_ratio: section.settings.maintain_aspect_ratio,
             compress_blocks: section.settings.compress_blocks,
-            additional_classes: additional_classes
+            additional_classes: additional_classes,
+            index: forloop.index,
           %}
         {% endfor %}
       </div>
@@ -83,7 +84,7 @@
   </div>
 
   {%
-    include 'promo-block-background',
+    render 'promo-block-background',
     blocks: section.blocks
   %}
 </section>

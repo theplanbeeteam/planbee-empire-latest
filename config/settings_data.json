@@ -205,11 +205,13 @@
           "1493143038057-0": {
             "type": "promotion",
             "settings": {
-              "title": "Mosaic",
-              "text": "Use this section to welcome customers to your store, say a bit about your brand, or share news.",
+              "image": "shopify:\/\/shop_images\/Top_Left-min_cb34c740-1684-44d2-92a4-2042d03225ef.png",
+              "title": "Lesson plans and primary resources, ready to teach.",
+              "text": "PlanBee is the hive of fully-prepared lesson planning packs and downloadable classroom resources.",
               "color": "#4d4d4d",
-              "button_text": "",
-              "button_style": "secondary",
+              "block_link": "\/account\/register",
+              "button_text": "JOIN TODAY",
+              "button_style": "primary",
               "show_overlay": false,
               "background": "",
               "opacity": 1
@@ -218,11 +220,13 @@
           "1493143038057-1": {
             "type": "promotion",
             "settings": {
-              "title": "Mosaic",
-              "text": "Use this section to welcome customers to your store, say a bit about your brand, or share news.",
+              "image": "shopify:\/\/shop_images\/Top_Right-min_f098cc70-c58d-4a17-98ac-a43db4e04a2a.png",
+              "title": "Made by teachers.",
+              "text": "Everything we make is written and designed by experienced primary teachers who know what's needed for rich learning experiences.",
               "color": "#4d4d4d",
-              "button_text": "",
-              "button_style": "primary",
+              "block_link": "shopify:\/\/pages\/about-us",
+              "button_text": "MEET THE TEAM",
+              "button_style": "secondary",
               "show_overlay": false,
               "background": "",
               "opacity": 50
@@ -231,8 +235,9 @@
           "1493143038057-2": {
             "type": "promotion",
             "settings": {
-              "title": "Mosaic",
-              "text": "Use this section to welcome customers to your store, say a bit about your brand, or share news.",
+              "image": "shopify:\/\/shop_images\/Bottom_Left-min.png",
+              "title": "Everything's included.",
+              "text": "Every downloadable lesson pack includes practically everything you need. Plans, slides, worksheets, activities – it's all in there.",
               "color": "#4d4d4d",
               "button_text": "",
               "button_style": "primary",
@@ -244,8 +249,9 @@
           "1493143583401": {
             "type": "promotion",
             "settings": {
-              "title": "Mosaic",
-              "text": "Use this section to welcome customers to your store, say a bit about your brand, or share news.",
+              "image": "shopify:\/\/shop_images\/Bottom_Right-min.png",
+              "title": "Plan less, enjoy more.",
+              "text": "Restore your work-life balance – let us take care of your planning. Whether you're a subject leader, classroom-based or teaching at home, PlanBee resources are fully-prepared and easy to use.",
               "color": "#4d4d4d",
               "button_text": "",
               "button_style": "primary",
@@ -406,17 +412,6 @@
       },
       "static-collection": {
         "type": "static-collection",
-        "blocks": {
-          "1498186879532": {
-            "type": "menu",
-            "settings": {
-              "menu": "design-technology-collections"
-            }
-          }
-        },
-        "block_order": [
-          "1498186879532"
-        ],
         "settings": {
           "show_collection_image": false,
           "products_per_page_range": 24,
@@ -427,7 +422,7 @@
           "default_view": "list-view",
           "show_sidebar": true,
           "show_prod_count": false,
-          "filter_style": "none",
+          "filter_style": "groups",
           "filter_limit": "5",
           "filter_position": "below_menus",
           "grid_categories": "",
@@ -628,6 +623,326 @@
           "enable_order_notes": false,
           "enable_shipping_calc": true,
           "shipping_calc_default_country": "United States"
+        }
+      },
+      "static-collection-art": {
+        "type": "static-collection-art",
+        "blocks": {
+          "5254bf6d-2603-41bb-8313-27679bb3e39a": {
+            "type": "menu",
+            "settings": {
+              "menu": "sidebar-art"
+            }
+          }
+        },
+        "block_order": [
+          "5254bf6d-2603-41bb-8313-27679bb3e39a"
+        ],
+        "settings": {
+          "show_collection_image": false,
+          "products_per_page_range": 24,
+          "products_per_row": "4",
+          "sort_by": true,
+          "show_by": true,
+          "grid_list": false,
+          "default_view": "list-view",
+          "show_sidebar": true,
+          "show_prod_count": false,
+          "filter_style": "groups",
+          "filter_limit": "999",
+          "filter_position": "below_menus",
+          "grid_categories": "",
+          "custom_ordered_categories": "",
+          "custom_ordered_tags": "",
+          "menu_depth_range": 3
+        }
+      },
+      "static-collection-topics": {
+        "type": "static-collection-topics",
+        "blocks": {
+          "6184e2d8-1a3b-49b4-83a4-f7be069374a9": {
+            "type": "menu",
+            "settings": {
+              "menu": "topic-collections"
+            }
+          }
+        },
+        "block_order": [
+          "6184e2d8-1a3b-49b4-83a4-f7be069374a9"
+        ],
+        "settings": {
+          "show_collection_image": false,
+          "products_per_page_range": 24,
+          "products_per_row": "4",
+          "sort_by": true,
+          "show_by": true,
+          "grid_list": false,
+          "default_view": "list-view",
+          "show_sidebar": true,
+          "show_prod_count": false,
+          "filter_style": "none",
+          "filter_limit": "999",
+          "filter_position": "above_menus",
+          "grid_categories": "",
+          "custom_ordered_categories": "",
+          "custom_ordered_tags": "",
+          "menu_depth_range": 3
+        }
+      },
+      "static-collection-dt": {
+        "type": "static-collection-dt",
+        "blocks": {
+          "855297d8-8580-4a62-9ae2-3726e4ef6d75": {
+            "type": "menu",
+            "settings": {
+              "menu": "design-technology-collections"
+            }
+          }
+        },
+        "block_order": [
+          "855297d8-8580-4a62-9ae2-3726e4ef6d75"
+        ],
+        "settings": {
+          "show_collection_image": false,
+          "products_per_page_range": 24,
+          "products_per_row": "4",
+          "sort_by": true,
+          "show_by": true,
+          "grid_list": false,
+          "default_view": "list-view",
+          "show_sidebar": true,
+          "show_prod_count": false,
+          "filter_style": "none",
+          "filter_limit": "999",
+          "filter_position": "above_menus",
+          "grid_categories": "",
+          "custom_ordered_categories": "",
+          "custom_ordered_tags": "",
+          "menu_depth_range": 3
+        }
+      },
+      "static-collection-english": {
+        "type": "static-collection-english",
+        "blocks": {
+          "c4254aae-1ec5-4ece-81e4-906591d25513": {
+            "type": "menu",
+            "settings": {
+              "menu": "english-collections"
+            }
+          }
+        },
+        "block_order": [
+          "c4254aae-1ec5-4ece-81e4-906591d25513"
+        ],
+        "settings": {
+          "show_collection_image": false,
+          "products_per_page_range": 24,
+          "products_per_row": "4",
+          "sort_by": true,
+          "show_by": true,
+          "grid_list": false,
+          "default_view": "list-view",
+          "show_sidebar": true,
+          "show_prod_count": false,
+          "filter_style": "none",
+          "filter_limit": "999",
+          "filter_position": "above_menus",
+          "grid_categories": "",
+          "custom_ordered_categories": "",
+          "custom_ordered_tags": "",
+          "menu_depth_range": 3
+        }
+      },
+      "static-collection-geography": {
+        "type": "static-collection-geography",
+        "blocks": {
+          "5c38b1da-ddb5-46a2-83c8-c771c2b3ee97": {
+            "type": "menu",
+            "settings": {
+              "menu": "geography-collections"
+            }
+          }
+        },
+        "block_order": [
+          "5c38b1da-ddb5-46a2-83c8-c771c2b3ee97"
+        ],
+        "settings": {
+          "show_collection_image": false,
+          "products_per_page_range": 24,
+          "products_per_row": "4",
+          "sort_by": true,
+          "show_by": true,
+          "grid_list": false,
+          "default_view": "list-view",
+          "show_sidebar": true,
+          "show_prod_count": false,
+          "filter_style": "none",
+          "filter_limit": "999",
+          "filter_position": "above_menus",
+          "grid_categories": "",
+          "custom_ordered_categories": "",
+          "custom_ordered_tags": "",
+          "menu_depth_range": 3
+        }
+      },
+      "static-collection-history": {
+        "type": "static-collection-history",
+        "blocks": {
+          "9ef1d007-8e46-49bb-a266-425f5fb5ad1d": {
+            "type": "menu",
+            "settings": {
+              "menu": "history-collections"
+            }
+          }
+        },
+        "block_order": [
+          "9ef1d007-8e46-49bb-a266-425f5fb5ad1d"
+        ],
+        "settings": {
+          "show_collection_image": false,
+          "products_per_page_range": 24,
+          "products_per_row": "4",
+          "sort_by": true,
+          "show_by": true,
+          "grid_list": false,
+          "default_view": "list-view",
+          "show_sidebar": true,
+          "show_prod_count": false,
+          "filter_style": "none",
+          "filter_limit": "999",
+          "filter_position": "above_menus",
+          "grid_categories": "",
+          "custom_ordered_categories": "",
+          "custom_ordered_tags": "",
+          "menu_depth_range": 3
+        }
+      },
+      "static-collection-maths": {
+        "type": "static-collection-maths",
+        "blocks": {
+          "aa5e46f1-f26d-4a9c-b471-50aa6fb806ff": {
+            "type": "menu",
+            "settings": {
+              "menu": "maths-collections"
+            }
+          }
+        },
+        "block_order": [
+          "aa5e46f1-f26d-4a9c-b471-50aa6fb806ff"
+        ],
+        "settings": {
+          "show_collection_image": false,
+          "products_per_page_range": 24,
+          "products_per_row": "4",
+          "sort_by": true,
+          "show_by": true,
+          "grid_list": false,
+          "default_view": "list-view",
+          "show_sidebar": true,
+          "show_prod_count": false,
+          "filter_style": "none",
+          "filter_limit": "999",
+          "filter_position": "above_menus",
+          "grid_categories": "",
+          "custom_ordered_categories": "",
+          "custom_ordered_tags": "",
+          "menu_depth_range": 3
+        }
+      },
+      "static-collection-re": {
+        "type": "static-collection-re",
+        "blocks": {
+          "ee4f853f-ede8-40c8-a03b-9b70520f41eb": {
+            "type": "menu",
+            "settings": {
+              "menu": "re-collections"
+            }
+          }
+        },
+        "block_order": [
+          "ee4f853f-ede8-40c8-a03b-9b70520f41eb"
+        ],
+        "settings": {
+          "show_collection_image": false,
+          "products_per_page_range": 24,
+          "products_per_row": "4",
+          "sort_by": true,
+          "show_by": true,
+          "grid_list": false,
+          "default_view": "list-view",
+          "show_sidebar": true,
+          "show_prod_count": false,
+          "filter_style": "none",
+          "filter_limit": "999",
+          "filter_position": "above_menus",
+          "grid_categories": "",
+          "custom_ordered_categories": "",
+          "custom_ordered_tags": "",
+          "menu_depth_range": 3
+        }
+      },
+      "static-collection-science": {
+        "type": "static-collection-science",
+        "blocks": {
+          "ce87052d-e335-46ef-a6a1-9a413bb2fc60": {
+            "type": "menu",
+            "settings": {
+              "menu": "science-collections"
+            }
+          }
+        },
+        "block_order": [
+          "ce87052d-e335-46ef-a6a1-9a413bb2fc60"
+        ],
+        "settings": {
+          "show_collection_image": false,
+          "products_per_page_range": 24,
+          "products_per_row": "4",
+          "sort_by": true,
+          "show_by": true,
+          "grid_list": false,
+          "default_view": "list-view",
+          "show_sidebar": true,
+          "show_prod_count": false,
+          "filter_style": "none",
+          "filter_limit": "999",
+          "filter_position": "above_menus",
+          "grid_categories": "",
+          "custom_ordered_categories": "",
+          "custom_ordered_tags": "",
+          "menu_depth_range": 3
+        }
+      },
+      "static-collection-esr": {
+        "type": "static-collection-esr",
+        "blocks": {
+          "17c0e6b4-dd87-462e-a7ea-5ac67bcab372": {
+            "type": "menu",
+            "settings": {
+              "menu": "esr-collections"
+            }
+          }
+        },
+        "block_order": [
+          "17c0e6b4-dd87-462e-a7ea-5ac67bcab372"
+        ],
+        "settings": {
+          "show_collection_image": false,
+          "products_per_page_range": 24,
+          "products_per_row": "4",
+          "sort_by": true,
+          "show_by": true,
+          "grid_list": false,
+          "default_view": "list-view",
+          "show_sidebar": true,
+          "show_prod_count": false,
+          "filter_style": "none",
+          "filter_limit": "999",
+          "filter_position": "above_menus",
+          "grid_categories": "",
+          "custom_ordered_categories": "",
+          "custom_ordered_tags": "",
+          "menu_depth_range": 3
         }
       }
     },

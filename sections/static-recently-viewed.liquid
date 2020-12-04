@@ -1,7 +1,7 @@
 {% if section.settings.enable_recently_viewed_products %}
   {%- capture recently_viewed_data -%}
     {%-
-      include 'product-recently-viewed',
+      render 'product-recently-viewed',
       product: product
     -%}
   {%- endcapture %}

@@ -124,7 +124,7 @@
           <label class="form-field-title" for="customer_addr_{{ address_id }}_country">
             {{ 'customers.forms.country' | t }}
           </label>
-          {% include 'icon-chevron-down-small' %}
+          {% render 'icon-chevron-down-small' %}
         </div>
       </div>
 
@@ -139,7 +139,7 @@
           <label class="form-field-title" for="customer_addr_{{ address_id }}_province">
             {{ 'customers.forms.province' | t }}
           </label>
-          {% include 'icon-chevron-down-small' %}
+          {% render 'icon-chevron-down-small' %}
         </div>
       </div>
 
@@ -172,7 +172,7 @@
           {{ form.set_as_default_checkbox }}
 
           <span class="form-icon--checkbox">
-            {%- include 'icon-checkmark-animated', animation_state: 'unchecked' -%}
+            {%- render 'icon-checkmark-animated', animation_state: 'unchecked' -%}
           </span>
           <span class="form-field-title--inline">
             {{ 'customers.addresses.set_default' | t }}

@@ -43,7 +43,8 @@
 <section class="featured-product--container home-section--content" data-product-wrapper>
   <div class="featured-product--inner">
     {%
-      include 'product',
+      render 'product',
+      product: product,
       is_product_modal: false,
       hide_description: true,
       onboarding: onboarding,
@@ -51,7 +52,7 @@
       gallery_thumbnail_position: section.settings.gallery_thumbnail_position,
       gallery_image_crop: section.settings.gallery_image_crop,
       gallery_click_to_zoom: 'disabled',
-      gallery_hover_zoom: section.settings.gallery_hover_zoom
+      gallery_hover_zoom: section.settings.gallery_hover_zoom,
     %}
   </div>
 </section>

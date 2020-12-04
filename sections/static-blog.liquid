@@ -24,7 +24,7 @@
     <h1>{{ blog.title }}</h1>
     {% if section.settings.show_rss_link %}
       <a href="{{ blog.url }}.atom">
-        {% include 'icon-rss' %}
+        {% render 'icon-rss' %}
         <span class="visually-hidden">{{ 'general.accessibility.rss' | t: platform: title | escape }}</span>
       </a>
     {% endif %}
@@ -34,7 +34,7 @@
 
     {% if show_featured %}
       {%
-        include 'article-excerpt-featured',
+        render 'article-excerpt-featured',
         article: articles[featured_post]
       %}
     {% endif %}
@@ -43,7 +43,7 @@
     <ul class="blog--inner">
       {% for article in blog.articles %}
         {%
-          include 'article-excerpt',
+          render 'article-excerpt',
           article: article
           %}
       {% else %}
@@ -55,7 +55,7 @@
       {% endfor %}
     </ul>
 
-    {% include 'pagination' %}
+    {% render 'pagination', paginate: paginate %}
   {% endpaginate %}
 </section>
 

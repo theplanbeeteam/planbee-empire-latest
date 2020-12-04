@@ -2,10 +2,14 @@
   Use 'search-sanitizer' to remove added `*` added by HeaderSearch
     - Adding `*` after a word helps Shopify increase amount of results
 {% endcomment %}
-{%-
-  include 'search-sanitizer',
-  search_terms: search.terms
--%}
+{% capture sanitized_terms %}
+  {%
+    render 'search-sanitizer',
+    search_terms: search.terms
+  %}
+{% endcapture %}
+
+{% assign sanitized_terms = sanitized_terms | strip %}
 
 {%- paginate search.results by 50 -%}
   {%- capture product_results -%}
@@ -25,11 +29,17 @@
           {% assign on_sale = true %}
         {% endif %}
 
-        {%-
-          include 'consistent-savings',
-          variants: item.variants,
-          on_sale: on_sale
-        -%}
+        {% assign consistent_saved = false %}
+        {% capture consistent_savings %}
+          {%
+            render 'consistent-savings',
+            variants: product.variants,
+            on_sale: on_sale
+          %}
+        {% endcapture %}
+        {% if consistent_savings contains 'true' %}
+          {% assign consistent_saved = true %}
+        {% endif %}
 
         {%- assign swatch_count = nil -%}
         {%- if settings.swatches_enable -%}
@@ -51,7 +61,7 @@
             {% endif %}
 
             {%
-              include 'rimg',
+              render 'rimg',
               img: item.featured_media.preview_image,
               alt: image_alt,
               size: '100x100',

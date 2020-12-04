@@ -22,7 +22,7 @@
     <a href="{{ item.url }}">
       {% if item.image %}
         {%
-          include 'rimg',
+          render 'rimg',
           img: item.image,
           alt: item.title,
           size: '120x'
@@ -91,7 +91,7 @@
         <ul class="discount-list" aria-label="{{ 'product.general.discounts' | t }}">
           {% for discount_allocation in item.line_level_discount_allocations %}
             <li class="discount-list-item">
-              {% include 'icon-library', id: 'icon-sale-tag' %}
+              {% render 'icon-library', id: 'icon-sale-tag' %}
               {{ discount_allocation.discount_application.title }}
               (-<span class="money">{{ discount_allocation.amount | money }}</span>)
             </li>
@@ -137,7 +137,7 @@
             <label class="form-field-title" for="quantity_{{ item.key | replace: ':', '_' }}">
               {{ 'general.general.quantity' | t }}
             </label>
-            {% include 'icon-chevron-down-small' %}
+            {% render 'icon-chevron-down-small' %}
             </div>
         </div>
 
@@ -183,7 +183,7 @@
           data-no-instant
           aria-label="remove {{ item.product.title | escape }}"
         >
-          {% include 'icon-remove' %}
+          {% render 'icon-remove' %}
         </a>
       </div>
 

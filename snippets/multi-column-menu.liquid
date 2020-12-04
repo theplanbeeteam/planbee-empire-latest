@@ -12,9 +12,7 @@
 {%- capture meganav_classes -%}
   navmenu-submenu
   navmenu-meganav
-  {% unless is_mobile %}
-    navmenu-meganav--desktop
-  {% endunless %}
+  navmenu-meganav--desktop
 {%- endcapture -%}
 
 {% assign total_links = 0 %}
@@ -35,7 +33,7 @@
   class="{{ meganav_classes | strip_newlines }}"
   data-navmenu-submenu
   data-meganav-menu
-  data-meganav-id="{{ meganav_block.id }}"
+  data-meganav-id="{{ block.id }}"
 >
   <div class="navmenu-meganav-wrapper navmenu-multi-column-items">
     <ul class="navmenu navmenu-depth-2 multi-column-count-{{ column_count }}">

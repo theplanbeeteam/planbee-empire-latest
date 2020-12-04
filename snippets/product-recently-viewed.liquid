@@ -18,7 +18,7 @@
 
     {%- capture product_price -%}
       {%-
-        include 'product-badge',
+        render 'product-badge',
         class_root: 'product',
         product_available: product_available,
         on_sale: on_sale,
@@ -28,7 +28,7 @@
       -%}
 
       {%-
-        include 'product-price',
+        render 'product-price',
         class_root: 'product',
         price: price,
         price_varies: false,
@@ -45,7 +45,7 @@
         {{- selected_image | img_url: '360x360' -}}
       {%- else -%}
         {%-
-          include 'placeholder_svg_uri'
+          render 'placeholder_svg_uri'
           placeholder: 'image'
         -%}
       {%- endif -%}

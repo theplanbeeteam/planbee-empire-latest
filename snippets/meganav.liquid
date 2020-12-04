@@ -2,7 +2,7 @@
   @param menu LinkList
     List of menu items
 
-  @param meganav_block Block
+  @param block Block
     The block with the meganav properties
 
 {% endcomment %}
@@ -26,15 +26,15 @@ when there are only a few menus. We'd like them to be closer to each other.
 {% assign list_max_width = 0 %}
 {% if menu.links.size <= 4 %}
   {% assign available_width = 1000 %}
-  {% if meganav_block.settings.image_1 %}
-    {% case meganav_block.settings.size_1 %}
+  {% if block.settings.image_1 %}
+    {% case block.settings.size_1 %}
       {% when 'small' %}{% assign available_width = available_width | minus: 200 %}
       {% when 'medium' %}{% assign available_width = available_width | minus: 300 %}
       {% when 'large' %}{% assign available_width = available_width | minus: 400 %}
     {% endcase %}
   {% endif %}
-  {% if meganav_block.settings.image_2 %}
-    {% case meganav_block.settings.size_2 %}
+  {% if block.settings.image_2 %}
+    {% case block.settings.size_2 %}
       {% when 'small' %}{% assign available_width = available_width | minus: 200 %}
       {% when 'medium' %}{% assign available_width = available_width | minus: 300 %}
       {% when 'large' %}{% assign available_width = available_width | minus: 400 %}
@@ -52,12 +52,12 @@ when there are only a few menus. We'd like them to be closer to each other.
   class="{{ meganav_classes | strip_newlines }}"
   data-navmenu-submenu
   data-meganav-menu
-  data-meganav-id="{{ meganav_block.id }}"
+  data-meganav-id="{{ block.id }}"
 >
   <div class="navmenu-meganav-wrapper">
     {%
-      include 'meganav-promo',
-      meganav_block: meganav_block,
+      render 'meganav-promo',
+      block: block,
       position: 'first'
     %}
     <ul
@@ -82,21 +82,17 @@ when there are only a few menus. We'd like them to be closer to each other.
           </a>
 
           {% if menu_item.links.size > 0 %}
-            {% include
-              'mobile-navmenu-button',
+            {%
+              render 'mobile-navmenu-button',
               button_label: menu_item.title,
-              depth: depth,
             %}
           {% endif %}
 
           {%
-            include 'navlist',
+            render 'navlist',
             menu_list: linklists[menu_item.handle].links,
             depth: 3,
             max_depth: 3,
-            is_submenu: true,
-            has_triggers: true,
-            submenu_arrows: true,
             aria_expanded: true,
             is_mobile: false,
           %}
@@ -104,8 +100,8 @@ when there are only a few menus. We'd like them to be closer to each other.
       {% endfor %}
     </ul>
     {%
-      include 'meganav-promo',
-      meganav_block: meganav_block,
+      render 'meganav-promo',
+      block: block,
       position: 'last'
     %}
   </div>

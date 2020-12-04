@@ -49,7 +49,7 @@
         {% assign animation_state = 'checked' %}
       {% endif %}
       <span class="filter-icon--checkbox" data-handle="{{ tag | handle }}">
-        {%- include 'icon-checkmark-animated', animation_state: animation_state -%}
+        {%- render 'icon-checkmark-animated', animation_state: animation_state -%}
       </span>
       <span class="filter-text">
         {{ tag_content }}

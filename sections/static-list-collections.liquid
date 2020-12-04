@@ -7,7 +7,7 @@
   {% assign pagination = 48 %}
 {% endif %}
 
-{% include 'breadcrumbs' %}
+{% render 'breadcrumbs' %}
 
 <script type="application/pxs-animation-mapping+json">
   {
@@ -26,17 +26,17 @@
         {% for link in linklists[linklist].links %}
           {% assign link_handle = link.handle %}
           {% assign collection = collections[link_handle] %}
-          {% include 'collection-list-item' %}
+          {% render 'collection-list-item', collection: collection %}
         {% endfor %}
       {% else %}
         {% for collection in collections %}
-          {% include 'collection-list-item' %}
+          {% render 'collection-list-item', collection: collection %}
         {% endfor %}
       {% endif %}
     </div>
   </ul>
 
-  {% include 'pagination' %}
+  {% render 'pagination', paginate: paginate %}
 {% endpaginate %}
 
 {% schema %}

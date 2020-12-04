@@ -20,7 +20,7 @@
       {% if variant.image != blank %}
         {% capture current_rimg %}
           {%
-            include 'rimg',
+            render 'rimg',
             img: variant.image,
             size: '384x',
             lazy: true,
@@ -53,7 +53,7 @@
   {%- if product.featured_image != blank -%}
     {%- capture featured_image -%}
       {%
-        include 'rimg',
+        render 'rimg',
         img: product.featured_image,
         size: '384x',
         lazy: true,

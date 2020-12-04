@@ -31,10 +31,14 @@
         aria-label="{{ 'search.form.label' | t }}"
         placeholder="{{ 'search.form.placeholder' | t}}"
         {% if search.performed %}
-          {%
-            include 'search-sanitizer',
-            search_terms: search.terms
-          %}
+          {% capture sanitized_terms %}
+            {%
+              render 'search-sanitizer',
+              search_terms: search.terms
+            %}
+          {% endcapture %}
+
+          {% assign sanitized_terms = sanitized_terms | strip %}
           value="{{ sanitized_terms }}"
         {% endif %}
         data-live-search-input>
@@ -46,10 +50,10 @@
         data-live-search-submit
       >
         <span class="search-icon search-icon--inactive">
-          {% include 'icon-search' %}
+          {% render 'icon-search' %}
         </span>
         <span class="search-icon search-icon--active">
-          {% include 'icon-spinner' %}
+          {% render 'icon-spinner' %}
         </span>
       </button>
     </div>

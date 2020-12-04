@@ -20,10 +20,14 @@
   {% assign page_title = 'general.accessibility.search' | t %}
   {% assign total_result_count = search.results.size %}
   {% if total_result_count > 0 %}
-    {%
-      include 'search-sanitizer',
-      search_terms: search.terms
-    %}
+    {% capture sanitized_terms %}
+      {%
+        render 'search-sanitizer',
+        search_terms: search.terms
+      %}
+    {% endcapture %}
+
+    {% assign sanitized_terms = sanitized_terms | strip %}
     {% assign page_title = 'general.accessibility.search_results' | t: terms: sanitized_terms %}
   {% endif %}
 
@@ -68,16 +72,17 @@
   <div class="productgrid--outer layout--no-sidebar">
     <div class="productgrid--wrapper">
       {%
-        include 'breadcrumbs',
+        render 'breadcrumbs',
         search_category: search_category,
-        search_filter_string: search_filter_string,
       %}
 
       <div class="productgrid--masthead">
         <h1 class="visually-hidden">{{ page_title }}</h1>
         {%
-          include 'page-search-form',
-          enable_content: enable_content
+          render 'page-search-form',
+          enable_content: enable_content,
+          search_filter_string: search_filter_string,
+          sanitized_terms: sanitized_terms,
         %}
       </div>
 
@@ -88,7 +93,7 @@
             {% for item in search.results %}
               {% if item.object_type != 'product' %}{% continue %}{% endif %}
               {%
-                include 'product-grid-item',
+                render 'product-grid-item',
                 product: item
               %}
             {% endfor %}
@@ -98,10 +103,14 @@
             {% assign title = 'search.general.no_search_performed' | t %}
 
             {% if search.performed %}
-              {%
-                include 'search-sanitizer',
-                search_terms: search.terms
-              %}
+              {% capture sanitized_terms %}
+                {%
+                  render 'search-sanitizer',
+                  search_terms: search.terms
+                %}
+              {% endcapture %}
+
+              {% assign sanitized_terms = sanitized_terms | strip %}
 
               {%- if search_category != blank -%}
                 {%
@@ -140,7 +149,7 @@
       {% if enable_content and search.performed and search_category == blank %}
         <div class="productgrid--footer">
           {%
-            include 'results-search-content',
+            render 'results-search-content',
             title: 'search.general.posts_title',
             results: search.results,
             results_type: 'article',
@@ -148,7 +157,7 @@
           %}
 
           {%
-            include 'results-search-content',
+            render 'results-search-content',
             title: 'search.general.pages_title',
             results: search.results,
             results_type: 'page',
@@ -157,9 +166,9 @@
         </div>
       {% endif %}
 
-      {% include 'pagination' %}
+      {% render 'pagination', paginate: paginate %}
     </div>
-    {% include 'quick-shop' %}
+    {% render 'quick-shop' %}
   </div>
 {% endpaginate %}
 

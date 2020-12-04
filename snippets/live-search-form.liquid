@@ -2,9 +2,6 @@
   @param quick_links {LinkedList}
     Handle of menu to display
 
-  @param enable_live_search {Bool}
-    Determine whether search will be a auto prompt results
-
   @param enable_images {Bool}
     Display images in flydown
 
@@ -14,6 +11,8 @@
   @param placeholder {String|Nil}
     Add a custom placeholder string
 {% endcomment %}
+
+{% assign placeholder = placeholder | default: nil %}
 
 {% assign has_quick_links = false %}
 {% if quick_links.links.size > 0 %}
@@ -113,7 +112,7 @@
               {{ 'search.form.filter_all' | t }}
             {%- endif -%}
           </label>
-          {% include 'icon-chevron-down-small' %}
+          {% render 'icon-chevron-down-small' %}
         </span>
       {%- endunless -%}
       <input
@@ -123,10 +122,14 @@
         aria-label="{{ 'search.form.label' | t }}"
         placeholder="{{ placeholder_text | escape }}"
         {% if search.performed %}
-          {%
-            include 'search-sanitizer',
-            search_terms: search.terms
-          %}
+          {% capture sanitized_terms %}
+            {%
+              render 'search-sanitizer',
+              search_terms: search.terms
+            %}
+          {% endcapture %}
+
+          {% assign sanitized_terms = sanitized_terms | strip %}
           value="{{ sanitized_terms }}"
         {% endif %}
         autocomplete="off"
@@ -145,10 +148,10 @@
         data-live-search-submit
       >
         <span class="search-icon search-icon--inactive">
-          {% include 'icon-search' %}
+          {% render 'icon-search' %}
         </span>
         <span class="search-icon search-icon--active">
-          {% include 'icon-spinner' %}
+          {% render 'icon-spinner' %}
         </span>
       </button>
     </div>

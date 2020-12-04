@@ -57,7 +57,7 @@
       "
       {% if first_block.settings.image %}
         {%
-          include 'rimg',
+          render 'rimg',
           img: first_block.settings.image
           size: '500x750',
           crop: 'center',
@@ -68,7 +68,7 @@
     >
       {% if first_block.settings.image %}
         {%
-          include 'rimg',
+          render 'rimg',
           img: first_block.settings.image
           size: '500x750',
           crop: 'center',
@@ -138,13 +138,13 @@
 
     {% for p in products limit: product_count %}
       {%
-        include 'product-grid-item',
+        render 'product-grid-item',
         product: p,
       %}
     {% else %}
       {% for i in (1..product_count) %}
         {%
-          include 'product-grid-item',
+          render 'product-grid-item',
           product: false,
         %}
       {% endfor %}
@@ -165,7 +165,7 @@
     </a>
   {% endif %}
 
-  {% include 'quick-shop' %}
+  {% render 'quick-shop' %}
 </section>
 
 {% schema %}

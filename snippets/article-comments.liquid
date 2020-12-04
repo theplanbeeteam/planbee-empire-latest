@@ -12,12 +12,10 @@
           {{ 'blog.comments.title' | t }}
         </h2>
 
-        {% for comment in article.comments %}
-          {% include 'article-comment-item' %}
-        {% endfor %}
+        {% render 'article-comment-item' for article.comments as comment %}
 
         {% if paginate.pages > 1 %}
-          {% include 'pagination' %}
+          {% render 'pagination', paginate: paginate %}
         {% endif %}
       {% endif %}
 

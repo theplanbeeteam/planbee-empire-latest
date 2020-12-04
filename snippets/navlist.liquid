@@ -21,10 +21,6 @@
   @param show_arrows {Bool}
     Option to display dropdown arrows.
 
-  @param arrow_icons {Array}
-    Array of arrow_icon strings to apply different icons
-    to different depths of menus, mapped to Array[depth - 1].
-
   @param is_mobile {Bool}
     This is true if the navlist is to be presented on the mobile nav.
 
@@ -37,7 +33,10 @@
 
 {% endcomment %}
 
-{% assign show_collection_prod_count = show_prod_count | default: false %}
+{% assign menu_title = menu_title | default: nil %}
+{% assign show_arrows = show_arrows | default: false %}
+{% assign show_prod_count = show_prod_count | default: false %}
+{% assign accordion_level = accordion_level | default: nil %}
 {% assign include_accordion = false %}
 
 {% if depth >= accordion_level %}
@@ -64,7 +63,7 @@
     {% endif %}
 
     {% assign product_count = false %}
-    {% if show_collection_prod_count and menu_item.type == 'collection_link' or menu_item.type == 'catalog_link' %}
+    {% if show_prod_count and menu_item.type == 'collection_link' or menu_item.type == 'catalog_link' %}
       {% if menu_item.type == 'collection_link' %}
         {% capture product_count %}
           ({{ menu_item.object.products_count }})
@@ -121,30 +120,30 @@
               class="navmenu-icon navmenu-icon-depth-{{ depth }}"
               data-navmenu-trigger
             >
-              {% assign submenu_arrow_index = depth | minus: 1 %}
-              {% include 'icon-chevron-down-small' %}
+              {% render 'icon-chevron-down-small' %}
             </span>
           {% endif %}
         </a>
 
         {% if show_arrows and is_mobile == true %}
-          {% include
-            'mobile-navmenu-button',
-            button_label: menu_item.title
+          {%
+            render 'mobile-navmenu-button',
+            button_label: menu_item.title,
+            depth: depth,
           %}
         {% endif %}
 
         {% unless d > max_depth %}
           {%
-            include 'navlist',
+            render 'navlist',
             menu_list: linklists[menu_item.handle].links,
+            menu_title: menu_title,
             depth: d,
             max_depth: max_depth,
             show_arrows: show_arrows,
             aria_expanded: aria_expanded,
-            arrow_icons: arrow_icons,
             is_mobile: is_mobile,
-            show_collection_product_count: show_collection_prod_count,
+            show_prod_count: show_prod_count,
             accordion_level: accordion_level,
           %}
         {% endunless %}

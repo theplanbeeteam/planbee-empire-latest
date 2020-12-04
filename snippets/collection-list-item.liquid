@@ -13,6 +13,11 @@
 
 {% endcomment %}
 
+{% assign block = block | default: nil %}
+
+{% assign collection_image = collection_image | default: nil %}
+{% assign collection_image_alt = collection_image_alt | default: nil %}
+
 {% assign onboard = false %}
 {% assign image = false %}
 {% assign image_alt = false %}
@@ -29,9 +34,9 @@
   {% assign collection_url = '#' %}
 {% endif %}
 
-{% if collection_image and collection_image_alt %}
+{% if collection_image and onboard == false %}
   {% assign image = collection_image %}
-  {% assign image_alt = collection_image_alt %}
+  {% assign image_alt = collection_image_alt | default: collection.image.alt | escape | default: collection_title | escape %}
 {% elsif collection.image %}
   {% assign image = collection.image %}
   {% assign image_alt = collection.image.alt | escape %}
@@ -45,7 +50,7 @@
     <figure class="collection--item-image">
         {% if image and image_alt %}
           {%
-            include 'rimg',
+            render 'rimg',
             img: image,
             alt: image_alt,
             size: '1350x',

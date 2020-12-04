@@ -25,7 +25,7 @@
   {%- capture continue_link_html -%}
     <a class="cart-continue" href="{{ continue_url }}">
       {{ 'cart.general.continue_shopping' | t }}
-      {% include 'icon-library', id: 'icon-signpost-arrow' %}
+      {% render 'icon-library', id: 'icon-signpost-arrow' %}
     </a>
   {%- endcapture -%}
 {% endif %}
@@ -89,9 +89,9 @@
             aria-label="{{ 'cart.general.checkout' | t }}"
           >
             {% if settings.enable_checkout_lock_icon %}
-              {% include 'icon-checkout-lock' %}
+              {% render 'icon-checkout-lock' %}
             {% else %}
-              {% include 'icon-cart' %}
+              {% render 'icon-cart' %}
             {% endif %}
             {{ 'cart.general.checkout' | t }}
           </button>
@@ -106,7 +106,7 @@
     <div class="cartitems">
       {% if has_items %}
         {%
-          include 'cart-item-list',
+          render 'cart-item-list',
           cart: cart
         %}
         <div class="cart-total">
@@ -124,7 +124,7 @@
           <div class="cart-final-total">
             <ul class="discount-list" data-cart-discounts aria-label="{{ 'product.general.discounts' | t }}">
               {%
-                include 'cart-discounts',
+                render 'cart-discounts',
                 cart: cart
               %}
             </ul>
@@ -146,7 +146,7 @@
               snippets/cart-shipping.liquid has an internal check to see if shipping is required
             {% endcomment %}
             {% if section.settings.enable_shipping_calc %}
-              {% include 'cart-shipping' %}
+              {% render 'cart-shipping' %}
             {% endif %}
           </div>
 
@@ -158,9 +158,9 @@
               aria-label="{{ 'cart.general.checkout' | t }}"
             >
               {% if settings.enable_checkout_lock_icon %}
-                {% include 'icon-checkout-lock' %}
+                {% render 'icon-checkout-lock' %}
               {% else %}
-                {% include 'icon-cart' %}
+                {% render 'icon-cart' %}
               {% endif %}
               {{ 'cart.general.checkout' | t }}
             </button>
@@ -183,7 +183,7 @@
 
             {% if show_continue_link %}
               <a class="button-primary" href="{{ continue_url }}">
-                {% include 'icon-cart' %}
+                {% render 'icon-cart' %}
                 {{ 'cart.general.continue_shopping' | t }}
               </a>
             {% endif %}
@@ -201,7 +201,7 @@
             <article class="cart-sidebar-item">
               {% if image %}
                 {%
-                  include 'rimg',
+                  render 'rimg',
                   img: image,
                   class: 'cart-sidebar-item-image',
                   size: '445x',

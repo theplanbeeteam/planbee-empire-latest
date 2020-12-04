@@ -38,14 +38,14 @@
     {% if onboarding %}
       {% for i in (1..article_count) %}
         {%
-          include 'article-excerpt',
+          render 'article-excerpt',
           onboarding: true
         %}
       {% endfor %}
     {% else %}
       {% for article in blog.articles limit: article_count %}
         {%
-          include 'article-excerpt',
+          render 'article-excerpt',
           article: article
         %}
       {% endfor %}
@@ -57,7 +57,7 @@
       {{ 'blog.general.see_more' | t }}
 
       <span class="blogposts--footer-icon">
-        {% include 'icon-library', id: 'icon-signpost-arrow' %}
+        {% render 'icon-library', id: 'icon-signpost-arrow' %}
       </span>
     </a>
   </div>

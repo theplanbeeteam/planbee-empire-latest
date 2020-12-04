@@ -1,3 +1,4 @@
+{% assign grid_list = grid_list | default: nil %}
 
 {% if paginate.previous or paginate.next %}
   <nav class="pagination--container" aria-label="Pagination">
@@ -11,7 +12,7 @@
             aria-label="Go to previous page"
           >
             <span class="pagination--chevron-left" aria-hidden="true">
-              {% include 'icon-chevron-down-small' %}
+              {% render 'icon-chevron-down-small' %}
             </span>
 
             {{ 'general.pagination.prev' | t }}
@@ -59,7 +60,7 @@
           >
             {{ 'general.pagination.next' | t }}
             <span class="pagination--chevron-right" aria-hidden="true">
-              {% include 'icon-chevron-down-small' %}
+              {% render 'icon-chevron-down-small' %}
             </span>
           </a>
         </li>

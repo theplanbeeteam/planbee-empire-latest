@@ -9,9 +9,7 @@
     {% if section.blocks.size %}
       <div class="site-footer-item">
         <div class="site-footer-blocks column-count-{{ section.blocks.size }}">
-          {% for block in section.blocks %}
-            {% include 'footer-block' %}
-          {% endfor %}
+          {% render 'footer-block' for section.blocks as block %}
         </div>
       </div>
     {% endif %}
@@ -26,10 +24,11 @@
               aria-label="{{ 'general.accessibility.nav_footer' | t }}"
             >
               {%
-                include 'navlist',
+                render 'navlist',
                 menu_list: linklists[section.settings.additional_menu].links,
                 depth: 1,
                 max_depth: 1,
+                aria_expanded: true,
               %}
             </nav>
           {% endif %}
@@ -49,10 +48,10 @@
 
         {%- if section.settings.payment_icons or currency_selector or locale_selector -%}
           <div class="site-footer-right">
-            {% comment %}cross-border{% endcomment %}
+            {% comment %}Inject @pixelunion/shopify-cross-border/cross-border begin{% endcomment %}
             {% form 'localization' %}
               {% if locale_selector and form.available_locales.size > 1 %}
-                {% comment %}multi-language{% endcomment %}
+                {% comment %}Inject @pixelunion/shopify-cross-border/multi-language begin{% endcomment %}
                 <div class="selectors-form__item">
                   <div class="disclosure" data-disclosure-locale>
                     <button type="button" class="disclosure__toggle" aria-expanded="false" aria-controls="lang-list" aria-describedby="lang-heading" data-disclosure-toggle>
@@ -70,10 +69,12 @@
                     <input type="hidden" name="locale_code" id="LocaleSelector" value="{{ form.current_locale.iso_code }}" data-disclosure-input/>
                   </div>
                 </div>
+                {% comment %}Inject @pixelunion/shopify-cross-border/multi-language end{% endcomment %}
+            
               {% endif %}
             
               {% if currency_selector and form.available_currencies.size > 1 %}
-                {% comment %}multi-currency{% endcomment %}
+                {% comment %}Inject @pixelunion/shopify-cross-border/multi-currency begin{% endcomment %}
                 <div class="selectors-form__item">
                   <div class="disclosure" data-disclosure-currency>
                     <button type="button" class="disclosure__toggle" aria-expanded="false" aria-controls="currency-list" aria-describedby="currency-heading" data-disclosure-toggle>
@@ -91,8 +92,12 @@
                     <input type="hidden" name="currency_code" id="CurrencySelector" value="{{ form.current_currency.iso_code }}" data-disclosure-input/>
                   </div>
                 </div>
+                {% comment %}Inject @pixelunion/shopify-cross-border/multi-currency end{% endcomment %}
+            
               {% endif %}
             {% endform %}
+            {% comment %}Inject @pixelunion/shopify-cross-border/cross-border end{% endcomment %}
+
             {% if section.settings.payment_icons and shop.enabled_payment_types.size > 0 %}
               <ul class="payment-icons">
                 {% for type in shop.enabled_payment_types %}

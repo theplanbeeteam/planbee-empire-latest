@@ -32,7 +32,7 @@
       type="hidden">
   {% else %}
     {%
-      include 'product-options',
+      render 'product-options',
       product: product,
       selected_variant: selected_variant,
       style: settings.product_option_style
@@ -64,7 +64,7 @@
           >
             {{ 'general.general.quantity' | t }}
           </label>
-          {% include 'icon-chevron-down-small' %}
+          {% render 'icon-chevron-down-small' %}
         </div>
       </div>
       <div class="form-field form-field--qty-input hidden">
@@ -101,7 +101,7 @@
         {% endif %}
       </span>
       <span class="atc-button--icon">
-        {%- include 'icon-spinner' -%}
+        {%- render 'icon-spinner' -%}
       </span>
     </button>
   </div>
@@ -109,4 +109,7 @@
   {% if product_smart_buttons or quickshop_smart_buttons %}
     {{ form | payment_button }}
   {% endif %}
+
+
+  <div class="surface-pick-up" data-surface-pick-up></div>
 {% endform %}
