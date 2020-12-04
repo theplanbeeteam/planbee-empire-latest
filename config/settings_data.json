@@ -153,6 +153,7 @@
       "1520634789686": {
         "type": "dynamic-featured-product",
         "settings": {
+          "product": "",
           "show_dcb": false,
           "product_cart_redirect": false,
           "gallery_aspect_ratio": "natural",
@@ -196,6 +197,7 @@
           "show_date": true,
           "show_author": true,
           "show_excerpt": true,
+          "featured_post": "news\/10-best-gifts-for-teachers",
           "posts_per_page_range": 9
         }
       },
@@ -484,6 +486,7 @@
         "settings": {
           "title": "Featured Collection",
           "layout": "grid",
+          "collection": "",
           "product_count": 5,
           "cta_label": "Shop collection",
           "cta_button_style": "primary"

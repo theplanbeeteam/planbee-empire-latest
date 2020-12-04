@@ -310,12 +310,19 @@
       {% endif %}
 
       <!-- PLANBEE CUSTOM CODE -->
-      {%- comment -%}
-      {% unless emphasize_price %}
-        {{ product_item_price }}
-      {% endunless %}
-      {%- endcomment -%}
-      {%- include 'pb-product-item-price' -%}
+      {%- if product.price_varies -%}
+        <div class="price--main">
+          <span style="color: #707070;">From</span> <span style="color: #02c3e7;">{{ product.price_min | money }}</span> <span style="color: #707070;">to</span> <span style="color: #02c3e7;">{{ product.price_max | money }}</span>
+        </div>
+        {%- elsif product.price < 0.01 -%}
+          <div class="price--main">
+            <span style="color: #707070;"><em>FREE</em></span>
+          </div>
+        {%- else -%}
+        <div class="price--main">
+          <span style="color: #02c3e7;">{{ product.price | money }}</span>
+        </div>
+      {%- endif -%}
       <!-- END PLANBEE CUSTOM CODE -->
 
       {% if product_ratings_reviews and product_ratings_star_display == "all" %}
