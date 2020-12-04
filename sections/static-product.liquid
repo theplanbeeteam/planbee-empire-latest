@@ -20,7 +20,7 @@
       "product_available": {{ 'product.buttons.add_to_cart' | t | json }},
       "product_unavailable": {{ 'product.buttons.sold_out' | t | json }}
     },
-    "product": {{ product | json }}
+    "product": {%- render 'wc_product_json', product: product -%}
   }
 </script>
 

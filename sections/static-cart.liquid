@@ -76,9 +76,9 @@
             <div class="cart-title-total" data-cart-title-total>
               {{ 'cart.general.subtotal' | t }}
 
-              <span class="money" data-cart-total>
+              <span style="display: block; text-align: right;" class="saw-extra-note"></span><span class="saw-cart-original-total"><span class="money" data-cart-total>
                 {{ cart.total_price | money }}
-              </span>
+              </span></span><br><span class="saw-cart-total"></span>
             </div>
           </div>
 
@@ -131,7 +131,7 @@
 
             <div class="cart-subtotal">
               <span>{{ 'cart.general.subtotal' | t }}</span>
-              <span class="money" data-cart-total>{{ cart.total_price | money }}</span>
+              <span style="display: block; text-align: right;" class="saw-extra-note"></span><span class="saw-cart-original-total"><span class="money" data-cart-total>{{ cart.total_price | money }}</span></span><br><span class="saw-cart-total"></span>
             </div>
           </div>
 

@@ -5,7 +5,7 @@
   {{ settings | json }}
   {{ 'product.buttons.add_to_cart' | t }}
   {{ 'product.buttons.sold_out' | t  }}
-  {{ product | json }}
+  {%- render 'wc_product_json', product: product -%}
 {% endcapture %}
 {% assign to_hash = to_hash | replace: ' ', '' | sha256 %}
 
@@ -22,7 +22,7 @@
 
 <template data-data>
   {
-    "product": {{ product | json }},
+    "product": {%- render 'wc_product_json', product: product -%},
     "settings": {
       "money_format": {{ shop.money_format | strip_html | json }},
       "thumbnail_position": {{ settings.quickshop_gallery_thumbnail_position | json }},
