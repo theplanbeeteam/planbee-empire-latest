@@ -6,7 +6,7 @@
         <input type="hidden" name="token" value="{{ shop.metafields.Flits.SHOP_TOKEN }}" id="flits-token">
         <input type="hidden" name="flits-shop-money-format" value="{{ shop.money_format }}" id="flits-shop-money-format">
         <input type="hidden" name="customer-url" value="/apps/{{ shop.metafields.Flits.APP_PROXY }}/api/{{ shop.metafields.Flits.APP_ID }}/{{ shop.metafields.Flits.SHOP_ID }}/{{ customer.id }}" id="flits-customer-url">
-        <input type="hidden" name="flits-order-shipment-url" value="/apps/{{ shop.metafields.Flits.APP_PROXY }}/api/{{ shop.metafields.Flits.APP_ID }}/{{ shop.metafields.Flits.SHOP_ID }}" id="flits-order-shipment-url">  
+        <input type="hidden" name="flits-order-shipment-url" value="/apps/{{ shop.metafields.Flits.APP_PROXY }}/api/{{ shop.metafields.Flits.APP_ID }}/{{ shop.metafields.Flits.SHOP_ID }}" id="flits-order-shipment-url">
         <input type="hidden" name="flits-order-tracking-paid" value="{{ shop.metafields.Flits.IS_ORDER_TRACKING_PAID }}" id="flits-order-tracking-paid">
         <input type="hidden" name="flits-order-tracking-enable" value="{{ shop.metafields.Flits.IS_ORDER_TRACKING_ENABLE }}" id="flits-order-tracking-enable">
         <input type="hidden" name="flits-order-tracking-domain" value="{{ shop.metafields.Flits.ORDER_TRACKING_DOMAIN }}" id="flits-order-tracking-domain">
@@ -86,7 +86,7 @@
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </div>
         </div>
-    </div>  
+    </div>
     <div class="flits-text-center flits-account-page-title">
         <h1>{{ 'flits.general.greeting' | t }}  {{ customer.first_name }}</h1>
     </div>
@@ -115,7 +115,7 @@
                     {% if type != 'PAGE' %}
                     <a disabled data-type="flits" href="{{ url }}" target="_blank" class="flits-list-group-item flits-bg-theme">{{ title }}</a>
                     {% else %}
-                    <a disabled data-type="flits" data-title="{{ title }}" data-toggle='page' data-href="#flits-page-{{ url }}" class="flits-list-group-item flits-bg-theme">{{ title }}</a>          
+                    <a disabled data-type="flits" data-title="{{ title }}" data-toggle='page' data-href="#flits-page-{{ url }}" class="flits-list-group-item flits-bg-theme">{{ title }}</a>
                     {% endif %}
 
                     {% endfor %}
@@ -193,7 +193,7 @@
                                 </div>
                             </div>
                         </div>
-                        {% render 'flits_refer_friend_snippet' with 'referred_by' %}                                       
+                        {% render 'flits_refer_friend_snippet' with 'referred_by' %}
                         <div class="flits-row flits-m-t-10 flits-edit-button-row">
                             <div class="flits-col-md-2">
                                 <label>&nbsp;</label>
@@ -225,17 +225,17 @@
                     {% if customer.orders.size != 0 %}
                     {% paginate customer.orders by 3 %}
                     {% for order in customer.orders %}
-                    
+
                     {% assign order_date_month_original = order.created_at | date: '%B' %}
                     {% assign order_date_month_downcase = order.created_at | date: '%B' | downcase  %}
-                    {% assign order_date_month_text = 'flits.months.' | append:order_date_month_downcase | t %}	
+                    {% assign order_date_month_text = 'flits.months.' | append:order_date_month_downcase | t %}
                     {% assign order_date = order.created_at | date:date_format | replace:order_date_month_original,order_date_month_text %}
 
                     {% assign order_cancelled_month_original = order.cancelled_at | date: '%B' %}
                     {% assign order_cancelled_month_downcase = order.cancelled_at | date: '%B' | downcase  %}
-                    {% assign order_cancelled_month_text = 'flits.months.' | append:order_cancelled_month_downcase | t %}	
+                    {% assign order_cancelled_month_text = 'flits.months.' | append:order_cancelled_month_downcase | t %}
                     {% assign order_cancelled_date = order.cancelled_at | date:date_format | replace:order_cancelled_month_original,order_cancelled_month_text %}
-                    
+
                     <div class="flits-order-row">
                         <div class="flits-order-status-row">
                             <div class="flits-row">
@@ -250,7 +250,7 @@
                             </div>
                             <div class="flits-row">
                                 {% if order.cancelled  %}
-                                <div class="flits-col-md-6 flits-text-left flits-order-cancel-status" data-value='{{ order.cancelled_at }}'>{{ 'flits.order_page.cancel_at' | t }}: <span class='flits-order-details-value'>{{ order_cancelled_date }}</span></div>                              
+                                <div class="flits-col-md-6 flits-text-left flits-order-cancel-status" data-value='{{ order.cancelled_at }}'>{{ 'flits.order_page.cancel_at' | t }}: <span class='flits-order-details-value'>{{ order_cancelled_date }}</span></div>
                                 {% else %}
                                 <div class="flits-col-md-6 flits-text-left flits-order-fulfillment-status" data-value='{{ order.fulfillment_status }}'>{{ 'flits.order_page.fulfillment_status' | t }}: <span class='flits-order-details-value'>{{ order.fulfillment_status_label }}</span></div>
                                 {% endif %}
@@ -277,7 +277,9 @@
                                 <div class="flits-row ">
                                     <div class="flits-col-md-2 flits-col-sm-2 flits-col-xs-4 flits-order-item-image">
                                         <img src="{{item.image | img_url: 'small'}}" class="flits-image">
+                                        <!-- PLANBEE CUSTOM CODE - COMMENT OUT
                                         <div class="flits-order-item-quantity">{{ item.quantity }}</div>
+                                        PLANBEE CUSTOM CODE END -->
                                     </div>
                                     <div class="flits-col-md-10 flits-col-sm-10 flits-col-xs-8">
                                         <div class="flits-row">
@@ -295,12 +297,12 @@
                                         {% if item.fulfillment and item.fulfillment.tracking_number != blank %}
                                         <div class="flits-row flits-m-t-10">
                                             <div class="flits-col-md-12 flits-line-item-track">
-                                                {{ 'flits.order_page.tracking_number' | t }} : <a href="{{ item.fulfillment.tracking_url }}" 
+                                                {{ 'flits.order_page.tracking_number' | t }} : <a href="{{ item.fulfillment.tracking_url }}"
                                                                                                   class="flits-order-tracking"
                                                                                                   data-line-item-id="{{ item.id }}"
                                                                                                   data-order-id = "{{ order.id }}"
                                                                                                   data-tracking-number="{{ item.fulfillment.tracking_number }}"
-                                                                                                  target="_blank">{{ item.fulfillment.tracking_number }}</a>	                                                
+                                                                                                  target="_blank">{{ item.fulfillment.tracking_number }}</a>
                                             </div>
                                         </div>
                                         {% if shop.metafields.Flits.IS_ORDER_TRACKING_ENABLE and shop.metafields.Flits.IS_ORDER_TRACKING_ENABLE == 1 %}
@@ -334,19 +336,24 @@
                                     <span class="flits-m-t-10 flits-hidden flits_append_tracking_btn" data-append-tracking-id="{{ order.id }}">
                                     </span>
                                     {% endif %}
-                                    
+
                                     {% if shop.metafields.Flits.IS_ORDER_CONTACT_US_ENABLE and shop.metafields.Flits.IS_ORDER_CONTACT_US_ENABLE == 1 %}
                                         {% render 'flits_order_contact_us_snippet' with 'contact_us_button', customer:customer, order:order %}
                                     {% endif %}
-                                    
+
+                                    <!-- PLANBEE CUSTOM CODE
+                                    Comment out default button:
                                     <button class="flits-hidden flits-btn-inline flits-btn-primary flits-btn-custom flits-order-details-btn flits-btn" data-show-text="{{ 'flits.order_page.show_order_details' | t }}" data-hide-text="{{ 'flits.order_page.hide_order_details' | t }}">{{ 'flits.order_page.show_order_details' | t }}</button>
-                                    
+                                    Replace with custom styled button: -->
+                                    <button class="flits-hidden flits-btn-inline flits-order-details-btn flits-btn button-primary" data-show-text="{{ 'flits.order_page.show_order_details' | t }}" data-hide-text="{{ 'flits.order_page.hide_order_details' | t }}">{{ 'flits.order_page.show_order_details' | t }}</button>
+                                    <!-- PLANBEE CUSTOM CODE ENDS -->
+
                                     {% if shop.metafields.Flits.IS_REORDER_ENABLE and shop.metafields.Flits.IS_REORDER_ENABLE == 1 %}
                                     <button class="flits-btn-inline flits-btn-default flits-btn-custom flits-order-re-order-btn flits-btn" data-target="{{ order.id }}">{{ 'flits.order_page.re_order' | t }}</button>
                                     {% endif %}
 
                                     <div class="flits-hidden flits-order-line-items">
-                                        
+
                                     </div>
                                 </div>
                             </div>
@@ -468,7 +475,7 @@
                     <div class='flits-row'>
                         <div class='flits-col-md-12 flits-text-right'>
                             <button type="button" class="flits-btn flits-btn-danger flits-btn-custom flits-hidden flits-new-address-cancel-btn">{{ 'flits.buttons.cancel' | t }}</button>
-                            <button style='display:none;' type="button" class="flits-btn flits-btn-primary flits-btn-custom flits-new-address-btn flits-hidden">{{ 'flits.address_page.add_a_new_address' | t }}</button>  
+                            <button style='display:none;' type="button" class="flits-btn flits-btn-primary flits-btn-custom flits-new-address-btn flits-hidden">{{ 'flits.address_page.add_a_new_address' | t }}</button>
                         </div>
                     </div>
                     <div class='flits-hidden flits-new-address-form'>
@@ -543,16 +550,16 @@
                         <ul class='flits-addresses-ul'>
 
                             {% if customer.addresses.size != 0 %}
-                            <li class='flits-card-box flits-address-default' 
+                            <li class='flits-card-box flits-address-default'
                                 data-phone="{{ customer.default_address.phone }}"
-                                data-phone="{{ customer.default_address.phone }}" 
-                                data-first-name="{{ customer.default_address.first_name }}" 
+                                data-phone="{{ customer.default_address.phone }}"
+                                data-first-name="{{ customer.default_address.first_name }}"
                                 data-last-name="{{ customer.default_address.last_name }}"
                                 data-company="{{ customer.default_address.company }}"
                                 data-address1="{{ customer.default_address.address1 }}"
                                 data-address2="{{ customer.default_address.address2 }}"
-                                data-zip="{{ customer.default_address.zip }}" 
-                                data-city="{{ customer.default_address.city }}" 
+                                data-zip="{{ customer.default_address.zip }}"
+                                data-city="{{ customer.default_address.city }}"
                                 data-province="{{ customer.default_address.province }}"
                                 data-country="{{ customer.default_address.country }}"
                                 data-id="{{ customer.default_address.id }}"
@@ -612,15 +619,15 @@
                             {% continue; %}
                             <!--<p><strong>{{ 'flits.address_page.default' | t }}</strong></p>-->
                             {% endif %}
-                            <li class='flits-card-box' 
-                                data-phone="{{ address.phone }}" 
-                                data-first-name="{{ address.first_name }}" 
+                            <li class='flits-card-box'
+                                data-phone="{{ address.phone }}"
+                                data-first-name="{{ address.first_name }}"
                                 data-last-name="{{ address.last_name }}"
                                 data-company="{{ address.company }}"
                                 data-address1="{{ address.address1 }}"
                                 data-address2="{{ address.address2 }}"
-                                data-zip="{{ address.zip }}" 
-                                data-city="{{ address.city }}" 
+                                data-zip="{{ address.zip }}"
+                                data-city="{{ address.city }}"
                                 data-province="{{ address.province }}"
                                 data-country="{{ address.country }}"
                                 data-id="{{ address.id }}"
@@ -854,7 +861,7 @@
                                         <div class="flits-col-md-12 flits-col-sm-12">
                                             <button type="submit" class="flits-btn flits-btn-default flits-btn-custom flits-btn-block flits-add-to-cart"
                                                     data-flits-sold-out-text="{{ 'flits.buttons.sold_out' | t }}"
-                                                    data-flits-add-to-cart-text="{{ 'flits.buttons.add_to_cart' | t }}">	
+                                                    data-flits-add-to-cart-text="{{ 'flits.buttons.add_to_cart' | t }}">
                                                 {{ 'flits.buttons.add_to_cart' | t }}
                                             </button>
                                         </div>
@@ -1021,7 +1028,7 @@
                                 <div class="flits-col-md-12 flits-col-sm-12">
                                     <button type="submit" class="flits-btn flits-btn-default flits-btn-custom flits-btn-block flits-add-to-cart"
                                             data-flits-sold-out-text="{{ 'flits.buttons.sold_out' | t }}"
-                                            data-flits-add-to-cart-text="{{ 'flits.buttons.add_to_cart' | t }}">	
+                                            data-flits-add-to-cart-text="{{ 'flits.buttons.add_to_cart' | t }}">
                                         {{ 'flits.buttons.add_to_cart' | t }}
                                     </button>
                                 </div>
@@ -1038,9 +1045,9 @@
                     </form>
                 </li>
             </div>
-            <input type="hidden" name='flits-wishlist-current-page' value="1" id="flits-wishlist-current-page"/>	
-            <input type="hidden" name='flits-wishlist-size' value="0" id="flits-wishlist-size"/>	
-            <input type="hidden" name='flits-wishlist-limit' value="8" id="flits-wishlist-limit"/>	
+            <input type="hidden" name='flits-wishlist-current-page' value="1" id="flits-wishlist-current-page"/>
+            <input type="hidden" name='flits-wishlist-size' value="0" id="flits-wishlist-size"/>
+            <input type="hidden" name='flits-wishlist-limit' value="8" id="flits-wishlist-limit"/>
             <input type="hidden" name='flits-wishlist-total-page' value="0" id="flits-wishlist-total-page"/>
             <div class="flits-pagination-div flits-m-t-10" style="display:none;">
                 <div class="flits-pagination">
@@ -1059,6 +1066,6 @@
 
 {% if shop.metafields.Flits.IS_HOW_TO_EARN_CREDIT_DISPLAY and shop.metafields.Flits.IS_HOW_TO_EARN_CREDIT_DISPLAY == 1 %}{% render 'flits_how_to_earn_credit_snippet' with 'account_page_data' %}{% endif %}
 
-{% if shop.metafields.Flits.IS_STORE_CREDIT_PAID and shop.metafields.Flits.IS_STORE_CREDIT_PAID == 1 %}{% render 'flits_refer_friend_snippet' with 'account_page_data' %}{% endif %} 
+{% if shop.metafields.Flits.IS_STORE_CREDIT_PAID and shop.metafields.Flits.IS_STORE_CREDIT_PAID == 1 %}{% render 'flits_refer_friend_snippet' with 'account_page_data' %}{% endif %}
 
 {% if shop.metafields.Flits.IS_ORDER_CONTACT_US_ENABLE and shop.metafields.Flits.IS_ORDER_CONTACT_US_ENABLE == 1 %}{% render 'flits_order_contact_us_snippet' with 'contact_us_form' %}{% endif %}
