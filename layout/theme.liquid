@@ -83,6 +83,10 @@
     {% if product.id > 1 %}
     {% render 'pb-product-image-slider' %}
     {% endif %}
+    <!-- Pinterest tracking -->
+    {% render 'pb-pinterest-tracking' %}
+    <!-- PayPal/CloudIQ -->
+    {% render 'pb-paypal-cloudiq' %}
     <!-- END PLANBEE CUSTOM CODE  -->
 
     {% comment %}Inject theme-object begin{% endcomment %}
@@ -455,7 +459,7 @@
     </script>
     <!-- END PLANBEE CUSTOM SCRIPTS -->
 
-  	
+
 	{% render 'flits_snippet' %}
 </body>
 </html>
