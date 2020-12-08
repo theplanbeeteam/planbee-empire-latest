@@ -132,7 +132,7 @@
 }
 
 .flits-h-full {
-  height: 100% !important
+  height: 100% !important;
 }
 
 .flits-page {
@@ -1947,7 +1947,7 @@ a.flits-list-group-item:hover, a.flits-list-group-item:focus {
 
 .flits-list-group {
   margin-top: 15px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   padding-left: 0
 }
 

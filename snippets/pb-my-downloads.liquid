@@ -1,0 +1,21 @@
+<div style="max-width: 1400px; padding: 0 25px; margin: 0 auto;">
+  <h2>My Downloads</h2>
+  {% for order in customer.orders %}
+  {% assign line_item_by_title = order.line_items | sort: "title" %}
+    {% for line_item in line_item_by_title %}
+      <p>
+        <a href="https://planbee-primary-resources.fetchapp.com/orders?email={{ order.email }}&number={{ order.name }}&submit=true">{{ line_item.title }}</a>
+      </p>
+    {% endfor %}
+  {% endfor %}
+  <hr />
+  {% for order in customer.orders %}
+  {% capture my_var %}
+  {% for line_item in order.line_items %}
+  {{ line_item.title }}
+  {% endfor %}
+  {% endcapture %}
+  {% assign my_items = my_var | sort: 'title' %}
+  {{ my_items }}
+  {% endfor %}
+</div>
