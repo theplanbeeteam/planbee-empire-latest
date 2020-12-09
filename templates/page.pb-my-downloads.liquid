@@ -12,7 +12,7 @@
   {% endif %}
 
   <div class="container" style="max-width: 1400px; padding: 0 25px; margin: 0 auto;">
-    <input type="text" id="myDownloadsInput" onkeyup="myDownloadsFunction()" placeholder="Search your downloads…" title="Search Downloads">
+    <input type="text" id="myDownloadsInput" onkeyup="myDownloadsFunction()" placeholder="Search by resource name…" title="Search Downloads">
 
     <table id="myDownloadsTable">
       <tr class="header">
@@ -26,7 +26,7 @@
       <tr>
         <td>
           {% if forloop.first == true %}
-          <a href="https://planbee-primary-resources.fetchapp.com/orders?email={{ order.email }}&number={{ order.name }}&submit=true" target="_blank">{{ order.name }}</a>
+          {{ order.name }}
           {% endif %}
         </td>
         <td style="color: #707070; font-style: italic;">
@@ -35,7 +35,7 @@
           {% endif %}
         </td>
         <td>
-          {{ line_item.title }}
+          <a class="pb_order_name" href="https://planbee-primary-resources.fetchapp.com/orders?email={{ order.email }}&number={{ order.name }}&submit=true" target="_blank">{{ line_item.title }}</a>
         </td>
       </tr>
       {% endfor %}

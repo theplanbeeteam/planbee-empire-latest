@@ -275,13 +275,14 @@
                             </script>
                             <div class="flits-order-item">
                                 <div class="flits-row ">
+                                    <!-- PLANBEE CUSTOM CODE - COMMENT OUT
                                     <div class="flits-col-md-2 flits-col-sm-2 flits-col-xs-4 flits-order-item-image">
                                         <img src="{{item.image | img_url: 'small'}}" class="flits-image">
-                                        <!-- PLANBEE CUSTOM CODE - COMMENT OUT
                                         <div class="flits-order-item-quantity">{{ item.quantity }}</div>
-                                        PLANBEE CUSTOM CODE END -->
                                     </div>
+                                    PLANBEE CUSTOM CODE END -->
                                     <div class="flits-col-md-10 flits-col-sm-10 flits-col-xs-8">
+                                        <!-- PLANBEE CUSTOM CODE - COMMENT OUT
                                         <div class="flits-row">
                                             <a href="{{ item.url }}" target="_blank">
                                                 <div class="flits-col-md-12 flits-order-item-title" title="{{ item.title }}">
@@ -289,6 +290,13 @@
                                                 </div>
                                             </a>
                                         </div>
+                                        AND REPLACE WITH: -->
+                                        <div class="flits-row">
+                                                <div class="flits-col-md-12 flits-order-item-title" title="{{ item.title }}">
+                                                    {{ item.title }}<a class="flits-row-order-item-name" href="{{ item.url }}"><small> – view product page</small></a>
+                                                </div>
+                                        </div>
+                                        <!-- END PLANBEE CUSTOM CODE -->
                                         <div class="flits-row flits-m-t-10">
                                             <div class="flits-col-md-12 flits-order-item-price">
                                                 {{ item.price | money }}
@@ -346,6 +354,9 @@
                                     <button class="flits-hidden flits-btn-inline flits-btn-primary flits-btn-custom flits-order-details-btn flits-btn" data-show-text="{{ 'flits.order_page.show_order_details' | t }}" data-hide-text="{{ 'flits.order_page.hide_order_details' | t }}">{{ 'flits.order_page.show_order_details' | t }}</button>
                                     Replace with custom styled button: -->
                                     <button class="flits-hidden flits-btn-inline flits-order-details-btn flits-btn button-primary" data-show-text="{{ 'flits.order_page.show_order_details' | t }}" data-hide-text="{{ 'flits.order_page.hide_order_details' | t }}">{{ 'flits.order_page.show_order_details' | t }}</button>
+                                    <!-- PLANBEE INVOICE AND ORDER DOWNLOAD BUTTONS -->
+                                    <button type="submit" class="flits-btn-inline flits-btn button-primary" onclick="window.location.href = 'https://planbee-primary-resources.fetchapp.com/orders?email={{ order.email }}&number={{ order.name }}&submit=true';">Download resources {{ order.name }}</button>
+                                    <button type="submit" class="flits-btn-inline flits-btn button-primary" onclick="window.location.href = '/apps/invoice-printer/print/fWAV0G5shNvOn3cvMrOo/{{ order.id | times: 19 }}';">Download PDF invoice</button>
                                     <!-- PLANBEE CUSTOM CODE ENDS -->
 
                                     {% if shop.metafields.Flits.IS_REORDER_ENABLE and shop.metafields.Flits.IS_REORDER_ENABLE == 1 %}
@@ -360,10 +371,11 @@
                         </div>
                         <div class="flits-order-address-details-row" style="display: none;">
                             <div class="flits-row flits-m-t-15">
+                                <!-- PLANBEE - COMMENT OUT
                                 <div class="flits-col-md-6 flits-col-sm-6 flits-col-xs-12 flits-order-shipping-address">
                                     <h4 class="flits-text-left">{{ 'flits.order_page.shipping_address' | t }}</h4>
                                     {{ order.shipping_address | format_address }}
-                                </div>
+                                </div> -->
                                 <div class="flits-col-md-6  flits-col-sm-6 flits-col-xs-12 flits-sm-m-t-15  flits-order-billing-address">
                                     <h4 class="flits-text-left">{{ 'flits.order_page.billing_address' | t }}</h4>
                                     {{ order.billing_address | format_address }}
@@ -384,14 +396,15 @@
                                     {% endfor %}
                                     {% for tax_line in order.tax_lines %}
                                     <div class="flits-row flits-order-tax">
-                                        <div class="flits-col-md-6 flits-col-sm-6 flits-col-xs-6 flits-text-left">{{ tax_line.title }} {{ tax_line.rate | times: 100 }}%</div>
-                                        <div class="flits-col-md-6 flits-col-sm-6 flits-col-xs-6 flits-text-right">{{ tax_line.price | money }}</div>
+                                        <div class="flits-col-md-6 flits-col-sm-6 flits-col-xs-6 flits-text-left">(Inclusive of {{ tax_line.title }} @ {{ tax_line.rate | times: 100 }}%)</div>
+                                        <div class="flits-col-md-6 flits-col-sm-6 flits-col-xs-6 flits-text-right">({{ tax_line.price | money }})</div>
                                     </div>
                                     {% endfor %}
+                                    <!-- PLANBEE - COMMENT OUT
                                     <div class="flits-row flits-order-shipping-price">
                                         <div class="flits-col-md-6 flits-col-sm-6 flits-col-xs-6 flits-text-left">{{ 'flits.order_page.shipping_and_handling' | t }}</div>
                                         <div class="flits-col-md-6 flits-col-sm-6 flits-col-xs-6 flits-text-right">{{ order.shipping_price | money }}</div>
-                                    </div>
+                                    </div> -->
 
                                     <div class="flits-row flits-order-grand-total">
                                         <div class="flits-col-md-6 flits-col-sm-6 flits-col-xs-6 flits-text-left">{{ 'flits.order_page.grand_total' | t }}</div>

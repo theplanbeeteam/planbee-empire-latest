@@ -1946,7 +1946,7 @@ a.flits-list-group-item:hover, a.flits-list-group-item:focus {
 }
 
 .flits-list-group {
-  margin-top: 15px;
+  padding-top: 15px;
   margin-bottom: 15px;
   padding-left: 0
 }
@@ -2476,4 +2476,11 @@ a.flits-btn:hover, a.flits-btn:focus, a.flits-btn:active {
   -moz-filter: blur(1px);
   -o-filter: blur(1px);
   -ms-filter: blur(1px)
+}
+
+/* PLANBEE CUSTOM CODE: OVERRIDES */
+
+.flits-row-order-item-name {
+  text-decoration: none;
+  color: #02c3e7;
 }
