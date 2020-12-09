@@ -1,0 +1,66 @@
+<article class="site-page" data-template-page>
+  <header class="page-masthead">
+    <h1 class="page-title">
+      {{ page.title }}
+    </h1>
+  </header>
+
+  {% if page.content != blank %}
+    <div class="page-content rte">
+      {{ page.content }}
+    </div>
+  {% endif %}
+
+  <div class="container" style="max-width: 1400px; padding: 0 25px; margin: 0 auto;">
+    <input type="text" id="myDownloadsInput" onkeyup="myDownloadsFunction()" placeholder="Search your downloads…" title="Search Downloads">
+
+    <table id="myDownloadsTable">
+      <tr class="header">
+        <th style="min-width: 130px; max-width:10%; border-bottom: 0;">Order #</th>
+        <th style="min-width: 130px; max-width:10%; border-bottom: 0;">Date</th>
+        <th style="width:80%;">Resources</th>
+      </tr>
+      {% for order in customer.orders %}
+      {% assign line_item_by_title = order.line_items | sort: "title" %}
+      {% for line_item in line_item_by_title %}
+      <tr>
+        <td>
+          {% if forloop.first == true %}
+          <a href="https://planbee-primary-resources.fetchapp.com/orders?email={{ order.email }}&number={{ order.name }}&submit=true" target="_blank">{{ order.name }}</a>
+          {% endif %}
+        </td>
+        <td style="color: #707070; font-style: italic;">
+          {% if forloop.first == true %}
+          {{ order.created_at | date: "%d %b %Y" }}
+          {% endif %}
+        </td>
+        <td>
+          {{ line_item.title }}
+        </td>
+      </tr>
+      {% endfor %}
+      {% endfor %}
+    </table>
+  </div>
+</article>
+
+<script>
+  function myDownloadsFunction() {
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("myDownloadsInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myDownloadsTable");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[2];
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }
+    }
+  }
+</script>
