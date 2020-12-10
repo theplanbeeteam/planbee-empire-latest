@@ -291,7 +291,7 @@
   function SAWCheckout() {
     var noteAttributes = [];
     var attributesList = document.querySelectorAll("[name^='attributes']");
-    
+
     Array.prototype.forEach.call(attributesList, function(el) {
       if (el.value == "") return;
 
@@ -412,6 +412,7 @@ for (var i = 0; i < inputElements.length; i++) {
   font-weight: bold;
   display: inline-block;
   margin-top: 5px;
+  color: #ff6347;
 }
 
 .sam-add-address-error, a.sam-add-address-error:visited {
@@ -421,11 +422,11 @@ for (var i = 0; i < inputElements.length; i++) {
 }
 
 .saso-use-discount-code-cart-code {
-  display: inline !important;
+  display: none;
   width: 10em !important;
 }
 .saso-use-discount-code-cart-apply {
-  display: inline !important;
+  display: none;
 }
 </style>
 {% endif %}

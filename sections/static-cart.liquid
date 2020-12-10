@@ -63,7 +63,7 @@
   <header class="cart-title">
     <div class="cart-title-left">
       <h1>{{ 'cart.general.your_cart' | t }}</h1>
-
+{% comment %}
       {% if has_items %}
         <div class="cart-title-total--small"></div>
       {% endif %}
@@ -82,7 +82,7 @@
             </div>
           </div>
 
-          <button
+          <!-- <button
             class="button-primary cart-title-button"
             name="checkout"
             type="submit"
@@ -94,16 +94,17 @@
               {% render 'icon-cart' %}
             {% endif %}
             {{ 'cart.general.checkout' | t }}
-          </button>
+          </button> -->
         {% elsif show_continue_link %}
           {{ continue_link_html }}
         {% endif %}
       </div>
     {% endif %}
+{% endcomment %}
   </header>
 
   <section class="cartitems--container {% if has_sidebar %}has-sidebar{% endif %}">
-    <div class="cartitems">
+    <div class="cartitems" style="margin-bottom: 20px;">
       {% if has_items %}
         {%
           render 'cart-item-list',
@@ -121,7 +122,7 @@
             </div>
           {% endif %}
 
-          <div class="cart-final-total">
+          <div class="cart-final-total pb-cart-final-total">
             <ul class="discount-list" data-cart-discounts aria-label="{{ 'product.general.discounts' | t }}">
               {%
                 render 'cart-discounts',
@@ -135,7 +136,7 @@
             </div>
           </div>
 
-          <div class="cart-shipping">
+          <div class="cart-shipping pb-cart-final-total">
             {% if cart.requires_shipping %}
               {{ 'cart.general.shipping_at_checkout' | t }}
             {% else %}
@@ -149,6 +150,17 @@
               {% render 'cart-shipping' %}
             {% endif %}
           </div>
+
+          <!-- PLANBEE CUSTOM CODE -->
+          <div>
+            {% unless customer.tags contains 'net15' or customer.tags contains 'net30' or customer.tags contains 'net45' or customer.tags contains 'net60' %}
+            {% render 'flits_snippet' with 'cart_use_credit_select' %}
+            {% endunless %}
+          </div>
+
+			{% render 'saw_netterms' %} <br>
+      <!-- Optionally, render the snippet 'pb-cart-promo' here. -->
+      <!-- PLANBEE CUSTOM CODE END -->
 
           <div class="cart-checkout">
             <button
@@ -164,6 +176,8 @@
               {% endif %}
               {{ 'cart.general.checkout' | t }}
             </button>
+
+<!-- Optionally, render the snippet 'pb-promo-reminder' here. -->
 
             {% if additional_checkout_buttons %}
               <div class="additional-checkout-buttons">

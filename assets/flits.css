@@ -455,8 +455,8 @@
   width: 30px;
   height: 30px;
   font-size: 15px;
-  padding-left: 9px !important;
-  padding-top: 3px !important;
+  padding-left: 8.5px !important;
+  padding-top: 6px !important;
   background: gray;
   color: white !important;
   z-index: 10 !important;
@@ -478,8 +478,8 @@
 }
 
 .flits-addresses-ul li:hover span.flits-remove-address-btn {
-  border: 1px solid black;
-  background: black;
+  /* border: 1px solid black; */
+  background: #FF6347;
   opacity: 1
 }
 
@@ -725,15 +725,18 @@
 }
 
 .flits-credit-page .flits-credit-balance .flits-card-box.flits-earned-credits-div {
-  border-color: #5fbeaa !important
+  background-color: #ffe4b5;
+  border: 0;
 }
 
 .flits-credit-page .flits-credit-balance .flits-card-box.flits-spent-credits-div {
-  border-color: #4c5667 !important
+  background-color: #ffe4b5;
+  border: 0;
 }
 
 .flits-credit-page .flits-credit-balance .flits-card-box.flits-current-credits-div {
-  border-color: #d9534f !important
+  background-color: #ffe4b5;
+  border: 0;
 }
 
 @media only screen and (max-width: 992px) {
@@ -763,7 +766,7 @@
 
 .flits-credit-history-empty {
   height: 350px;
-  position: relative
+  position: relative;
 }
 
 .flits-credit-history-empty .flits-empty-history {
@@ -774,7 +777,7 @@
   -o-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%)
+  transform: translate(-50%, -50%);
 }
 
 .flits-credit-history-empty .flits-empty-history .flits-empty-history-msg {
@@ -844,7 +847,9 @@
 }
 
 .flits-credit-history.flits-card-box {
-  border-color: #4c5667 !important
+  border-color: #4c5667 !important;
+  background-color: #e9e9e9 !important;
+  border: 0 !important;
 }
 
 #flits-page-top-ordered-products .flits-loading-icon {
@@ -1942,7 +1947,8 @@ a.flits-list-group-item:hover, a.flits-list-group-item:focus {
 .flits-list-group-item:last-child {
   margin-bottom: 0;
   border-bottom-right-radius: 5px;
-  border-bottom-left-radius: 5px
+  border-bottom-left-radius: 5px;
+  text-decoration: none;
 }
 
 .flits-list-group {

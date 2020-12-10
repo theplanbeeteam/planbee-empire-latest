@@ -12,7 +12,7 @@
         <input type="hidden" name="flits-order-tracking-domain" value="{{ shop.metafields.Flits.ORDER_TRACKING_DOMAIN }}" id="flits-order-tracking-domain">
         <div class="flits-hidden">
             <li class='flits-card-box' id="flits-customer-address-template">
-                <span class="flits-remove-address-btn" data-form-id="{{ customer.default_address.id }}" data-confirm-message="{{ 'flits.address_page.delete_confirm' | t }}">X</span>
+                <span class="flits-remove-address-btn" data-form-id="{{ customer.default_address.id }}" data-confirm-message="{{ 'flits.address_page.delete_confirm' | t }}">✕</span>
                 <div class="flits-address">
                     <div class="flits-row">
                         <div class="flits-col-md-12 flits-text-center">
@@ -41,8 +41,8 @@
                             </div>
                         </div>
                         <div class='flits-row flits-city-row'>
-                            <div class='flits-col-md-12 flits-content' title="{{ customer.default_address.zip }} {{ customer.default_address.city }} {{ customer.default_address.province_code }}">
-                                {{ customer.default_address.zip }} {{ customer.default_address.city }} {{ customer.default_address.province_code }}
+                            <div class='flits-col-md-12 flits-content' title="{{ customer.default_address.city }} {{ customer.default_address.zip }}">
+                                {{ customer.default_address.city }} {{ customer.default_address.zip }}
                             </div>
                         </div>
                         <div class='flits-row flits-country-row'>
@@ -53,7 +53,7 @@
                     </div>
                     <div class='flits-row flits-m-t-20 flits-text-center'>
                         <div class="flits-col-md-6 flits-col-sm-6 flits-col-xs-6 flits-col-md-offset-3 flits-col-sm-offset-3 flits-col-xs-offset-3">
-                            <button type="button" class="flits-btn-inline flits-btn-custom flits-btn-default flits-btn flits-full-width flits-btn-small flits-edit-address-btn" data-form-id="{{ customer.default_address.id }}">{{ 'flits.address_page.edit' | t }}</button>
+                            <button type="button" class="flits-btn-inline flits-btn-default flits-full-width flits-btn-small flits-edit-address-btn flits-btn button-secondary" data-form-id="{{ customer.default_address.id }}">{{ 'flits.address_page.edit' | t }}</button>
                         </div>
                     </div>
                 </div>
@@ -95,6 +95,7 @@
             <div class="flits-nav flits-h-full">
                 <div class="flits-list-group">
                     <a disabled data-type="flits" data-href="#flits-page-profile" data-toggle='page' class="flits-list-group-item flits-bg-theme">{{ 'flits.navigation.profile' | t }}</a>
+                    <a disabled data-type="flits" data-href="#flits-page-myDownloads" data-toggle='page' class="flits-list-group-item flits-bg-theme">My Downloads</a>
                     <a disabled data-type="flits" data-href="#flits-page-orders" data-toggle='page' class="flits-list-group-item active flits-bg-theme">{{ 'flits.navigation.my_orders' | t }}</a>
                     <a disabled data-type="flits" data-href="#flits-page-address" data-toggle='page' class="flits-list-group-item flits-bg-theme">{{ 'flits.navigation.delivery_address' | t }}</a>
                     {% if shop.metafields.Flits.is_store_credit_enable == 0 or shop.metafields.Flits.IS_STORE_CREDIT_PAID == 0 %}
@@ -143,33 +144,38 @@
                     <form data-action="profile_save" id="flits-form-profile" method="post">
                         <div class="flits-row">
                             <div class="flits-col-md-6">
-                                <label>{{ 'flits.profile_page.first_name' | t }}:</label>
+                                <label class="pb-flits-form-label">{{ 'flits.profile_page.first_name' | t }}:</label>
                                 <label class="flits-hide-profile-edit">{{ customer.first_name }}</label>
-                                <input type="text" name="first_name" class="flits-hidden flits-hide-profile-cancel" value="{{ customer.first_name }}">
+                                <input type="text" name="first_name" class="flits-hidden flits-hide-profile-cancel pb-flits-form-field" value="{{ customer.first_name }}">
                             </div>
                         </div>
                         <div class="flits-row flits-m-t-15">
                             <div class="flits-col-md-6">
-                                <label>{{ 'flits.profile_page.last_name' | t }}:</label>
+                                <label class="pb-flits-form-label">{{ 'flits.profile_page.last_name' | t }}:</label>
                                 <label class="flits-hide-profile-edit">{{ customer.last_name }}</label>
-                                <input type="text" name="last_name" class="flits-hidden flits-hide-profile-cancel" value="{{ customer.last_name }}">
+                                <input type="text" name="last_name" class="flits-hidden flits-hide-profile-cancel pb-flits-form-field" value="{{ customer.last_name }}">
                             </div>
                         </div>
                         <div class="flits-row flits-m-t-15">
                             <div class="flits-col-md-6">
-                                <label>{{ 'flits.profile_page.email' | t }}:</label>
+                                <label class="pb-flits-form-label">{{ 'flits.profile_page.email' | t }}:</label>
                                 <label class="flits-hide-profile-edit">{{ customer.email }}</label>
-                                <input type="email" readonly="" class="flits-hidden flits-hide-profile-cancel" value="{{ customer.email }}" name="email">
+                                <input type="email" readonly="" class="flits-hidden flits-hide-profile-cancel pb-flits-form-field" value="{{ customer.email }}" name="email">
                             </div>
                         </div>
                         <div class="flits-row flits-m-t-15">
                             <div class="flits-col-md-6">
-                                <label>{{ 'flits.profile_page.contact_no' | t }}:</label>
+                                <label class="pb-flits-form-label">{{ 'flits.profile_page.contact_no' | t }}:</label>
                                 <label class="flits-hide-profile-edit">{{ customer.phone }}</label>
-                                <input type="text" name="phone" class="flits-hidden flits-hide-profile-cancel"  value="{{ customer.phone }}">
+                                <input type="text" name="phone" class="flits-hidden flits-hide-profile-cancel pb-flits-form-field"  value="{{ customer.phone }}">
                             </div>
                         </div>
                         <div class="flits-row flits-m-t-15">
+                          <div class="flits-col-md-9">
+                            <p style="padding-left: 15px;"><small>Need to change your email address? <a href="/pages/contact-us">Get in contact</a> and we'll change it for you.</small></p/>
+                          </div>
+                        </div>
+                        <!-- <div class="flits-row flits-m-t-15">
                             <div class="flits-col-md-6">
                                 <label>{{ 'flits.profile_page.birthdate' | t }}:</label>
                                 <label class="flits-hide-profile-edit">{{ customer.metafields.Flits.birthdate }}</label>
@@ -192,22 +198,22 @@
                                     </select>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         {% render 'flits_refer_friend_snippet' with 'referred_by' %}
                         <div class="flits-row flits-m-t-10 flits-edit-button-row">
                             <div class="flits-col-md-2">
                                 <label>&nbsp;</label>
-                                <button type="button" data-type="flits" class='flits-btn-inline flits-btn-block flits-btn flits-btn-default flits-btn-custom flits-profile-edit-button' disabled>{{ 'flits.buttons.edit' | t }}</button>
+                                <button type="button" data-type="flits" class='flits-btn-inline flits-btn-block flits-btn flits-profile-edit-button button-secondary' disabled>{{ 'flits.buttons.edit' | t }}</button>
                             </div>
                         </div>
                         <div class="flits-row flits-m-t-10 flits-save-button-row flits-hidden">
                             <div class="flits-col-md-2">
                                 <label>&nbsp;</label>
-                                <button type="button" data-type="flits" class='flits-btn-inline flits-btn-block flits-btn-danger flits-btn-custom flits-profile-cancel-button flits-btn' disabled>{{ 'flits.buttons.cancel' | t }}</button>
+                                <button type="button" data-type="flits" class='flits-btn-inline flits-btn-block flits-profile-cancel-button flits-btn button-secondary' disabled>{{ 'flits.buttons.cancel' | t }}</button>
                             </div>
                             <div class="flits-col-md-2">
                                 <label>&nbsp;</label>
-                                <button type="submit" data-type="flits" class='flits-btn-inline flits-btn-block flits-btn-primary flits-btn-custom  flits-btn' disabled>{{ 'flits.buttons.save' | t }}</button>
+                                <button type="submit" data-type="flits" class='flits-btn-inline flits-btn-block flits-btn button-primary' disabled>{{ 'flits.buttons.save' | t }}</button>
                             </div>
                         </div>
                     </form>
@@ -355,7 +361,9 @@
                                     Replace with custom styled button: -->
                                     <button class="flits-hidden flits-btn-inline flits-order-details-btn flits-btn button-primary" data-show-text="{{ 'flits.order_page.show_order_details' | t }}" data-hide-text="{{ 'flits.order_page.hide_order_details' | t }}">{{ 'flits.order_page.show_order_details' | t }}</button>
                                     <!-- PLANBEE INVOICE AND ORDER DOWNLOAD BUTTONS -->
-                                    <button type="submit" class="flits-btn-inline flits-btn button-primary" onclick="window.location.href = 'https://planbee-primary-resources.fetchapp.com/orders?email={{ order.email }}&number={{ order.name }}&submit=true';">Download resources {{ order.name }}</button>
+                                    &nbsp;
+                                    <button type="submit" class="flits-btn-inline flits-btn button-primary" onclick="window.location.href = 'https://planbee-primary-resources.fetchapp.com/orders?email={{ order.email }}&number={{ order.name }}&submit=true';">Download resources</button>
+                                    &nbsp;
                                     <button type="submit" class="flits-btn-inline flits-btn button-primary" onclick="window.location.href = '/apps/invoice-printer/print/fWAV0G5shNvOn3cvMrOo/{{ order.id | times: 19 }}';">Download PDF invoice</button>
                                     <!-- PLANBEE CUSTOM CODE ENDS -->
 
@@ -380,19 +388,38 @@
                                     <h4 class="flits-text-left">{{ 'flits.order_page.billing_address' | t }}</h4>
                                     {{ order.billing_address | format_address }}
                                 </div>
+                                <div class="flits-col-md-6 flits-col-sm-6 flits-col-xs-12 flits-order-shipping-address">
+                                    <h4 class="flits-text-left">Contact Information</h4>
+                                    <p>{{ customer.phone }}</p>
+                                    <p>{{ customer.email }}</p>
+                                    <h4 class="flits-text-left">Order Note</h4>
+                                    <div style="border-radius: 5px; border: 1px solid #ddd; padding: 0 10px; margin: 10px 0; background-color: #fff; text-align: top;">
+                                      <p>{{ order.note }}</p>
+                                    </div>
+                                </div>
                             </div>
                             <div class="flits-row flits-order-cost-breakup">
                                 <div class="flits-col-md-12">
                                     <h4 class="flits-text-left">{{ 'flits.order_page.cost_breakup' | t }}</h4>
                                     <div class="flits-row flits-order-subtotal">
-                                        <div class="flits-col-md-6  flits-col-sm-6 flits-col-xs-6 flits-text-left">{{ 'flits.order_page.subtotal' | t }}</div>
+                                        <div class="flits-col-md-6  flits-col-sm-6 flits-col-xs-6 flits-text-left">{{ 'flits.order_page.subtotal' | t }} <small>(line items)</small></div>
                                         <div class="flits-col-md-6 flits-col-sm-6 flits-col-xs-6 flits-text-right">{{ order_line_item_price | money }}</div>
                                     </div>
                                     {% for discount in order.discounts %}
                                     <div class="flits-row flits-order-discount">
-                                        <div class="flits-col-md-6 flits-col-sm-6 flits-col-xs-6 flits-text-left">{{ 'flits.order_page.discount_code' | t }}: {{ discount.code }} </div>
-                                        <div class="flits-col-md-6 flits-col-sm-6 flits-col-xs-6 flits-text-right">{{ discount.savings | money }}</div>
+                                        <div class="flits-col-md-6 flits-col-sm-6 flits-col-xs-6 flits-text-left">{{ 'flits.order_page.discount_code' | t }}
+                                          {% for discount_application in order.discount_applications %}
+                                          <img src="{{ 'notifications/discounttag.png' | shopify_asset_url }}" width="10" height="10" class="discount-tag-icon" /> <small>{{ discount_application.title | upcase }}</small>
+                                          {% endfor %}
+                                        </div>
+                                        <div class="flits-col-md-6 flits-col-sm-6 flits-col-xs-6 flits-text-right">-{{ discount.amount | money }}</div>
                                     </div>
+                                    {% unless discount.id %}
+                                    <div class="flits-row flits-order-subtotal">
+                                        <div class="flits-col-md-6  flits-col-sm-6 flits-col-xs-6 flits-text-left">{{ 'flits.order_page.subtotal' | t }} <small>(post-discount)</small></div>
+                                        <div class="flits-col-md-6 flits-col-sm-6 flits-col-xs-6 flits-text-right">{{ order_line_item_price | minus: discount.amount | money }}</div>
+                                    </div>
+                                    {% endunless %}
                                     {% endfor %}
                                     {% for tax_line in order.tax_lines %}
                                     <div class="flits-row flits-order-tax">
@@ -487,7 +514,7 @@
                     </div>
                     <div class='flits-row'>
                         <div class='flits-col-md-12 flits-text-right'>
-                            <button type="button" class="flits-btn flits-btn-danger flits-btn-custom flits-hidden flits-new-address-cancel-btn">{{ 'flits.buttons.cancel' | t }}</button>
+                            <button type="button" class="flits-btn flits-hidden flits-new-address-cancel-btn button-secondary">{{ 'flits.buttons.cancel' | t }}</button>
                             <button style='display:none;' type="button" class="flits-btn flits-btn-primary flits-btn-custom flits-new-address-btn flits-hidden">{{ 'flits.address_page.add_a_new_address' | t }}</button>
                         </div>
                     </div>
@@ -498,47 +525,47 @@
                         <div class='flits-row'>
                             <div class='flits-col-md-6'>
                                 <label for="AddressFirstNameNew">{{ 'flits.address_page.first_name' | t }}</label>
-                                <input class='flits-full-width' type="text" id="AddressFirstNameNew" name="address[first_name]" value="{{ form.first_name }}">
+                                <input class='flits-full-width pb-flits-form-field' type="text" id="AddressFirstNameNew" name="address[first_name]" value="{{ form.first_name }}">
                             </div>
                             <div class='flits-col-md-6 flits-sm-m-t-15'>
                                 <label for="AddressLastNameNew">{{ 'flits.address_page.last_name' | t }}</label>
-                                <input class='flits-full-width' type="text" id="AddressLastNameNew" name="address[last_name]" value="{{ form.last_name }}">
+                                <input class='flits-full-width pb-flits-form-field' type="text" id="AddressLastNameNew" name="address[last_name]" value="{{ form.last_name }}">
                             </div>
                         </div>
                         <div class='flits-row flits-m-t-15'>
                             <div class='flits-col-md-12'>
                                 <label for="AddressAddress1New">{{ 'flits.address_page.address1' | t }}</label>
-                                <input class='flits-full-width' type="text" id="AddressAddress1New" name="address[address1]" value="{{ form.address1 }}">
+                                <input class='flits-full-width pb-flits-form-field' type="text" id="AddressAddress1New" name="address[address1]" value="{{ form.address1 }}">
                             </div>
                         </div>
                         <div class='flits-row flits-m-t-15'>
                             <div class='flits-col-md-12'>
                                 <label for="AddressAddress2New">{{ 'flits.address_page.address2' | t }}</label>
-                                <input class='flits-full-width' type="text" id="AddressAddress2New" name="address[address2]" value="{{ form.address2 }}">
+                                <input class='flits-full-width pb-flits-form-field' type="text" id="AddressAddress2New" name="address[address2]" value="{{ form.address2 }}">
                             </div>
                         </div>
                         <div class='flits-row flits-m-t-15'>
                             <div class='flits-col-md-4'>
                                 <label for="AddressCompanyNew">{{ 'flits.address_page.company' | t }}</label>
-                                <input class='flits-full-width' type="text" id="AddressCompanyNew" name="address[company]" value="{{ form.company }}">
+                                <input class='flits-full-width pb-flits-form-field' type="text" id="AddressCompanyNew" name="address[company]" value="{{ form.company }}">
                             </div>
                             <div class='flits-col-md-4 flits-sm-m-t-15'>
                                 <label for="AddressZipNew">{{ 'flits.address_page.zip' | t }}</label>
-                                <input class='flits-full-width' type="text" id="AddressZipNew" name="address[zip]" value="{{ form.zip }}" autocapitalize="characters">
+                                <input class='flits-full-width pb-flits-form-field' type="text" id="AddressZipNew" name="address[zip]" value="{{ form.zip }}" autocapitalize="characters">
                             </div>
                             <div class='flits-col-md-4 flits-sm-m-t-15'>
                                 <label for="AddressPhoneNew">{{ 'flits.address_page.phone' | t }}</label>
-                                <input class='flits-full-width' type="tel" id="AddressPhoneNew" name="address[phone]" value="{{ form.phone }}">
+                                <input class='flits-full-width pb-flits-form-field' type="tel" id="AddressPhoneNew" name="address[phone]" value="{{ form.phone }}">
                             </div>
                         </div>
                         <div class='flits-row flits-m-t-15'>
                             <div class='flits-col-md-4'>
                                 <label for="AddressCityNew">{{ 'flits.address_page.city' | t }}</label>
-                                <input class='flits-full-width' type="text" id="AddressCityNew" name="address[city]" value="{{ form.city }}">
+                                <input class='flits-full-width pb-flits-form-field' type="text" id="AddressCityNew" name="address[city]" value="{{ form.city }}">
                             </div>
                             <div class='flits-col-md-4 flits-sm-m-t-15'>
                                 <label for="AddressCountryNew">{{ 'flits.address_page.country' | t }}</label>
-                                <select class='flits-full-width' id="AddressCountryNew" name="address[country]" data-default="{{ form.country }}">{{ country_option_tags }}</select>
+                                <select class='flits-full-width pb-flits-form-field' style="height: 34px;" id="AddressCountryNew" name="address[country]" data-default="{{ form.country }}">{{ country_option_tags }}</select>
                             </div>
                             <div class='flits-col-md-4  flits-sm-m-t-15' id="AddressProvinceContainerNew" style="display:none">
                                 <label for="AddressProvinceNew">{{ 'flits.address_page.province' | t }}</label>
@@ -553,8 +580,8 @@
                         </div>
                         <div class='flits-row flits-m-t-15'>
                             <div class='flits-col-md-12 flits-text-right'>
-                                <button type="button" class="flits-btn flits-btn-danger flits-btn-custom flits-new-address-cancel-btn flits-btn-inline flits-btn">{{ 'flits.address_page.cancel' | t }}</button>
-                                <button type='submit' data-add-text="{{ 'flits.address_page.add_address' | t }}" data-update-text="{{ 'flits.address_page.save_address' | t }}" class="flits-btn-inline flits-btn flits-btn-primary flits-btn-custom flits-btn">{{ 'flits.address_page.add_address' | t }}</button>
+                                <button type="button" class="flits-new-address-cancel-btn flits-btn-inline flits-btn button-secondary">{{ 'flits.address_page.cancel' | t }}</button>
+                                <button type='submit' data-add-text="{{ 'flits.address_page.add_address' | t }}" data-update-text="{{ 'flits.address_page.save_address' | t }}" class="flits-btn-inline flits-btn button-primary">{{ 'flits.address_page.add_address' | t }}</button>
                             </div>
                         </div>
                         {% endform %}
@@ -578,7 +605,7 @@
                                 data-id="{{ customer.default_address.id }}"
                                 data-default="true"
                                 >
-                                <span class="flits-remove-address-btn" data-form-id="{{ customer.default_address.id }}" data-confirm-message="{{ 'flits.address_page.delete_confirm' | t }}">X</span>
+                                <span class="flits-remove-address-btn" data-form-id="{{ customer.default_address.id }}" data-confirm-message="{{ 'flits.address_page.delete_confirm' | t }}">✕</span>
                                 <div class="flits-address">
                                     <div class='flits-row'>
                                         <div class='flits-col-md-12 flits-text-center'>
@@ -607,8 +634,8 @@
                                             </div>
                                         </div>
                                         <div class='flits-row flits-city-row'>
-                                            <div class='flits-col-md-12 flits-content' title="{{ customer.default_address.zip }} {{ customer.default_address.city }} {{ customer.default_address.province_code }}">
-                                                {{ customer.default_address.zip }} {{ customer.default_address.city }} {{ customer.default_address.province_code }}
+                                            <div class='flits-col-md-12 flits-content' title="{{ customer.default_address.city }} {{ customer.default_address.zip }}">
+                                                {{ customer.default_address.city }} {{ customer.default_address.zip }}
                                             </div>
                                         </div>
                                         <div class='flits-row flits-country-row'>
@@ -619,7 +646,7 @@
                                     </div>
                                     <div class='flits-row flits-m-t-20 flits-text-center'>
                                         <div class="flits-col-md-6 flits-col-sm-6 flits-col-xs-6 flits-col-md-offset-3 flits-col-sm-offset-3 flits-col-xs-offset-3">
-                                            <button type="button" class="flits-btn-inline flits-btn-default flits-btn-custom flits-full-width flits-btn-small flits-edit-address-btn flits-btn" data-form-id="{{ customer.default_address.id }}">{{ 'flits.address_page.edit' | t }}</button>
+                                            <button type="button" class="flits-btn-inline flits-btn-default flits-full-width flits-btn-small flits-edit-address-btn flits-btn button-secondary" data-form-id="{{ customer.default_address.id }}">{{ 'flits.address_page.edit' | t }}</button>
                                         </div>
                                     </div>
                                 </div>
@@ -646,7 +673,7 @@
                                 data-id="{{ address.id }}"
                                 data-default="false"
                                 >
-                                <span class="flits-remove-address-btn" data-form-id="{{ address.id }}" data-confirm-message="{{ 'flits.address_page.delete_confirm' | t }}">X</span>
+                                <span class="flits-remove-address-btn" data-form-id="{{ address.id }}" data-confirm-message="{{ 'flits.address_page.delete_confirm' | t }}">✕</span>
                                 <div class="flits-address">
                                     <div class='flits-row'>
                                         <div class='flits-col-md-12 flits-text-center'>
@@ -675,8 +702,8 @@
                                             </div>
                                         </div>
                                         <div class='flits-row flits-city-row'>
-                                            <div class='flits-col-md-12 flits-content'  title="{{ address.zip }} {{ address.city }} {{ address.province_code }}">
-                                                {{ address.zip }} {{ address.city }} {{ address.province_code }}
+                                            <div class='flits-col-md-12 flits-content'  title="{{ address.city }} {{ address.zip }}">
+                                                {{ address.city }} {{ address.zip }}
                                             </div>
                                         </div>
                                         <div class='flits-row flits-country-row'>
@@ -687,7 +714,7 @@
                                     </div>
                                     <div class='flits-row flits-m-t-20 flits-text-center'>
                                         <div class="flits-col-md-6 flits-col-sm-6 flits-col-xs-6 flits-col-md-offset-3 flits-col-sm-offset-3 flits-col-xs-offset-3">
-                                            <button type="button" class="flits-btn-inline flits-btn flits-btn-default flits-btn-custom flits-btn flits-full-width flits-btn-small flits-edit-address-btn" data-form-id="{{ address.id }}">{{ 'flits.address_page.edit' | t }}</button>
+                                            <button type="button" class="flits-btn-inline flits-btn-default flits-full-width flits-btn-small flits-edit-address-btn flits-btn button-secondary" data-form-id="{{ address.id }}">{{ 'flits.address_page.edit' | t }}</button>
                                         </div>
                                     </div>
                                 </div>
@@ -858,11 +885,11 @@
                                             <select style="width:100%;" class="product-variant-options flits-product-variant-options" name="id">
 
                                             </select>
-                                            <div class="flits-product-quantity">
+                                            <!-- <div class="flits-product-quantity">
                                                 <input type="text" class="flits-product-quantity-num flits-product-quantity" value="1" min="1" name="quantity">
                                                 <span class="flits-product-quantity-adjuster flits-product-quantity-add" >+</span>
                                                 <span class="flits-product-quantity-adjuster flits-product-quantity-minus">-</span>
-                                            </div>
+                                            </div> -->
                                         </div>
                                     </div>
                                     <div class="flits-row flits-m-t-10">
@@ -872,7 +899,7 @@
                                     </div>
                                     <div class="flits-row flits-m-t-10">
                                         <div class="flits-col-md-12 flits-col-sm-12">
-                                            <button type="submit" class="flits-btn flits-btn-default flits-btn-custom flits-btn-block flits-add-to-cart"
+                                            <button type="submit" class="flits-btn flits-btn-block flits-add-to-cart button-primary"
                                                     data-flits-sold-out-text="{{ 'flits.buttons.sold_out' | t }}"
                                                     data-flits-add-to-cart-text="{{ 'flits.buttons.add_to_cart' | t }}">
                                                 {{ 'flits.buttons.add_to_cart' | t }}
@@ -897,21 +924,83 @@
                         <div class="flits-row">
                             <div class="flits-col-md-6">
                                 <label>{{ 'flits.update_password_page.new_password' | t }}:</label>
-                                <input required="" type="password" name="password" style="width:100%" placeholder="{{ 'flits.update_password_page.enter_new_password_here' | t }}">
+                                <input required="" type="password" name="password" style="width:100%" class="pb-flits-form-password" placeholder="{{ 'flits.update_password_page.enter_new_password_here' | t }}">
                             </div>
                         </div>
                         <div class="flits-row flits-m-t-15">
                             <div class="flits-col-md-6">
                                 <label>{{ 'flits.update_password_page.confirm_new_password' | t }}:</label>
-                                <input required="" type="password" name="password_confirmation" style="width:100%" placeholder="{{ 'flits.update_password_page.confirm_your_password_here' | t }}">
+                                <input required="" type="password" name="password_confirmation" style="width:100%" class="pb-flits-form-password" placeholder="{{ 'flits.update_password_page.confirm_your_password_here' | t }}">
                             </div>
                         </div>
                         <div class="flits-row flits-m-t-10">
                             <div class="flits-col-md-6">
-                                <button type="submit" data-type="flits" class='flits-btn-custom flits-btn-default flits-btn-inline btn-primary flits-btn' disabled>{{ 'flits.buttons.update_password' | t }}</button>
+                                <button type="submit" data-type="flits" class='flits-btn-inline btn-primary flits-btn button-primary' disabled>{{ 'flits.buttons.update_password' | t }}</button>
                             </div>
                         </div>
                     </form>
+                </div>
+                <div id="flits-page-myDownloads" data-type="page" class="flits-hidden">
+                    <div class="flits-page-heading">
+                        <span class="flits-back-icon flits-return-to-menu">
+                            {{ 'flits.buttons.back' | t }}
+                        </span>
+                        <span class="flits-heading">
+                            My Downloads
+                        </span>
+                    </div>
+                    <div class="container" style="max-width: 1400px; padding: 0 25px; margin: 0 auto;">
+                      <input type="text" id="myDownloadsInput" onkeyup="myDownloadsFunction()" placeholder="Search by resource name…" title="Search Downloads">
+
+                      <table id="myDownloadsTable">
+                        <tr class="header">
+                          <th style="min-width: 130px; max-width:10%; border-bottom: 0;">Order #</th>
+                          <th style="min-width: 130px; max-width:10%; border-bottom: 0;">Date</th>
+                          <th style="width:80%;">Resources</th>
+                        </tr>
+                        {% for order in customer.orders %}
+                        {% assign line_item_by_title = order.line_items | sort: "title" %}
+                        {% for line_item in line_item_by_title %}
+                        <tr>
+                          <td>
+                            {% if forloop.first == true %}
+                            {{ order.name }}
+                            {% endif %}
+                          </td>
+                          <td style="color: #707070; font-style: italic;">
+                            {% if forloop.first == true %}
+                            {{ order.created_at | date: "%d %b %Y" }}
+                            {% endif %}
+                          </td>
+                          <td>
+                            <a class="pb_order_name" href="https://planbee-primary-resources.fetchapp.com/orders?email={{ order.email }}&number={{ order.name }}&submit=true" target="_blank">{{ line_item.title }}</a>
+                          </td>
+                        </tr>
+                        {% endfor %}
+                        {% endfor %}
+                      </table>
+                    </div>
+
+                    <script>
+                      function myDownloadsFunction() {
+                        var input, filter, table, tr, td, i, txtValue;
+                        input = document.getElementById("myDownloadsInput");
+                        filter = input.value.toUpperCase();
+                        table = document.getElementById("myDownloadsTable");
+                        tr = table.getElementsByTagName("tr");
+                        for (i = 0; i < tr.length; i++) {
+                          td = tr[i].getElementsByTagName("td")[2];
+                          if (td) {
+                            txtValue = td.textContent || td.innerText;
+                            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                              tr[i].style.display = "";
+                            } else {
+                              tr[i].style.display = "none";
+                            }
+                          }
+                        }
+                      }
+                    </script>
                 </div>
                 {% assign total_pages = shop.metafields.Flits.total_pages %}
 

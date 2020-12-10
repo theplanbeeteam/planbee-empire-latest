@@ -8,6 +8,7 @@ width: 100%; /* Full-width */
 font-size: 16px; /* Increase font-size */
 padding: 12px 20px 12px 40px; /* Add some padding */
 border: 1px solid #ddd; /* Add a grey border */
+border-radius: 5px;
 margin-bottom: 12px; /* Add some space below the input */
 }
 
@@ -165,6 +166,51 @@ background-color: #f1f1f1;
 
 .site-footer-wrapper {
   margin-top: 0px;
+}
+
+/* Styles for Flits Account Page */
+
+.pb-flits-form-field {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  line-height: 2;
+  text-indent: 5px;
+  width: 240px;
+  font-family: "Roboto", sans-serif;
+}
+
+.pb-flits-form-label {
+  line-height: 2;
+  text-indent: 5px;
+  padding-left: 16px;
+}
+
+.pb-flits-form-password {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  line-height: 2;
+  text-indent: 5px;
+  width: 240px;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Styles for cart page */
+
+.pb-net-checkout-address-dropdown {
+  line-height:  2;
+  text-indent: 5px;
+  font-family: "Roboto", sans-serif;
+  border-radius: 3px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  height: 36px;
+}
+
+.pb-cart-final-total {
+  max-width: 320px;
 }
 
 /* ------------------------------- OVERRIDES ------------------------------- */
