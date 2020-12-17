@@ -47,7 +47,7 @@
   {% assign WCProduct_ComparePriceMax = base_product.compare_at_price_max %}
   {% assign WCProduct_VariantPrice = base_variant.price %}
   {% assign WCProduct_VariantComparePrice = base_variant.compare_at_price %}
-{% else %}   
+{% else %}
   {% assign WCProduct_Price = saw_variant_price %}
   {% assign WCProduct_PriceMin = base_product.price_min | times: saw_discount %}
   {% assign WCProduct_PriceMax = base_product.price_max | times: saw_discount %}
@@ -271,6 +271,7 @@
         {% if enable_social_sharing and is_product_modal == false %}
           {{ share_buttons | strip_newlines }}
         {% endif %}
+        {% render 'flits_wishlist_snippet' with 'flits_product_page_wsl_btn' %}
       </div>
     </div>
 
