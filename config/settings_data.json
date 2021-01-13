@@ -216,8 +216,8 @@
           "1493143038057-0": {
             "type": "promotion",
             "settings": {
-              "image": "shopify:\/\/shop_images\/Top_Left-min_cb34c740-1684-44d2-92a4-2042d03225ef.png",
-              "title": "Lesson plans and primary resources, ready to teach.",
+              "image": "shopify:\/\/shop_images\/mosaic-Top_Left.jpg",
+              "title": "Lesson plans and primary resources, ready to teach",
               "text": "PlanBee is the hive of fully-prepared lesson planning packs and downloadable classroom resources.",
               "color": "#4d4d4d",
               "block_link": "\/account\/register",
@@ -231,12 +231,12 @@
           "1493143038057-1": {
             "type": "promotion",
             "settings": {
-              "image": "shopify:\/\/shop_images\/Top_Right-min_f098cc70-c58d-4a17-98ac-a43db4e04a2a.png",
-              "title": "Made by teachers.",
-              "text": "Everything we make is written and designed by experienced primary teachers who know what's needed for rich learning experiences.",
+              "image": "shopify:\/\/shop_images\/mosaic-Top_Right.jpg",
+              "title": "Learn at Home Lessons",
+              "text": "Easy to use, ideal to send to parents",
               "color": "#4d4d4d",
-              "block_link": "shopify:\/\/pages\/about-us",
-              "button_text": "MEET THE TEAM",
+              "block_link": "shopify:\/\/collections\/home-learning-teaching-packs",
+              "button_text": "HALF PRICE SALE",
               "button_style": "secondary",
               "show_overlay": false,
               "background": "",
@@ -246,12 +246,13 @@
           "1493143038057-2": {
             "type": "promotion",
             "settings": {
-              "image": "shopify:\/\/shop_images\/Bottom_Left-min.png",
-              "title": "Everything's included.",
-              "text": "Every downloadable lesson pack includes practically everything you need. Plans, slides, worksheets, activities – it's all in there.",
+              "image": "shopify:\/\/shop_images\/mosaic-Bottom_Left.jpg",
+              "title": "Everything's included",
+              "text": "Plans, slides, worksheets, activities – it's all in there.",
               "color": "#4d4d4d",
-              "button_text": "",
-              "button_style": "primary",
+              "block_link": "shopify:\/\/blogs\/news",
+              "button_text": "VIEW BEST SELLERS",
+              "button_style": "secondary",
               "show_overlay": false,
               "background": "",
               "opacity": 50
@@ -260,12 +261,13 @@
           "1493143583401": {
             "type": "promotion",
             "settings": {
-              "image": "shopify:\/\/shop_images\/Bottom_Right-min.png",
-              "title": "Plan less, enjoy more.",
-              "text": "Restore your work-life balance – let us take care of your planning. Whether you're a subject leader, classroom-based or teaching at home, PlanBee resources are fully-prepared and easy to use.",
+              "image": "shopify:\/\/shop_images\/mosaic-Bottom_Right.jpg",
+              "title": "Teach remotely",
+              "text": "Discover how to teach online with fully-prepared planning from PlanBee.",
               "color": "#4d4d4d",
-              "button_text": "",
-              "button_style": "primary",
+              "block_link": "shopify:\/\/blogs\/news",
+              "button_text": "LEARN MORE",
+              "button_style": "secondary",
               "show_overlay": false,
               "background": "",
               "opacity": 50
