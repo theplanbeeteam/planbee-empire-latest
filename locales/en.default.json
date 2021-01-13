@@ -550,7 +550,7 @@
       "phone": "Phone",
       "city": "City",
       "country": "Country",
-      "province": "County/Region/Province",
+      "province": "County\/Region\/Province",
       "set_as_default_address": "Set as default address",
       "cancel": "Cancel",
       "add_address": "Add Address",
