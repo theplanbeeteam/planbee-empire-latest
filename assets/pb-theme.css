@@ -210,7 +210,8 @@ background-color: #f1f1f1;
 }
 
 .pb-cart-final-total {
-  max-width: 320px;
+  max-width: 375px;
+  margin: 0 auto;
 }
 
 /* ------------------------------- OVERRIDES ------------------------------- */
@@ -234,6 +235,12 @@ button.product-form--atc-button.mdc-ripple-surface.mdc-ripple-upgraded {
   min-height: 24px;
   position: relative;
   left: -7px;
+}
+
+/* Account page button overrides */
+#pb-account-btn {
+  min-width: 180px;
+  margin: 0 5px 5px 0;
 }
 
 /* ----------------------------- MEDIA QUERIES ----------------------------- */

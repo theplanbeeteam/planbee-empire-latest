@@ -1,7 +1,7 @@
 {%- comment -%}type_body{%- endcomment -%}
-  
+
 {%- assign fonts_type_body_display = 'auto' -%}
-    
+
   {%- comment -%}Normal{%- endcomment -%}
 
   {%- assign fonts_type_body_family = settings.type_body.family | append: ',' | append: settings.type_body.fallback_families -%}
@@ -13,7 +13,7 @@
 
   {%- assign fonts_type_body_style_italic = settings.type_body | font_modify: 'style', 'italic' | map: 'style' | default: 'italic' -%}
   {{ settings.type_body | font_modify: 'style', 'italic' | font_face: font_display: fonts_type_body_display }}
-  
+
   {%- comment -%}Bolder{%- endcomment -%}
 
   {%- assign fonts_weight_adjustment_default = 700 -%}
@@ -24,12 +24,12 @@
   {%- assign fonts_type_body_weight_bolder = fonts_type_body_bolder.weight | default: fonts_weight_adjustment_default -%}
   {{ fonts_type_body_bolder | font_face: font_display: fonts_type_body_display }}
   {{ fonts_type_body_bolder | font_modify: 'style', 'italic' | font_face: font_display: fonts_type_body_display }}
-    
+
 
 {%- comment -%}type_heading{%- endcomment -%}
-  
+
 {%- assign fonts_type_heading_display = 'auto' -%}
-    
+
   {%- comment -%}Normal{%- endcomment -%}
 
   {%- assign fonts_type_heading_family = settings.type_heading.family | append: ',' | append: settings.type_heading.fallback_families -%}
@@ -41,7 +41,7 @@
 
   {%- assign fonts_type_heading_style_italic = settings.type_heading | font_modify: 'style', 'italic' | map: 'style' | default: 'italic' -%}
   {{ settings.type_heading | font_modify: 'style', 'italic' | font_face: font_display: fonts_type_heading_display }}
-  
+
   {%- comment -%}Bolder{%- endcomment -%}
 
   {%- assign fonts_weight_adjustment_default = 700 -%}
@@ -52,7 +52,7 @@
   {%- assign fonts_type_heading_weight_bolder = fonts_type_heading_bolder.weight | default: fonts_weight_adjustment_default -%}
   {{ fonts_type_heading_bolder | font_face: font_display: fonts_type_heading_display }}
   {{ fonts_type_heading_bolder | font_modify: 'style', 'italic' | font_face: font_display: fonts_type_heading_display }}
-    
+
   {%- comment -%}Lighter{%- endcomment -%}
 
   {%- assign fonts_weight_adjustment_default = 300 -%}
@@ -63,12 +63,12 @@
   {%- assign fonts_type_heading_weight_lighter = fonts_type_heading_lighter.weight | default: fonts_weight_adjustment_default -%}
   {{ fonts_type_heading_lighter | font_face: font_display: fonts_type_heading_display }}
   {{ fonts_type_heading_lighter | font_modify: 'style', 'italic' | font_face: font_display: fonts_type_heading_display }}
-    
+
 
 {%- comment -%}type_button{%- endcomment -%}
-  
+
 {%- assign fonts_type_button_display = 'auto' -%}
-    
+
   {%- comment -%}Normal{%- endcomment -%}
 
   {%- assign fonts_type_button_family = settings.type_button.family | append: ',' | append: settings.type_button.fallback_families -%}
@@ -80,12 +80,12 @@
 
   {%- assign fonts_type_button_style_italic = settings.type_button | font_modify: 'style', 'italic' | map: 'style' | default: 'italic' -%}
   {{ settings.type_button | font_modify: 'style', 'italic' | font_face: font_display: fonts_type_button_display }}
-  
+
 
 {%- comment -%}type_button{%- endcomment -%}
-  
+
 {%- assign fonts_type_button_display = 'auto' -%}
-    
+
   {%- comment -%}Normal{%- endcomment -%}
 
   {%- assign fonts_type_button_family = settings.type_button.family | append: ',' | append: settings.type_button.fallback_families -%}
@@ -97,12 +97,12 @@
 
   {%- assign fonts_type_button_style_italic = settings.type_button | font_modify: 'style', 'italic' | map: 'style' | default: 'italic' -%}
   {{ settings.type_button | font_modify: 'style', 'italic' | font_face: font_display: fonts_type_button_display }}
-  
+
 
 {%- comment -%}type_menu{%- endcomment -%}
-  
+
 {%- assign fonts_type_menu_display = 'auto' -%}
-    
+
   {%- comment -%}Normal{%- endcomment -%}
 
   {%- assign fonts_type_menu_family = settings.type_menu.family | append: ',' | append: settings.type_menu.fallback_families -%}
@@ -114,12 +114,12 @@
 
   {%- assign fonts_type_menu_style_italic = settings.type_menu | font_modify: 'style', 'italic' | map: 'style' | default: 'italic' -%}
   {{ settings.type_menu | font_modify: 'style', 'italic' | font_face: font_display: fonts_type_menu_display }}
-  
+
 
 {%- comment -%}type_section{%- endcomment -%}
-  
+
 {%- assign fonts_type_section_display = 'auto' -%}
-    
+
   {%- comment -%}Normal{%- endcomment -%}
 
   {%- assign fonts_type_section_family = settings.type_section.family | append: ',' | append: settings.type_section.fallback_families -%}
@@ -4986,7 +4986,7 @@ body .mdc-ripple-surface:hover:before {
   padding-top: {{ space_large | divided_by: 16.0 | append: 'rem' }};
   margin-top: {{ space_x_large | divided_by: 16.0 | append: 'rem' }};
   margin-bottom: {{ space_small | divided_by: 16.0 | append: 'rem' }};
-  border-top: 1px solid {{ border_mix | color_modify: 'alpha', 0.15 }};
+  <!-- border-top: 1px solid {{ border_mix | color_modify: 'alpha', 0.15 }}; -->
 }
 
 .cart-final-total .discount-list-item svg {
@@ -16312,7 +16312,7 @@ body:not(.user-is-tabbing) .shopify-model-viewer-ui .shopify-model-viewer-ui__bu
 
 */
 /*
-	
+
 	1. Buttons
 
  */
@@ -16597,7 +16597,7 @@ a.pswp__share--download:hover {
 }
 
 /*
-	
+
 	4. Caption
 
  */
@@ -16692,8 +16692,8 @@ a.pswp__share--download:hover {
 }
 
 .pswp--css_animation .pswp__preloader__cut {
-  /* 
-			The idea of animating inner circle is based on Polymer ("material") loading indicator 
+  /*
+			The idea of animating inner circle is based on Polymer ("material") loading indicator
 			 by Keanu Lee https://blog.keanulee.com/2014/10/20/the-tale-of-three-spinners.html
 		*/
   position: relative;
@@ -16749,7 +16749,7 @@ a.pswp__share--download:hover {
 }
 
 /*
-	
+
 	6. Additional styles
 
  */

@@ -150,8 +150,10 @@
           {% endif %}
         </div>
       {% endif %}
-
+      {% render 'relatedblogs' %}
+      <div style="margin-top: 25px;"><br /></div>
       {% render 'article-comments', comment: comment %}
+            <div style="margin-top: 25px;"><br /></div>
     </div>
   </div>
 </section>

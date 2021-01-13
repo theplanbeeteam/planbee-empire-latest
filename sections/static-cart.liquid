@@ -130,13 +130,13 @@
               %}
             </ul>
 
-            <div class="cart-subtotal">
+            <div style="margin: 0 0 1rem 0;" class="cart-subtotal">
               <span>{{ 'cart.general.subtotal' | t }}</span>
               <span style="display: block; text-align: right;" class="saw-extra-note"></span><span class="saw-cart-original-total"><span class="money" data-cart-total>{{ cart.total_price | money }}</span></span><br><span class="saw-cart-total"></span>
             </div>
           </div>
 
-          <div class="cart-shipping pb-cart-final-total">
+          <div class="cart-shipping">
             {% if cart.requires_shipping %}
               {{ 'cart.general.shipping_at_checkout' | t }}
             {% else %}

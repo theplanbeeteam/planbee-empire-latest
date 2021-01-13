@@ -2464,7 +2464,7 @@ a.flits-list-group-item:hover, a.flits-list-group-item:focus {
 }
 
 .flits-btn-inline {
-  display: inline-block !important
+  display: inline-block !important;
 }
 
 a.flits-btn {
