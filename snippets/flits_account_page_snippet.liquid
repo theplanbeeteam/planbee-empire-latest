@@ -361,8 +361,8 @@
                                     Replace with custom styled button: -->
                                     <button id="pb-account-btn" class="flits-hidden flits-btn-inline flits-order-details-btn flits-btn button-primary" data-show-text="{{ 'flits.order_page.show_order_details' | t }}" data-hide-text="{{ 'flits.order_page.hide_order_details' | t }}">{{ 'flits.order_page.show_order_details' | t }}</button>
                                     <!-- PLANBEE INVOICE AND ORDER DOWNLOAD BUTTONS -->
-                                    <button id="pb-account-btn" type="submit" class="flits-btn-inline flits-btn button-primary" onclick="window.location.href = 'https://planbee-primary-resources.fetchapp.com/orders?email={{ order.email }}&number={{ order.name }}&submit=true';">Download resources</button>
-                                    <button id="pb-account-btn" type="submit" class="flits-btn-inline flits-btn button-primary" onclick="window.location.href = '/apps/invoice-printer/print/fWAV0G5shNvOn3cvMrOo/{{ order.id | times: 19 }}';">Download PDF invoice</button>
+                                    <button id="pb-account-btn" type="submit" class="flits-btn-inline flits-btn button-primary" onclick="window.open('https://planbee-primary-resources.fetchapp.com/orders?email={{ order.email }}&number={{ order.name }}&submit=true');">Download resources</button>
+                                    <button id="pb-account-btn" type="submit" class="flits-btn-inline flits-btn button-primary" onclick="window.open('/apps/invoice-printer/print/fWAV0G5shNvOn3cvMrOo/{{ order.id | times: 19 }}');">Download PDF invoice</button>
                                     <!-- PLANBEE CUSTOM CODE ENDS -->
 
                                     {% if shop.metafields.Flits.IS_REORDER_ENABLE and shop.metafields.Flits.IS_REORDER_ENABLE == 1 %}

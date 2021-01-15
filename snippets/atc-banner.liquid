@@ -16,7 +16,8 @@
           <div class="atc--product-details">
             <h2 class="atc--product-details--title" data-atc-banner-product-title></h2>
             <span class="atc--product-details--options" data-atc-banner-product-options></span>
-            <span class="atc--product-details--price">
+            <!-- Comment out existing code which did not display discounted prices. -->
+            <!-- <span class="atc--product-details--price">
               <span class="atc--product-details--price-quantity" data-atc-banner-product-price-quantity></span>
               <span class="atc--product-details--price-value money" data-atc-banner-product-price-value></span>
               <span class="atc--product-details--price-discounted money" data-atc-banner-product-price-discounted></span>
@@ -30,7 +31,12 @@
                 <span class="discount-title"></span>
                 (-<span class="money discount-amount"></span>)
               </li>
-            </ul>
+            </ul> -->
+            <!-- Include custom snippet based on product form price code. -->
+              <div>
+                {% render 'pb-atc-banner-price' %}
+              </div>
+            <!-- End custom snippet. -->
           </div>
         </div>
       </div>
@@ -41,6 +47,15 @@
             {{ 'add_to_cart_banner.general.sub_total' | t }}
           </span>
           <span class="atc-subtotal--price money" data-atc-banner-cart-subtotal></span>
+          {%- if customer.tags contains 'Platinum'
+          or customer.tags contains 'Platinum-KS1'
+          or customer.tags contains 'Platinum-KS2'
+          or customer.tags contains 'Platinum-NOMATHS'
+          or customer.tags contains 'Gold'
+          or customer.tags contains 'Silver'
+          or customer.tags contains 'Bronze' -%}
+          <span style="color: #707070;"><sup><small><em> *before membership discounts are applied. <a href="/cart">View cart</a> to see your membership subtotal.</em></small></sup></span>
+          {%- endif -%}
         </div>
 
         <footer class="atc-banner--cart-footer">

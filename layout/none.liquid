@@ -32,7 +32,9 @@
     </script>
 
     {{ 'theme.css' | asset_url | stylesheet_tag }}
-  </head>
+  
+  {% render 'shogun-head' %}
+</head>
 
   <body class="template-{{ template | split: '.' | first }}">
     <main class="site-main" aria-label="main content" tabindex="-1">
