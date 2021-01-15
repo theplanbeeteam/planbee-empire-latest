@@ -159,46 +159,6 @@
           "image": "shopify:\/\/shop_images\/Platinum-Medal-min_1.png"
         }
       },
-      "1520634789686": {
-        "type": "dynamic-featured-product",
-        "settings": {
-          "product": "",
-          "show_dcb": false,
-          "product_cart_redirect": false,
-          "gallery_aspect_ratio": "natural",
-          "gallery_image_crop": false,
-          "gallery_thumbnail_position": "below",
-          "gallery_video_autoplay": true,
-          "gallery_video_looping": true,
-          "gallery_hover_zoom": "disabled"
-        }
-      },
-      "1498182734213": {
-        "type": "dynamic-twitter-feed",
-        "settings": {
-          "title": "Twitter feed",
-          "username": "",
-          "retweets": false,
-          "images": false
-        }
-      },
-      "1517239645202": {
-        "type": "dynamic-search",
-        "settings": {
-          "title": "Search",
-          "text": "Use this section to help customers find the products they're looking for.",
-          "placeholder": "What are you looking for?",
-          "filter_search_by": "disabled",
-          "enable_live_search": true,
-          "enable_live_search_images": true,
-          "enable_live_search_articles_pages": false,
-          "position": "top-center",
-          "show-overlay": true,
-          "color": "#4d4d4d",
-          "background": "#ffffff",
-          "opacity": 75
-        }
-      },
       "static-blog": {
         "type": "static-blog",
         "settings": {
@@ -216,7 +176,7 @@
           "1493143038057-0": {
             "type": "promotion",
             "settings": {
-              "image": "shopify:\/\/shop_images\/mosaic-Top_Left.jpg",
+              "image": "shopify:\/\/shop_images\/Mosaic-3_Left_ab9ed823-2ac2-42ad-8f62-2f86a8d02e95.jpg",
               "title": "Lesson plans and primary resources, ready to teach",
               "text": "PlanBee is the hive of fully-prepared lesson planning packs and downloadable classroom resources.",
               "color": "#4d4d4d",
@@ -231,9 +191,9 @@
           "1493143038057-1": {
             "type": "promotion",
             "settings": {
-              "image": "shopify:\/\/shop_images\/mosaic-Top_Right.jpg",
+              "image": "shopify:\/\/shop_images\/Mosaic-3_Top-Right.jpg",
               "title": "Learn at Home Lessons",
-              "text": "Easy to use, ideal to send to parents",
+              "text": "Easy to use, ideal to send to parents.",
               "color": "#4d4d4d",
               "block_link": "shopify:\/\/collections\/home-learning-teaching-packs",
               "button_text": "HALF PRICE SALE",
@@ -243,29 +203,14 @@
               "opacity": 50
             }
           },
-          "1493143038057-2": {
-            "type": "promotion",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/mosaic-Bottom_Left.jpg",
-              "title": "Everything's included",
-              "text": "Plans, slides, worksheets, activities – it's all in there.",
-              "color": "#4d4d4d",
-              "block_link": "shopify:\/\/blogs\/news",
-              "button_text": "VIEW BEST SELLERS",
-              "button_style": "secondary",
-              "show_overlay": false,
-              "background": "",
-              "opacity": 50
-            }
-          },
           "1493143583401": {
             "type": "promotion",
             "settings": {
-              "image": "shopify:\/\/shop_images\/mosaic-Bottom_Right.jpg",
+              "image": "shopify:\/\/shop_images\/Mosaic-3_Bottom-Right.jpg",
               "title": "Teach remotely",
               "text": "Discover how to teach online with fully-prepared planning from PlanBee.",
               "color": "#4d4d4d",
-              "block_link": "shopify:\/\/blogs\/news",
+              "block_link": "https:\/\/planbee.com\/blogs\/news\/get-started-teaching-online-with-planbee",
               "button_text": "LEARN MORE",
               "button_style": "secondary",
               "show_overlay": false,
@@ -277,7 +222,6 @@
         "block_order": [
           "1493143038057-0",
           "1493143038057-1",
-          "1493143038057-2",
           "1493143583401"
         ],
         "settings": {
@@ -330,35 +274,6 @@
           "additional_menu": "footer"
         }
       },
-      "1493145778308": {
-        "type": "dynamic-promo-grid",
-        "blocks": {
-          "1493145778308-0": {
-            "type": "promotion",
-            "settings": {
-              "title": "Grid",
-              "text": "Use this section to welcome customers to your store, say a bit about your brand, or share news.",
-              "color": "#4d4d4d",
-              "button_text": "",
-              "button_style": "primary",
-              "promo_width": "full-width",
-              "show_overlay": false,
-              "background": "",
-              "opacity": 50
-            }
-          }
-        },
-        "block_order": [
-          "1493145778308-0"
-        ],
-        "settings": {
-          "title": "Grid",
-          "section_height": "medium",
-          "text_alignment": "center-center",
-          "maintain_aspect_ratio": true,
-          "compress_blocks": false
-        }
-      },
       "static-highlights-banners": {
         "type": "static-highlights-banners",
         "blocks": {
@@ -406,21 +321,6 @@
           "color": "#4d4d4d",
           "icon_color": "#4d4d4d",
           "background_color": "#f8f8f8"
-        }
-      },
-      "1521054862775": {
-        "type": "dynamic-video",
-        "settings": {
-          "title": "Video",
-          "url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
-          "show_caption": false,
-          "caption": "<p>A short description of the video.<\/p>",
-          "autoplay": false,
-          "aspect_ratio": "16-9",
-          "position": "center-center",
-          "show_overlay": false,
-          "background": "#000000",
-          "opacity": 50
         }
       },
       "static-collection": {
@@ -495,53 +395,12 @@
       "1493163784784": {
         "type": "dynamic-featured-collection",
         "settings": {
-          "title": "Featured Collection",
-          "layout": "grid",
-          "collection": "",
+          "title": "Newest Resources",
+          "layout": "slideshow",
+          "collection": "featured-planning",
           "product_count": 5,
-          "cta_label": "Shop collection",
+          "cta_label": "",
           "cta_button_style": "primary"
-        }
-      },
-      "1493171740659": {
-        "type": "dynamic-blog-posts",
-        "settings": {
-          "title": "Blog Posts",
-          "blog": "news",
-          "show_date": true,
-          "show_author": true,
-          "show_excerpt": true
-        }
-      },
-      "1493166188493": {
-        "type": "dynamic-menu-list",
-        "blocks": {
-          "1493166188493-0": {
-            "type": "menu",
-            "settings": {
-              "menu": ""
-            }
-          },
-          "1493166188493-1": {
-            "type": "menu",
-            "settings": {
-              "menu": ""
-            }
-          },
-          "1493166188493-2": {
-            "type": "menu",
-            "settings": {
-              "menu": ""
-            }
-          }
-        },
-        "block_order": [
-          "1493166188493-0",
-          "1493166188493-1",
-          "1493166188493-2"
-        ],
-        "settings": {
-          "title": "Menu list"
         }
       },
       "static-product": {
@@ -557,50 +416,6 @@
           "gallery_video_looping": true,
           "gallery_hover_zoom": "disabled",
           "gallery_click_to_zoom": "always"
-        }
-      },
-      "1540247561673": {
-        "type": "dynamic-promo-grid",
-        "blocks": {
-          "1540247561673-0": {
-            "type": "promotion",
-            "settings": {
-              "title": "Grid",
-              "text": "Use this section to welcome customers to your store, say a bit about your brand, or share news.",
-              "color": "#4d4d4d",
-              "button_text": "",
-              "button_style": "primary",
-              "promo_width": "half-width",
-              "show_overlay": false,
-              "background": "",
-              "opacity": 50
-            }
-          },
-          "1540247561673-1": {
-            "type": "promotion",
-            "settings": {
-              "title": "Grid",
-              "text": "Use this section to welcome customers to your store, say a bit about your brand, or share news.",
-              "color": "#4d4d4d",
-              "button_text": "",
-              "button_style": "primary",
-              "promo_width": "half-width",
-              "show_overlay": false,
-              "background": "#ee3224",
-              "opacity": 50
-            }
-          }
-        },
-        "block_order": [
-          "1540247561673-0",
-          "1540247561673-1"
-        ],
-        "settings": {
-          "title": "",
-          "section_height": "small",
-          "text_alignment": "top-left",
-          "maintain_aspect_ratio": false,
-          "compress_blocks": false
         }
       },
       "static-announcement": {
@@ -958,19 +773,167 @@
           "custom_ordered_tags": "",
           "menu_depth_range": 3
         }
+      },
+      "1610543381f4ca064f": {
+        "type": "dynamic-html",
+        "settings": {
+          "title": "",
+          "custom_html": "<div style=\"min-height: 28px;\">\n<!-- TrustBox widget - Horizontal -->\n<div class=\"trustpilot-widget\" data-locale=\"en-GB\" data-template-id=\"5406e65db0d04a09e042d5fc\" data-businessunit-id=\"59ae9f640000ff0005aa75d1\" data-style-height=\"28px\" data-style-width=\"100%\" data-theme=\"light\">\n  <a href=\"https:\/\/uk.trustpilot.com\/review\/www.planbee.com\" target=\"_blank\" rel=\"noopener\">Trustpilot<\/a>\n<\/div>\n<!-- End TrustBox widget -->\n<\/div>"
+        }
+      },
+      "16105434335c4b646a": {
+        "type": "dynamic-html",
+        "settings": {
+          "title": "",
+          "custom_html": "<style>\n.flex-container {\n  display: flex;\n  flex-flow: row wrap;\n  justify-content: center;\n  justify-content: space-around;\n  align-items: center;\n}\n\n.flex-box {\n  flex: 0 0 33.3333%;\n  text-align: center;\n  padding: 0 20px;\n}\n\n@media (max-width: 800px) {\n  .flex-container {\n    flex-direction: column;\n  }\n}\n<\/style>\n<div class=\"flex-container\">\n  <div class=\"flex-box\">\n    <h2 class=\"home-section--title\">PlanBee for teachers<\/h2>\n    <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0338\/5478\/3626\/files\/PlanBee_for_Teachers-699x697.png?v=1602155630\" alt=\"The PlanBee Bee teaching three little bees\" style=\"max-width: 200px;\"> <p>Download one-off lessons or whole schemes of work, each with lesson plans, slideshows, differentiated activities and a range of printable resources.<\/p>\n<p><\/p>\n  <a href=\"\/pages\/planbeeforteachers\" class=\"button-primary\" style=\"color: #353535;\">INFORMATION FOR TEACHERS<\/a>\n  <\/div>\n  <div class=\"flex-box\">\n    <h2 class=\"home-section--title\">PlanBee for schools<\/h2>\n    <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0338\/5478\/3626\/files\/PlanBee_for_Schools-699x697.png?v=1602165375\" alt=\"A school building in the shape of a beehive\" style=\"max-width: 200px;\">\n    <p>Download fully planned and resourced Curriculum Packs, covering all National Curriculum objectives from Year 1 to Year 6 for a variety of subjects.<\/p>\n    <a href=\"\/pages\/planbeeforschools\" class=\"button-primary\" style=\"color: #353535;\">INFORMATION FOR SCHOOLS<\/a>\n  <\/div>\n  <div class=\"flex-box\">\n    <h2 class=\"home-section--title\">PlanBee for home educators<\/h2>\n    <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0338\/5478\/3626\/files\/Home_Educators.png?v=1602165363\" alt=\"A red house with a tree behind it\" style=\"max-width: 200px; padding-bottom: 12px;\">\n    <p>Thousands of easy-to-use and completely ready-to-teach lesson plans. Practically everything you need is included, 'out of the box' (ok, out of the zip file!)<\/p>\n    <a href=\"\/pages\/planbeeforhomeeducators\" class=\"button-primary\" style=\"color: #353535;\">INFORMATION FOR HOME EDUCATORS<\/a>\n  <\/div>\n<\/div>"
+        }
+      },
+      "1610543679633a59a0": {
+        "type": "dynamic-html",
+        "settings": {
+          "title": "",
+          "custom_html": "<hr>"
+        }
+      },
+      "1610543761d5b27df3": {
+        "type": "dynamic-logo-list",
+        "blocks": {
+          "1610543761d5b27df3-0": {
+            "type": "logo",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Download_10x_241x222_61e4c36a-0592-4c5d-a11e-484efc42425b.png",
+              "link": "\/collections\/free-teaching-resources\/free-resources_sample-packs"
+            }
+          }
+        },
+        "block_order": [
+          "1610543761d5b27df3-0"
+        ],
+        "settings": {
+          "title": "Download FREE sample lesson packs"
+        }
+      },
+      "1610544567f60121fe": {
+        "type": "dynamic-html",
+        "settings": {
+          "title": "",
+          "custom_html": "<hr>"
+        }
+      },
+      "16105446375c59102a": {
+        "type": "dynamic-rich-text",
+        "blocks": {
+          "16105446375c59102a-0": {
+            "type": "text",
+            "settings": {
+              "title": "Ready to teach primary lesson planning, trusted by thousands of teachers",
+              "text": "<p>Since 2009, we&#x27;ve helped teachers restore their work-life balance by providing fully-prepared lesson planning packs.<\/p><p>Today, PlanBee is the home of more than 4,000 primary teaching resources, including everything from free classroom labels to complete, whole-school curriculum packs – and everything in between!<\/p><p>Because all of our resources are made by teachers, we&#x27;re <em>trusted<\/em> by teachers. Every lesson plan pack includes detailed, differentiated learning activities supported by practically everything teachers need—slides, worksheets, games, challenges and many other PDF printable resources—to deliver outstanding lessons.<\/p><p>We&#x27;re proud to be different. Unlike some other providers, <strong>we&#x27;ve planned for progression in every year group, during every term, all year round<\/strong>. PlanBee lesson plan packs are designed, from the ground up, to ensure excellent coverage of National Curriculum objectives, AND fit into a bigger Curriculum Pack with comprehensive planning for the whole school.<\/p><p>We know teachers care about delivering fantastic learning experiences, which is why we also know how important it is to see exactly what you get with a PlanBee lesson plan pack, before you buy. That&#x27;s why it&#x27;s completely free to download sample packs of the actual lessons in our catalogue. You can even download a free mini-scheme of work to teach with your class. It&#x27;s the perfect way to gain an understanding of how we can support you, just as we already support schools and teachers across the UK and around the world.<\/p><p>So: ready to take the plunge? It takes seconds to create a free account, or buy one of our affordable memberships (which include year-round discounts and free resources!) Once you&#x27;ve joined you can start downloading thousands of time-saving teaching resources. Give it a go! With PlanBee, you&#x27;ll spend less time planning and more time teaching outstanding lessons your pupils will love.<\/p><p><a href=\"https:\/\/planbee.com\/account\/register\" title=\"Join PlanBee today\"><strong>Transform your teaching life today<\/strong>.<\/a><\/p>",
+              "heading_size": "medium",
+              "text_alignment": "center"
+            }
+          }
+        },
+        "block_order": [
+          "16105446375c59102a-0"
+        ],
+        "settings": {
+          "width": "regular"
+        }
+      },
+      "1610544730d12b76ed": {
+        "type": "dynamic-collection-list",
+        "blocks": {
+          "1610544730d12b76ed-0": {
+            "type": "collection",
+            "settings": {
+              "collection": "ancient-greece-ks2"
+            }
+          },
+          "1610544730d12b76ed-1": {
+            "type": "collection",
+            "settings": {
+              "collection": "home-learning-teaching-packs",
+              "image": "shopify:\/\/shop_images\/learn-at-home-LKS2-week-1_696x_2x.progressive_7fccfba6-3166-42d7-b065-5158c0a7737f.jpg"
+            }
+          },
+          "1610544730d12b76ed-2": {
+            "type": "collection",
+            "settings": {
+              "collection": "christmas-activities-ks1-ks2"
+            }
+          },
+          "1610544730d12b76ed-3": {
+            "type": "collection",
+            "settings": {
+              "collection": "africa-ks1"
+            }
+          }
+        },
+        "block_order": [
+          "1610544730d12b76ed-0",
+          "1610544730d12b76ed-1",
+          "1610544730d12b76ed-2",
+          "1610544730d12b76ed-3"
+        ],
+        "settings": {
+          "title": "Latest Collections"
+        }
+      },
+      "1610544808091b91ef": {
+        "type": "dynamic-html",
+        "settings": {
+          "title": "",
+          "custom_html": "<div class=\"flex-container\">\n  <div class=\"flex-box\">\n    <h2 class=\"home-section--title\" style=\"color: #353535;\">Resources at your fingertips<\/h2>\n    <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0338\/5478\/3626\/files\/Resource_Fingertips_10x.png?v=1602166800\" alt=\"A pointed finger clicking a button\" style=\"height: 100px;\">\n    <p>We really do mean this! Whether you want an individual lesson or a complete scheme of work, our teaching packs come with a detailed lesson plan that walks you through an engaging input, a slideshow presentation to go with it, differentiated activity ideas, and — in most cases — a range of printable resources such as worksheets, activity cards or writing frames. If anything else is required, you'll be able to see at a glance, as everything you need is listed at the top of every plan!<\/p>\n  <\/div>\n  <div class=\"flex-box\">\n    <h2 class=\"home-section--title\" style=\"color: #353535;\">Written by professionals<\/h2>\n    <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0338\/5478\/3626\/files\/Written_by_professionals_10x.png?v=1602166800\" alt=\"A rosette and a pencil\" style=\"height: 100px;\">\n    <p>We're qualified primary teachers with extensive classroom experience. We know how hard the job is! That's why we try to give you as much as we can with every teaching pack – to help you and make life easier. We've obsessively pored over the National Curriculum objectives to make sure that you get excellent coverage when you teach with PlanBee, and that you get engaging, challenging learning activities with which all of your children can achieve and make progress.\n\n<\/p>\n  <\/div>\n<div class=\"flex-box\">\n    <h2 class=\"home-section--title\" style=\"color: #353535;\">More time for you<\/h2>\n    <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0338\/5478\/3626\/files\/More_time_10x.png?v=1602166800\" alt=\"A clock and a cup of tea\" style=\"height: 100px;\">\n    <p>Stuck for ideas on Sunday evening? All your time taken up with marking? We know how much time teachers spend on preparation and assessment. It's time to get some of that time back! It only takes a moment to sign up with PlanBee and start downloading, so you can claim back a bit more You time! Our Complete Series of lessons come with assessment questions and marking grids, too – it's another way we've tried to make the incredible job you do that little bit easier!<\/p>\n  <\/div>\n<\/div>"
+        }
+      },
+      "1610549260038ad142": {
+        "type": "dynamic-logo-list",
+        "blocks": {
+          "1610549260038ad142-0": {
+            "type": "logo",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/PlanBee_Bee_OnlyEXTRA_LARGE_243x164_37cf4032-eb2f-45ed-ba11-10788451228c.png",
+              "link": ""
+            }
+          }
+        },
+        "block_order": [
+          "1610549260038ad142-0"
+        ],
+        "settings": {
+          "title": ""
+        }
+      },
+      "1610549357f7a6fa87": {
+        "type": "dynamic-html",
+        "settings": {
+          "title": "",
+          "custom_html": "<div style=\"margin-top: 25px;\"><\/div>"
+        }
+      },
+      "161063100554c3a2d3": {
+        "type": "dynamic-html",
+        "disabled": true,
+        "settings": {
+          "title": "What is PlanBee?",
+          "custom_html": "<div class=\"hp-video\">\n<video autoplay=\"\" loop=\"loop\" controls=\"controls\" muted=\"muted\" style=\"width: 100%; margin: 0 auto;\">\n  <source src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0338\/5478\/3626\/files\/PlanBee_Promo_July_2018_Homepage_Version.mp4?v=1610630978\" type=\"video\/mp4\">\nYour browser does not support the video tag.\n<\/source><\/video>\n<\/div>"
+        }
       }
     },
     "content_for_index": [
       "1493143038057",
-      "1493145778308",
-      "1540247561673",
+      "1610543381f4ca064f",
+      "161063100554c3a2d3",
+      "16105434335c4b646a",
+      "1610543679633a59a0",
+      "1610543761d5b27df3",
+      "1610544567f60121fe",
       "1493163784784",
-      "1520634789686",
-      "1521054862775",
-      "1493166188493",
-      "1493171740659",
-      "1498182734213",
-      "1517239645202"
+      "16105446375c59102a",
+      "1610544730d12b76ed",
+      "1610544808091b91ef",
+      "1610549260038ad142",
+      "1610549357f7a6fa87"
     ]
   },
   "presets": {
